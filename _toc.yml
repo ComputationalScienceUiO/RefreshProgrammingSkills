@@ -1,0 +1,36 @@
+# Table of contents
+format: jb-book
+root: intro
+parts:
+  - caption: Python Intro
+    chapters:
+    - file: notebooks/PythonIntro/W1_Lecture
+      sections:
+      - file: notebooks/PythonIntro/exercises/W1_Exercises
+    - file: notebooks/PythonIntro/W2_Lecture
+      sections:
+      - file: notebooks/PythonIntro/exercises/W2_Exercises
+    - file: notebooks/PythonIntro/W3_Lecture
+      sections:
+      - file: notebooks/PythonIntro/exercises/W3_Exercises
+    - file: notebooks/PythonIntro/W4_Lecture
+      sections:
+      - file: notebooks/PythonIntro/exercises/W4_Exercises
+      
+  - caption: Python
+    chapters:
+    - file: notebooks/Python/SetupAndLibraries
+    - file: notebooks/Python/scikit-learn
+    - file: notebooks/Python/pandas
+    - file: notebooks/Python/pandasDF
+    - file: notebooks/Python/linalg
+    
+  - caption: Tools
+    chapters:
+    - file: notebooks/Tools/Git
+    - file: notebooks/Tools/Latex
+    
+  - caption: C++
+    chapters:
+    - file: notebooks/Cpp/Setup
+    - file: notebooks/Cpp/LectureNotes

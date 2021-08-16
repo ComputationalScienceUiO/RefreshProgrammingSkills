@@ -1,0 +1,1125 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables and Decisions &#8212; Programming Seminars</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercises" href="exercises/W1_Exercises.html" />
+    <link rel="prev" title="Introduction" href="../../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Seminars</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Intro
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Variables and Decisions
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/W1_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="W2_Lecture.html">
+   Lists and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/W2_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="W3_Lecture.html">
+   Data Processing and Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/W3_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="W4_Lecture.html">
+   Plotting and Correlation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/W4_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/SetupAndLibraries.html">
+   Setup And Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/scikit-learn.html">
+   scikit-learn - Linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/pandasDF.html">
+   pandas - DataFrame Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/linalg.html">
+   Linalg and numpy
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Latex.html">
+   LaTeX
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/Setup.html">
+   Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/LectureNotes.html">
+   C++ Intro Lecture Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/PythonIntro/W1_Lecture.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning Goals:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hello-world">
+   Hello world!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integers-and-floats">
+     Integers and Floats
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-number-exercises">
+     In-Class Number Exercises
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strings">
+     Strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#better-printing">
+     Better printing:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-string-exercises">
+     In-Class String Exercises
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-a-variable">
+     Changing a variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comments">
+     Comments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-variable-changing-exercises">
+     In-Class Variable Changing Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decisions">
+   Decisions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-decisions-exercises">
+     In-Class Decisions Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elif-statements-and-larger-decision-blocks">
+   Elif statements and larger decision blocks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-statements-and-booleans">
+     Logical statements and booleans
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-decisions-with-elif-exercises">
+     In-Class Decisions With
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       elif
+      </span>
+     </code>
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-number-generation">
+   Random number generation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-class-random-number-exercises">
+     In-Class Random number exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="variables-and-decisions">
+<h1>Variables and Decisions<a class="headerlink" href="#variables-and-decisions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="learning-goals">
+<h2>Learning Goals:<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
+<p>After this week, the student will be able to:</p>
+<ul class="simple">
+<li><p>Declare variables</p></li>
+<li><p>Do simple maths in Python</p></li>
+<li><p>Write programs using <em>if</em> and <em>else</em> statements</p></li>
+<li><p>Generate random numbers in python</p></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This course will teach you how to write code in the Python programming language. For our purposes code is instructions that computers can follow to complete tasks and solve problems for us.</p>
+</div>
+<div class="section" id="hello-world">
+<h2>Hello world!<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>To get started with coding, it is customary to write a “Hello world!” program, a program that prints the words “Hello world!” to the screen. In Python, this program looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>To write and run this program, you first need to open a code editor like jupyter lab (or Spyder or <a href="https://repl.it/languages/Python3">repl.it/languages/Python3</a>), then create a file with a suitable name(something like <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> or <code class="docutils literal notranslate"><span class="pre">hello.ipynb</span></code> for notebooks) <strong>in a folder you can find later</strong>. Write <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello</span> <span class="pre">world!&quot;)</span></code> in your file, and finally run your program.</p>
+<p>The “Hello world” program contains two new and useful concepts:</p>
+<p>The first is the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code> inside the parentheses. In programming, strings are one of the basic data types used to store information. Strings are used to store text. To create one you need to surround the text you want to store with quotes like this: <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">string&quot;</span></code>.</p>
+<p>The second thing is the function <code class="docutils literal notranslate"><span class="pre">print()</span></code>. Whatever you put inside the parentheses will be written in the console. Nearly every single program in this course will include the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function, we use it whenever we want our program to output some text. You will become familiar with many other functions during this course, and even make your own. Functions take some input inside the parentheses, and perform some action.</p>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Variables are used to store numbers and text among other things. Variables are useful beacuse we often want to save useful information in our programs in order to access it later. You declare a variable by giving it a name and a value. Let’s start by storing the number <code class="docutils literal notranslate"><span class="pre">5</span></code> in the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the variable with the name <code class="docutils literal notranslate"><span class="pre">a</span></code> holds the value <code class="docutils literal notranslate"><span class="pre">5</span></code>. You can try running <code class="docutils literal notranslate"><span class="pre">print(a)</span></code> to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>The number <code class="docutils literal notranslate"><span class="pre">5</span></code> was printed to the console, since printing the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> prints its value and not its name. You can create as many variables as you want, and you can name them almost anything.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Extra: Names you can’t use for variables</p>
+<p>A variable name can’t be a number, a special character or an important Python keyword like <code class="docutils literal notranslate"><span class="pre">print</span></code>. If a keyword is used for something else, it changes color in some editors, examples of such keywords are <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code>. Don’t use these names for your variables, as you’ll overwrite useful functions. Try naming a variable <code class="docutils literal notranslate"><span class="pre">print</span></code> and see what happens when you then try to print something.</p>
+</div>
+<p>You can think of a variable as being an adress in your computer memory, and at that adress you store some value. When you want to access a value, you use its address to find it.</p>
+<p>There are different <strong>types</strong> of variables that you should familiarize yourself with:</p>
+<div class="section" id="integers-and-floats">
+<h3>Integers and Floats<a class="headerlink" href="#integers-and-floats" title="Permalink to this headline">¶</a></h3>
+<p>In Python, whole numbers are stored as <strong>integers</strong> and decimal numbers are stored as <strong>floats</strong>. They are declared in the same way though, so you often don’t need to worry about the distinction. When doing calculations in Python, you can think of integers and floats as just being numbers. This is not the case in all other languages though.</p>
+<p>To declare an integer, do as before and assign a whole number to a variable. To declare a float, assign a decimal number to a variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thisNumber</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">otherNumber</span> <span class="o">=</span> <span class="mf">2.718</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can add, subtract, multiply and divide in Python like this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">difference</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">product</span> <span class="o">=</span> <span class="mi">13</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">quotient</span> <span class="o">=</span> <span class="mi">21</span> <span class="o">/</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see the actual results we can print the value of the variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">difference</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">product</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quotient</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+7
+26
+7.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can use variables as if they were numbers when doing calculations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">product</span> <span class="o">-</span> <span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are other operations you can do in Python as well. Exponents are done with two multiplication signs. You can also take a square root by raising a number to the power of <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">exponents</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">exponents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">25</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+5.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parentheses work just like in regular maths.</p>
+<p><strong>NOTE:</strong> Remember to put an operator between numbers and parentheses though, or Python will treat the number like a function and your program won’t run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parentheses</span> <span class="o">=</span> <span class="mi">5</span>  <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">parentheses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<p>This won’t work: <code class="docutils literal notranslate"><span class="pre">parentheses</span> <span class="pre">=</span> <span class="pre">5(2</span> <span class="pre">+</span> <span class="pre">3)</span></code>, neither will this: <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">=</span> <span class="pre">thisNumber(2</span> <span class="pre">+</span> <span class="pre">4)</span></code>, because Python tries to use <code class="docutils literal notranslate"><span class="pre">thisNumber</span></code> as a function instead of a variable when you use parentheses like this.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-number-exercises">
+<h3>In-Class Number Exercises<a class="headerlink" href="#in-class-number-exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> Store the result of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">1</span></code> in a variable and print it.</p>
+<p><strong>b)</strong> Store two different numbers in two variables. Add the variables together and print out the result.</p>
+<p><strong>c)</strong> Do calculations using all of the operators and print out the results.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<p>Let’s declare some strings. Remember that you need to surround text with quotes when declaring strings. Single, double and triple quotes will all work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s1">&#39;Stephen&#39;</span>
+<span class="n">middle</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">last</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Fry&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can combine strings with <code class="docutils literal notranslate"><span class="pre">+</span></code>, and  make strings repeat by multiplying them with whole numbers,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span>  <span class="n">last</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">first</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">middle</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">last</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StephenJohnFry
+StephenStephenStephenStephenStephen
+Stephen John Fry
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings can contain almost any text, as long as you surround it with quotes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myText</span> <span class="o">=</span> <span class="s2">&quot;Spaces   numbers 2020 &#39;other types of quotes&#39;&quot;</span>
+<span class="n">five</span> <span class="o">=</span> <span class="s2">&quot;5&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myText</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">five</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spaces   numbers 2020 &#39;other types of quotes&#39;
+55
+</pre></div>
+</div>
+</div>
+</div>
+<p>A problem arises if your text contains quotation marks. <code class="docutils literal notranslate"><span class="pre">print(&quot;He</span> <span class="pre">cried:</span> <span class="pre">&quot;Oh</span> <span class="pre">no&quot;&quot;)</span></code> creates the string <code class="docutils literal notranslate"><span class="pre">&quot;He</span> <span class="pre">cried:</span> <span class="pre">&quot;</span></code> and the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>, and a mess in between that ruins the code. To avoid this problem, python uses the escape character <code class="docutils literal notranslate"><span class="pre">\</span></code> - placing this escape character before a special character (like <code class="docutils literal notranslate"><span class="pre">\n</span></code>, which creates a linebreak) renders it a normal character in the string: <code class="docutils literal notranslate"><span class="pre">print(&quot;He</span> <span class="pre">cried:</span> <span class="pre">\&quot;Oh</span> <span class="pre">no\&quot;&quot;)</span></code>. You could also use a different type of quotation marks on the outside: <code class="docutils literal notranslate"><span class="pre">print('He</span> <span class="pre">cried:</span> <span class="pre">&quot;Oh</span> <span class="pre">no&quot;')</span></code>.</p>
+<p>A simple way of printing strings and numbers together is to use a comma between them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The best number is&quot;</span><span class="p">,</span> <span class="mi">43</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;without a doubt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The best number is 129 without a doubt
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="better-printing">
+<h3>Better printing:<a class="headerlink" href="#better-printing" title="Permalink to this headline">¶</a></h3>
+<p>A much better way of adding numbers or variables in the middle of text is to use f-strings (the f is for “format”). Put an f in front of the quotation marks, and use curly brackets where you want to add numbers or variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The best number is </span><span class="si">{</span><span class="mi">43</span> <span class="o">*</span> <span class="mi">3</span><span class="si">}</span><span class="s2"> without a doubt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The best number is 129 without a doubt
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span> <span class="o">=</span> <span class="s2">&quot;James&quot;</span>
+<span class="n">last</span> <span class="o">=</span> <span class="s2">&quot;Bond&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My name is </span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">first</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My name is Bond, James Bond.
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also use f-strings to round numbers, which can be useful when trying to make results more readable. To round a number to two decimals, add <code class="docutils literal notranslate"><span class="pre">:.2f</span></code> at the end of the curly bracket with a number. You can change the <code class="docutils literal notranslate"><span class="pre">2</span></code> to include more or fewer decimals. By adding <code class="docutils literal notranslate"><span class="pre">:.0f</span></code> after a number you can add it to the string without any decimals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The best number is </span><span class="si">{</span><span class="mi">22</span><span class="o">/</span><span class="mi">7</span><span class="si">}</span><span class="s2"> without a doubt, or maybe </span><span class="si">{</span><span class="mi">22</span><span class="o">/</span><span class="mi">7</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, or maybe even </span><span class="si">{</span><span class="mi">22</span><span class="o">/</span><span class="mi">7</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The best number is 3.142857142857143 without a doubt, or maybe 3.14, or maybe even 3
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to print the name and value of a variable, it can be done like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number = 42
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-string-exercises">
+<h3>In-Class String Exercises<a class="headerlink" href="#in-class-string-exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> Store your name in a string. Using this string, make the computer print out that you’re doing a good job.</p>
+<p><strong>b)</strong> Store you age as an integer. Using this integer, print out that it is your age.</p>
+<p><strong>c)</strong> Store the value <code class="docutils literal notranslate"><span class="pre">5.555</span></code> in a variable called <code class="docutils literal notranslate"><span class="pre">myFloat</span></code>. Using string formatting, <code class="docutils literal notranslate"><span class="pre">print</span></code> the value of <code class="docutils literal notranslate"><span class="pre">myFloat</span></code> with one decimal.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="changing-a-variable">
+<h3>Changing a variable<a class="headerlink" href="#changing-a-variable" title="Permalink to this headline">¶</a></h3>
+<p>If you assign two different values to a variable with the same name, the last value is the one that will be stored.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;Text&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1">#b now stores an integer, and not the string &quot;Text&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can assign the value of one variable to another.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1">#Now b = 5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">17</span> <span class="c1">#This changes a, but not b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="comments">
+<h3>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h3>
+<p>To write good code you should write good comments when needed. You comment your code by writing <code class="docutils literal notranslate"><span class="pre">#</span></code> and then your comment anywhere in your code. Comments are ignored by the computer when you run your code. Commenting your code to clarify what it does to yourself and others who might read it is a good practice. You should only add comments when it is needed for clarity, otherwise you only end up making the code less readable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myName</span> <span class="o">=</span> <span class="s2">&quot;Ola Nordmann&quot;</span> <span class="c1">#This is a comment</span>
+<span class="n">myNumber</span> <span class="o">=</span> <span class="mi">6224</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">myName</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">myNumber</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#The first multiplication makes the string repeat itself, the second doubles the number stored in myNumber</span>
+
+<span class="c1">#print(myName + myNumber) this line has been &quot;commented out&quot;, so the code here won&#39;t be run. If you were you run this code you would get an error anyway, since you can&#39;t add a string and integer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ola NordmannOla Nordmann 12448
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-variable-changing-exercises">
+<h3>In-Class Variable Changing Exercises<a class="headerlink" href="#in-class-variable-changing-exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> Define a variable <code class="docutils literal notranslate"><span class="pre">myNum</span></code> with the value <code class="docutils literal notranslate"><span class="pre">10</span></code> and a variable <code class="docutils literal notranslate"><span class="pre">yourNum</span></code> with the value <code class="docutils literal notranslate"><span class="pre">42</span></code>. Use a third variable <code class="docutils literal notranslate"><span class="pre">temp</span></code> to switch the values of <code class="docutils literal notranslate"><span class="pre">myNum</span></code> and <code class="docutils literal notranslate"><span class="pre">yourNum</span></code>.</p>
+<p><strong>b)</strong> What would the output of this code be?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a = 10
+b = 7
+
+a = b
+b = a + 5
+#b = a + b
+
+print(a)
+print(b)
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="decisions">
+<h2>Decisions<a class="headerlink" href="#decisions" title="Permalink to this headline">¶</a></h2>
+<p>We often want our program to do different things depending on the state of the program. Much like how we might want to bet different amounts in poker depending on the quality of our hand.</p>
+<p>To make our programs make decisions in Python, we use <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements.</p>
+<p>When the computer reaches an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, it checks whether the logical statement is true or not. If it is, the code below the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement that is <strong>indented</strong> is run. If not, the indented code is skipped. Indented code is code with blank space to its left. We normally use the “tab” key to indent code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myNumber</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">myNumber</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">myNumber</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Goodbye!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello!
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can expand this program with an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement. The indented code under the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is run whenever the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement above “fails”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myNumber</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">myNumber</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was bigger than 8&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The number was not bigger than 8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number was not bigger than 8
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use strings in the logical statements in the <code class="docutils literal notranslate"><span class="pre">if</span></code> statements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Kant&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m sorry, but I Kant remember your name, what was it again?&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello John.
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also put <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside other <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. These nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements work just like the ones we just looked at, but the program reaches them only if the outside <code class="docutils literal notranslate"><span class="pre">if</span></code> statement “succeeded”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;John&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">31</span>
+
+<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;Kant&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">297</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guten tag mein mann!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m sorry, but I Kant remember your name, what was it again?&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello John
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-decisions-exercises">
+<h3>In-Class Decisions Exercises<a class="headerlink" href="#in-class-decisions-exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> Write a program that checks whether an integer variable is greater than 10.</p>
+<p><strong>b)</strong> Write a program which greets children with the phrase “Hey kid”, and adults by their name.</p>
+<p><strong>c)</strong> Write a program that uses a nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="elif-statements-and-larger-decision-blocks">
+<h2>Elif statements and larger decision blocks<a class="headerlink" href="#elif-statements-and-larger-decision-blocks" title="Permalink to this headline">¶</a></h2>
+<p>We can expand this program again by combining an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement into an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement. The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement is run when an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement right above it fails.</p>
+<p>When you have multiple decisions chained together like this, the final <code class="docutils literal notranslate"><span class="pre">else</span></code> only “succeeds” when all prevous <code class="docutils literal notranslate"><span class="pre">ifs</span></code> and <code class="docutils literal notranslate"><span class="pre">elifs</span></code> failed or were skipped. Only an <code class="docutils literal notranslate"><span class="pre">if</span></code> can start such a chain, and when you reach an <code class="docutils literal notranslate"><span class="pre">else</span></code> the chain is stopped.</p>
+<p>The trolley problem is a thought experiment where a trolley is about to run over five people on the main track, but you can divert it to a side track where it will run over only one person.</p>
+<p>Let’s write a program that chooses what action to take depending on which action saves the most lives.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mainTrack</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">sideTrack</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">mainTrack</span> <span class="o">&gt;</span> <span class="n">sideTrack</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Change the tracks!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">mainTrack</span> <span class="o">==</span> <span class="n">sideTrack</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I honestly don&#39;t care what you do.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t change the tracks!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Change the tracks!
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also put <code class="docutils literal notranslate"><span class="pre">if</span></code> statement inside other <code class="docutils literal notranslate"><span class="pre">if</span></code> or <code class="docutils literal notranslate"><span class="pre">else</span></code> statements. These nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements work just like the ones we just looked at, but the program reaches them only if the outside <code class="docutils literal notranslate"><span class="pre">if</span></code> statement “succeeded”.</p>
+<p>Let’s write a program which does the same as last time, only now it can also choose to blow up the trolley if that saves the most lives.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mainTrack</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">sideTrack</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">passengers</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="k">if</span> <span class="n">mainTrack</span> <span class="o">&gt;</span> <span class="n">sideTrack</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">sideTrack</span> <span class="o">&gt;</span> <span class="n">passengers</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blow up the trolley!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Switch the tracks!&quot;</span><span class="p">)</span>
+        
+<span class="k">elif</span> <span class="n">mainTrack</span> <span class="o">==</span> <span class="n">sideTrack</span> <span class="o">==</span> <span class="n">passengers</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I honestly don&#39;t care what you do.&quot;</span><span class="p">)</span>
+    
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">mainTrack</span> <span class="o">&gt;</span> <span class="n">passengers</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Blow up the trolley!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t switch the tracks!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Blow up the trolley!
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>1.</strong> First the variables <code class="docutils literal notranslate"><span class="pre">mainTrack</span></code>, <code class="docutils literal notranslate"><span class="pre">sideTrack</span></code> and <code class="docutils literal notranslate"><span class="pre">passengers</span></code> are declared</p>
+<p><strong>2.</strong> Then the program reaches the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. <code class="docutils literal notranslate"><span class="pre">mainTrack</span></code> is not greater than <code class="docutils literal notranslate"><span class="pre">sideTrack</span></code>, so the program skips the indented code under the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p><strong>3.</strong> Then it reaches an <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement. <code class="docutils literal notranslate"><span class="pre">mainTrack</span></code>, <code class="docutils literal notranslate"><span class="pre">sideTrack</span></code> and <code class="docutils literal notranslate"><span class="pre">passengers</span></code> are not all equal, so this <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement “fails”. The indented code is skipped and the program reaches an <code class="docutils literal notranslate"><span class="pre">else</span></code> sentence.</p>
+<p><strong>4.</strong> Everything on the level of this <code class="docutils literal notranslate"><span class="pre">else</span></code> statement failed, so the indented code under it is run.</p>
+<p><strong>5.</strong> There it reaches an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. <code class="docutils literal notranslate"><span class="pre">mainTrack</span></code> is greater than <code class="docutils literal notranslate"><span class="pre">passengers</span></code>, so the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement succeeds and the indented code is run. “Blow up the trolley!” is printed.</p>
+<p><strong>6.</strong> Finally, the last <code class="docutils literal notranslate"><span class="pre">else</span></code> is reached and since the previous <code class="docutils literal notranslate"><span class="pre">if</span></code> succeeded, it is skipped. The program has now reached the end.</p>
+<p>This example brings up an important question when writing programs that make decisions in the real world. Should a program choose whether a self driving car should sacrifice a passenger or a pedestrian if it comes down to it during a potential collision? And if so, what should it choose? Should this decision be made by the car manufacturers?</p>
+<div class="section" id="logical-statements-and-booleans">
+<h3>Logical statements and booleans<a class="headerlink" href="#logical-statements-and-booleans" title="Permalink to this headline">¶</a></h3>
+<p>We often compare numbers in <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. These are the five different logical operators you can use to compare numbers:</p>
+<p>Let <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">5</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">5</span></code> returns False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;</span> <span class="pre">5</span></code> returns False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">5</span></code> returns True <em>(equal, you NEED two equal signs)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">5</span></code> returns True <em>(less than or equal)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&gt;=</span> <span class="pre">5</span></code> returns True</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">!=</span> <span class="pre">5</span></code> returns False <em>(not equal)</em></p></li>
+</ul>
+<p>You can store the value of these logical statemens in variables called booleans. Booleans can hold the values <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> and can be used for logical operations. Python uses the <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> keywords for logical operations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sunny</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">ownSunscreen</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">sunny</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ownSunscreen</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Go buy some sunscreen!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Go buy some sunscreen!
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span> <span class="pre">-&gt;</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span> <span class="pre">-&gt;</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">-&gt;</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span> <span class="pre">-&gt;</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">False</span> <span class="pre">-&gt;</span> <span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">-&gt;</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span> <span class="pre">-&gt;</span> <span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span> <span class="pre">-&gt;</span> <span class="pre">False</span></code></p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-decisions-with-elif-exercises">
+<h3>In-Class Decisions With <code class="docutils literal notranslate"><span class="pre">elif</span></code> Exercises<a class="headerlink" href="#in-class-decisions-with-elif-exercises" title="Permalink to this headline">¶</a></h3>
+<p><strong>a)</strong> Write a program that is nice to people called “Alice” and rude to people called “Bob”, while other people are given a standard greeting.</p>
+<p><strong>b)</strong> Write a program that makes a decision in the trolley problem, such that the most people are killed.</p>
+<p><strong>c)</strong> Try comparing two strings using the <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> operator. Write a program that compares two words and prints out the one which comes first alphabetically (only use lower case letters).</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="random-number-generation">
+<h2>Random number generation<a class="headerlink" href="#random-number-generation" title="Permalink to this headline">¶</a></h2>
+<p>By using built-in functionality in your computer and clever maths, Python can generate psuedorandom numbers. They’re not actually random numbers, since they’re generated from a starting number using a sequence of equations. But psuedorandom numbers are still distributed like random numbers, which is what we care about(therefore, we will just be calling them random numbers from now on). To generate them we need to <code class="docutils literal notranslate"><span class="pre">import</span></code> the <code class="docutils literal notranslate"><span class="pre">randint()</span></code> function like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python includes a lot of functionality right out of the box, but we often need even more functionality. To access this functionality, we <code class="docutils literal notranslate"><span class="pre">import</span></code> modules. In this case, we imported the <code class="docutils literal notranslate"><span class="pre">randint</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module so that we can generate random numbers. Now we can use this function freely in our program, much like how we would use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">randint()</span></code> function takes two arguments, a starting number and an ending number. The function then returns a random between the starting number and the ending number. What that means is that <code class="docutils literal notranslate"><span class="pre">randint(1,</span> <span class="pre">6)</span></code> can return any of the numbers 1, 2, 3, 4, 5 or 6, with equal probability.</p>
+<p>Using this we can simulate the throw of a die! Write these lines of code and run it multiple times to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dice</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1">#generates a random number between 1 and 6, like a die</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also simulate a cointoss like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coin</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">coin</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Heads!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tails!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tails!
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="in-class-random-number-exercises">
+<h3>In-Class Random number exercises<a class="headerlink" href="#in-class-random-number-exercises" title="Permalink to this headline">¶</a></h3>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">dice</span></code> holds a random value from 1 to 6, like a diceroll.</p>
+<p><strong>a)</strong> What is the probability that A will be printed?</p>
+<p><strong>b)</strong> What is the probability that B will be printed?</p>
+<p><strong>c)</strong> What is the probability that B will be printed given that A has been printed?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dice</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dice</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dice</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>d)</strong> Does this change the behaviour of the code?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dice</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">dice</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dice</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/PythonIntro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="exercises/W1_Exercises.html" title="next page">Exercises</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

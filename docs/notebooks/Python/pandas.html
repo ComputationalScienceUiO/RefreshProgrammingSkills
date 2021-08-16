@@ -1,0 +1,1456 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pandas &#8212; Programming Seminars</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/.ipynb_checkpoints/custom-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pandas - DataFrame Intro" href="pandasDF.html" />
+    <link rel="prev" title="scikit-learn - Linear regression" href="scikit-learn.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Seminars</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Intro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W1_Lecture.html">
+   Variables and Decisions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W1_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W2_Lecture.html">
+   Lists and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W2_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W3_Lecture.html">
+   Data Processing and Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W3_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W4_Lecture.html">
+   Plotting and Correlation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W4_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="SetupAndLibraries.html">
+   Setup And Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   scikit-learn - Linear regression
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandasDF.html">
+   pandas - DataFrame Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linalg.html">
+   Linalg and numpy
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Latex.html">
+   LaTeX
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/Setup.html">
+   Setup
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/LectureNotes.html">
+   C++ Intro Lecture Notes
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Python/pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lese-inn-data">
+   Lese inn data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kaste-ut-data-vi-ikke-skal-bruke">
+   Kaste ut data vi ikke skal bruke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lage-en-dataframe-manuelt">
+   Lage en dataframe manuelt
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#et-storre-datasett-presidenvalget-i-usa-2020">
+   Et større datasett: Presidenvalget i USA, 2020
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gruppere-data">
+   Gruppere data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#henting-av-subsets-og-kollaps-av-subsets">
+   Henting av subsets og kollaps av subsets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#masker-for-a-effektivt-hente-subsets-av-subsets">
+   Masker for å effektivt hente subsets av subsets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kombinere-dataframes-bonus">
+   Kombinere DataFrames (Bonus)
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pandas">
+<h1>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<p>Når vi skal jobbe med data som passer på tabellformat kan livet vårt bli svært mye enklere om vi brukere et bibliotek som heter <em>pandas</em>. Det skal da lite kode til for å lese inn filer og for å gjøre enkle plots. Dessuten passer dataformatet i pandas sammen med flere kjente maskinlæringsbiblioteker som <em>tensorflow</em> og <em>scikit-learn</em>. Dermed slipper vi å bruke tid på å manipulere data til å passe inn i spesifikke formater for hvert bibliotek vi skal bruke.</p>
+<p>Når man bruker kraftige biblioteker for databehnadling, vil det alltid være mange funksjoner man ikke kan navnet på, eller ikke vet hva gjør. Det er helt greit, og helt vanglig. Det er lov til å si at man “kan pandas” uten å vite hva alle funksjonene gjør, på samme måte som det er lov å si man kan engelsk selv om man ike vet betydningen av <em>floccinaucinihilipilification</em>.</p>
+<div class="note admonition">
+<p class="admonition-title">Søk i dokumentasjonen</p>
+<p>Når vi jobber med <em>pandas</em> kommer vi til å bruke mange forskjellige funksjoner med mange forskjellige navn. Den eneste måten å huske alle disse på, er å bruke dem jevnlig. Det er det ikke så mange av oss som gjør, og dermed kan vi like godt gi opp å huske alle funksjonene. Prøv heller å gjøre det til en vane å søke i <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/10min.html">pandas-dokumenasjonen</a> for å finne en funksjon som gjør det du ønsker å få til.</p>
+</div>
+<p>Når vi jobber med datavitenskap er det ofte hensiktsmessig å bruke <em>Jupyter notebook</em> i <em>JupyterLab</em>. Vi kan kjøre JupyterLab både lokalt på maskinen vår og på forskjellige skytjenester. Vi anbefaler å begynne på egen maskin. Etterhvert kan det hende vi vil bruke Kaggle eller Google Colab som skytjenester, fordi de gir tilgang på en fornuftig mengde regnekraft. I del 1 av kurset skal vi jobbe med prosjekter som ikke krever noe særlig regnekraft, og da fungerer det fint å kjøre lokalt.</p>
+<p>I denne økta skal vi bruke Jupyter notebook til å trene på å lese inn og visualisere data med <em>Pandas</em> og <em>Matplotlib</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="lese-inn-data">
+<h2>Lese inn data<a class="headerlink" href="#lese-inn-data" title="Permalink to this headline">¶</a></h2>
+<p>Når vi skal analysere datasett, er det første vi må gjøre å lese inn dataene. Data kan finnes i mange forskjellige formater: Tabeller, bilder, lister osv. I første omgang skal vi forholde oss til tabeller. Dette svarer til excel-ark og csv-filer.</p>
+<p>La oss lese inn en tabell med data fra en csv-fil (comma separated values-fil). Vi begynner med en fil som inneholder lite nok data til at vi kan sjekke manuelt at det gikk bra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/filmer.csv&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rangering</th>
+      <th>Navn</th>
+      <th>År</th>
+      <th>IMDb Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>The Shawshank Redemption</td>
+      <td>1994</td>
+      <td>9.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>The Godfather</td>
+      <td>1972</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>The Godfather: Part II</td>
+      <td>1974</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>The Dark Knight</td>
+      <td>2008</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>12 Angry Men</td>
+      <td>1957</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Schindler's List</td>
+      <td>1993</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>The Lord of the Rings: The Return of the King</td>
+      <td>2003</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>Pulp Fiction</td>
+      <td>1994</td>
+      <td>8.8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>The Good, the Bad and the Ugly</td>
+      <td>1966</td>
+      <td>8.8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>The Lord of the Rings: The Fellowship of the Ring</td>
+      <td>2001</td>
+      <td>8.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Csv-filer</p>
+<p>Siden komma er standard desimalskilletegn i Norge, mens punktum brukes i USA, oppstår det i blant trøbbel når vi skal lese inn norske CSV-filer. De bruker nemlig ofte semikolon i stedet for komma til å separere verdiene. Dette løser vi ved å bruke <code class="docutils literal notranslate"><span class="pre">delimiter=&quot;;&quot;</span></code> som argument til <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>.</p>
+</div>
+</div>
+<div class="section" id="kaste-ut-data-vi-ikke-skal-bruke">
+<h2>Kaste ut data vi ikke skal bruke<a class="headerlink" href="#kaste-ut-data-vi-ikke-skal-bruke" title="Permalink to this headline">¶</a></h2>
+<p>Ofte har en csv fil kollonner eller data vi ikke skal bruke, og da blir det ryddigere å ikke ha de med. Hvis vi f.eks vil undersøke hvilket år som hadde de beste filmene trenger vi ikke navnene eller rangeringene.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Rangering&quot;</span><span class="p">,</span> <span class="s2">&quot;Navn&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Man kan også fjerne rader med data, enten ved å fjerne spesifikke rader eller ved å filtrere på ulike måter. Hvis man f.eks tenker at superheltfilmer ikke er ekte filmer, kan man fjerne The Dark Knight fra datasettet med indeksen dens. Og hvis man mener det ikke ble laget ekte filmer før 70-tallet kan man filtrere de ut slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_filtered</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">data_filtered</span> <span class="o">=</span> <span class="n">data_filtered</span><span class="p">[</span><span class="n">data_filtered</span><span class="p">[</span><span class="s2">&quot;År&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1970</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_filtered</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>År</th>
+      <th>IMDb Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1994</td>
+      <td>9.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1972</td>
+      <td>9.1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1974</td>
+      <td>9.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1993</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2003</td>
+      <td>8.9</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1994</td>
+      <td>8.8</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2001</td>
+      <td>8.8</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="lage-en-dataframe-manuelt">
+<h2>Lage en dataframe manuelt<a class="headerlink" href="#lage-en-dataframe-manuelt" title="Permalink to this headline">¶</a></h2>
+<p>I blant trenger vi å skrive inn data manuelt. Da er det fint å vite hvordan vi kan lage en <em>Pandas</em> <em>DataFrame</em> fra grunnen. Dette kan også være nyttig om vi skal sette inn data fra eksempelvis <em>numpy</em>-arrayer i en <em>DataFrame</em>. En enkel og ryddig måte å lage en <em>DataFrame</em> er å først legge dataene i en <em>dictionary</em> og deretter be <em>Pandas</em> lage en <em>DataFrame</em> av denne dictionary’en.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;innsats&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> 
+        <span class="s2">&quot;talent&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+        <span class="s2">&quot;resultat&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">73</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">185</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">198</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">155</span><span class="p">]}</span>
+<span class="n">grit_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi er interresert i å se på sammenhengen mellom de ulike kolonnene i datasettet. En scatter matrise plotter fordelingen av de ulike verdiene for hver av kolonnene med søylediagrammer, og hvordan disse verdieme sammenfaller med scatter plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hfig</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">grit_data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pandas_16_0.png" src="../../_images/pandas_16_0.png" />
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Ta imot returvariabelen fra plottingen</p>
+<p>Noen ganger vil plottekommandoer returnere et objekt som holder på figuren vi har laget. Dette objektet kan vi senere bruke om vi vil endre på farger, fontstørrelser og så videre. Det er ofte også slik at om vi ikke eksplisitt tar imot returvariabelen fra en plottekommando, får vi en del unyttig tekst i output-vinduet (med mindre man bruker plt.show()).</p>
+</div>
+</div>
+<div class="section" id="et-storre-datasett-presidenvalget-i-usa-2020">
+<h2>Et større datasett: Presidenvalget i USA, 2020<a class="headerlink" href="#et-storre-datasett-presidenvalget-i-usa-2020" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/president_county_candidate.csv&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>county</th>
+      <th>candidate</th>
+      <th>party</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>44552</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>41009</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>1044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Howie Hawkins</td>
+      <td>GRN</td>
+      <td>420</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>195034</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>31107</th>
+      <td>Arizona</td>
+      <td>Maricopa County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>993691</td>
+    </tr>
+    <tr>
+      <th>31108</th>
+      <td>Arizona</td>
+      <td>Maricopa County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>31608</td>
+    </tr>
+    <tr>
+      <th>31109</th>
+      <td>Arizona</td>
+      <td>Mohave County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>78534</td>
+    </tr>
+    <tr>
+      <th>31110</th>
+      <td>Arizona</td>
+      <td>Mohave County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>24831</td>
+    </tr>
+    <tr>
+      <th>31111</th>
+      <td>Arizona</td>
+      <td>Mohave County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>1302</td>
+    </tr>
+  </tbody>
+</table>
+<p>31112 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Når vi leser inn slik i en jupyter notebook, får vi opp en visning av deler av tabellen. Om det er en veldig liten tabell ser vi hele. I dette tilfellet har vi lastet inn en tabell med valgresultatene for presidentvalget i USA i 2020. Det er en liste med mye innhold. La oss i første omgang bare lese ut litt forskjellige data fra tabellen, for å demonstrere hvordan vi <em>aksesserer</em> deler av dataene fra tabellen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Delaware&quot;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>county</th>
+      <th>candidate</th>
+      <th>party</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>44552</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>41009</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>1044</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Howie Hawkins</td>
+      <td>GRN</td>
+      <td>420</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>195034</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>88364</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>2953</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Howie Hawkins</td>
+      <td>GRN</td>
+      <td>1282</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Delaware</td>
+      <td>Sussex County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>71230</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Delaware</td>
+      <td>Sussex County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>56682</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Delaware</td>
+      <td>Sussex County</td>
+      <td>Jo Jorgensen</td>
+      <td>LIB</td>
+      <td>1003</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Delaware</td>
+      <td>Sussex County</td>
+      <td>Howie Hawkins</td>
+      <td>GRN</td>
+      <td>437</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>county</th>
+      <th>candidate</th>
+      <th>party</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Delaware</td>
+      <td>Kent County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>44552</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Delaware</td>
+      <td>New Castle County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>195034</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Delaware</td>
+      <td>Sussex County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>56682</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>District of Columbia</td>
+      <td>District of Columbia</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>35485</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>District of Columbia</td>
+      <td>Ward 2</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>26086</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>31098</th>
+      <td>Arizona</td>
+      <td>Graham County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>4034</td>
+    </tr>
+    <tr>
+      <th>31101</th>
+      <td>Arizona</td>
+      <td>Greenlee County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>1182</td>
+    </tr>
+    <tr>
+      <th>31104</th>
+      <td>Arizona</td>
+      <td>La Paz County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>2236</td>
+    </tr>
+    <tr>
+      <th>31106</th>
+      <td>Arizona</td>
+      <td>Maricopa County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>1038364</td>
+    </tr>
+    <tr>
+      <th>31110</th>
+      <td>Arizona</td>
+      <td>Mohave County</td>
+      <td>Joe Biden</td>
+      <td>DEM</td>
+      <td>24831</td>
+    </tr>
+  </tbody>
+</table>
+<p>4633 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>Det finnes mange flere måter å hente ut data på. Vi kommer til å introdusere dem i det tempoet vi trenger dem. Det er for kjedelig å liste opp alle mulige måter, og for dem som trenger å lese om alle måtene for å få sove godt om natta, finnes denne informasjonen <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/10min.html">andre steder</a>.</p>
+<p>La oss så begynne å regne litt. Kanskje er vi interessert i å finne ut hvor mange stemmer Donald trump fikk totalt i staten Delaware. Da kan vi summere opp stemmene for de radene i tabellen som svarer til Donald Trump og Delaware.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;state&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Delaware&quot;</span><span class="p">]</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">subset</span><span class="p">[</span><span class="n">subset</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Donald Trump&quot;</span><span class="p">]</span>
+
+<span class="n">trump_votes_delaware</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">subset</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]:</span> 
+    <span class="n">trump_votes_delaware</span> <span class="o">+=</span> <span class="n">number</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Donald Trump fikk </span><span class="si">{</span><span class="n">trump_votes_delaware</span><span class="si">}</span><span class="s2"> stemmer i Delaware&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Donald Trump fikk 200603 stemmer i Delaware
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s2">&quot;Delaware&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">candidate</span> <span class="o">==</span> <span class="s2">&quot;Donald Trump&quot;</span><span class="p">)][</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200603
+</pre></div>
+</div>
+</div>
+</div>
+<p>Over skjer det litt av hvert. For det første bruker vi et sammensatt logisk uttrykk for å hente ut de linjene i tabellen som inneholder <em>både</em> staten “Delaware” <em>og</em> kandidaten “Donald Trump”. Når vi har hentet ut linjene som oppfyller disse kriteriene, velger vi kolonnen “votes”, siden vi er interessert i antallet stemmer. Til slutt bruker vi <code class="docutils literal notranslate"><span class="pre">sum</span></code>-funksjonen på DataFrame-objektet. DataFrame-objektet er pandas sin vanlige måte å holde på data.</p>
+</div>
+<div class="section" id="gruppere-data">
+<h2>Gruppere data<a class="headerlink" href="#gruppere-data" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">by_candidate_sum</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;candidate&quot;</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">by_candidate_sum</span> <span class="o">=</span> <span class="n">by_candidate_sum</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;votes&quot;</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">by_candidate_sum</span><span class="o">.</span><span class="n">head</span><span class="p">())</span> <span class="c1">#viser kun de fem første radene</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">by_candidate_sum</span><span class="o">.</span><span class="n">tail</span><span class="p">())</span> <span class="c1">#viser kun de fem siste radene</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>candidate</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>37</th>
+      <td>Zachary Scalf</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Keith McCormic</td>
+      <td>127</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Gary Swing</td>
+      <td>143</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Jordan Scott</td>
+      <td>173</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Joseph Kishore</td>
+      <td>192</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>candidate</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Write-ins</td>
+      <td>155165</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Howie Hawkins</td>
+      <td>376714</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Jo Jorgensen</td>
+      <td>1808321</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Donald Trump</td>
+      <td>72691128</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Joe Biden</td>
+      <td>78220235</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Her innser vi for det første at det ar veldig mange kandidater. La oss så plotte resultatene for alle disse kandidatene:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">by_candidate_sum</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">],</span> <span class="n">by_candidate_sum</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pandas_29_0.png" src="../../_images/pandas_29_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="henting-av-subsets-og-kollaps-av-subsets">
+<h2>Henting av subsets og kollaps av subsets<a class="headerlink" href="#henting-av-subsets-og-kollaps-av-subsets" title="Permalink to this headline">¶</a></h2>
+<p>Hvis vi vil hente ut en del av dataene til en ny dataframe, som f.eks alle radene med Biden stemmer gjør vi det slik:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biden</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span><span class="p">]</span>
+<span class="n">trump</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Donald Trump&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hvis vi så vil slå sammen alle delene av dataene som har samme verdi for “state” gjør vi det slik. Her slår vi de sammen ved å summere verdiene, men det går også ann å ta gjennomsnitt eller bare telle antall rader.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biden_states</span> <span class="o">=</span> <span class="n">biden</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1">#.mean() og .size() er også nyttige ofte!</span>
+<span class="n">trump_states</span> <span class="o">=</span> <span class="n">trump</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nå har vi to dataframes som holder antall stemmer hver kandidat har i hver stat, så vi kan f.eks regne ut forskjellen og plotte den:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff_states</span> <span class="o">=</span> <span class="n">biden_states</span> <span class="o">-</span> <span class="n">trump_states</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">diff_states</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">diff_states</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pandas_36_0.png" src="../../_images/pandas_36_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="masker-for-a-effektivt-hente-subsets-av-subsets">
+<h2>Masker for å effektivt hente subsets av subsets<a class="headerlink" href="#masker-for-a-effektivt-hente-subsets-av-subsets" title="Permalink to this headline">¶</a></h2>
+<p>I forrige eksempel brukte vi en maske(rekke med <code class="docutils literal notranslate"><span class="pre">True</span></code> og <code class="docutils literal notranslate"><span class="pre">False</span></code> verdier) for å plukke ut verdiene vi ville ha med i dataframen <code class="docutils literal notranslate"><span class="pre">biden</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">biden</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Masken er det inni hakeparantesen, og kan bli lagret i en egen variabel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">biden_mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span>
+</pre></div>
+</div>
+<p>Dette blir utrolig nyttig om vi skal ha tak i mange ulike subsets av subsets av dataen. Dette eksempelet illustrerer ikke dette veldig godt, siden vi har få kollonner å jobbe med, men i datasett med egenskaper som kjønn, alder og rase blir dette helt nødvendig for å effektivt hente alle mulige kombinasjoner som hvite menn, asiatiske kvinner etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">biden_mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span>
+<span class="n">trump_mask</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Donald Trump&quot;</span>
+<span class="n">other</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_not</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_or</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">trump_mask</span><span class="p">))</span> <span class="c1">#evt. ~(biden_mask | trump_mask)</span>
+
+<span class="n">even</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="n">more10k</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">10000</span>
+<span class="n">more100k</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">100000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kombinerer masker med numpy sine logiske funksjoner. Man kan også bruke python sine innebygde <a class="reference external" href="https://realpython.com/python-bitwise-operators/#overview-of-pythons-bitwise-operators">bitwise operatorer</a>.</p>
+<p>Hvis vi bare vil telle antall <code class="docutils literal notranslate"><span class="pre">True</span></code>, kan vi ta summen av masken. Hugs at masker også kan brukes til å hente ut en subset av dataen.</p>
+<p>Trump fikk et partall antall stemmer i flere fylker:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">even</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1">#evt. (biden_mask &amp; even).sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">trump_mask</span><span class="p">,</span> <span class="n">even</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2354
+2381
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trump fikk mer enn 10000 stemmer i flere fylker enn Biden:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">more10k</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1">#evt. (biden_mask &amp; more10k).sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">trump_mask</span><span class="p">,</span> <span class="n">more10k</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>932
+1347
+</pre></div>
+</div>
+</div>
+</div>
+<p>Men Biden fikk med enn 100000 stemmer i flere fylker enn Trump!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">more100k</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1">#evt. (biden_mask &amp; more10k).sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">trump_mask</span><span class="p">,</span> <span class="n">more100k</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>168
+136
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi kan lage en funksjon som sammenligner hvor mange fylker en maske gjelder for for hver kandidat. Denne kan vi bruke til å finne når Biden tok igjen Trump</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">trumpVbiden</span><span class="p">(</span><span class="n">subset_mask</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">subset_mask</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">trump_mask</span><span class="p">,</span> <span class="n">subset_mask</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="c1">#evt. (biden_mask &amp; subset_mask).sum() &lt; (trump_mask &amp; subset_mask).sum()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Biden tar igjen Trump i antall fylker når man ser på fylker med 67114 stemmer eller flere.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">votes</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="k">while</span> <span class="n">trumpVbiden</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">votes</span><span class="p">):</span>
+    <span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">votes</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">votes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67114
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å finne hvilket fylke som var vippepunktet er det bare å lage en maske for 67113 stemmer. Trump mistet ledelsen i antall fylker når man ser på fylker med mer enn 67113 stemmer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">votes</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>state</th>
+      <th>county</th>
+      <th>candidate</th>
+      <th>party</th>
+      <th>votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>18799</th>
+      <td>Texas</td>
+      <td>Bell County</td>
+      <td>Donald Trump</td>
+      <td>REP</td>
+      <td>67113</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">biden_mask</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">votes</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1">#evt. (biden_mask &amp; (data[&quot;votes&quot;] &gt;= votes)).sum()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">trump_mask</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">votes</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>227
+227
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="kombinere-dataframes-bonus">
+<h2>Kombinere DataFrames (Bonus)<a class="headerlink" href="#kombinere-dataframes-bonus" title="Permalink to this headline">¶</a></h2>
+<p>Noen ganger ønsker vi å kombinere tabeller.
+Vi er nå klare til å gjøre litt mer omfattende oppgaver. For eksempel om vi skal legge data fra presidentvalget inn i et kart. Da må vi kombinere kartdata og stemmedata. Vi kan bruke modulen <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> til å lage figurer som viser fordelingen av stemmer rundt omkring i USA.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;https://www2.census.gov/geo/tiger/GENZ2018/shp/cb_2018_us_state_500k.zip&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Først fjerner vi alle små kandidater fra dataen. Vi må så summere stemmene hver kandidat har per stat. Så må vi vri om dataframen slik at statene blir kolonnene, hver kandidat har en rad og antall stemmer er verdiene. Så gjør vi antall stemmer om til andel av alle stemmen i den staten. Til slutt slår vi sammen kartet og dataframen med alle stemmene slik at de kan dele data om hver stat. Da kan vi plotte og få andel av stemmer inn i kartet.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trumpOrBiden</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Donald Trump&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;candidate&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Joe Biden&quot;</span><span class="p">)]</span> <span class="c1">#used bitwise or</span>
+<span class="n">votes_by_state</span> <span class="o">=</span> <span class="n">trumpOrBiden</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;candidate&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;votes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">votes_pivot</span> <span class="o">=</span> <span class="n">votes_by_state</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;candidate&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;votes&quot;</span><span class="p">)</span>
+<span class="n">votes_share</span> <span class="o">=</span> <span class="n">votes_pivot</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="n">votes_pivot</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">plotting_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">votes_share</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s2">&quot;state&quot;</span><span class="p">)</span>
+
+<span class="n">plotting_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;Donald Trump&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bwr&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">63</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Donal Trump&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pandas_59_0.png" src="../../_images/pandas_59_0.png" />
+</div>
+</div>
+<p>Større bredde av verdier lar oss se forskjellene mellom de røde statene og mellom de blå statene bedre, men gjør vippestatene vanskeligere å avklare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">column</span><span class="o">=</span><span class="s2">&quot;Donald Trump&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bwr&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">63</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Donal Trump&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/pandas_61_0.png" src="../../_images/pandas_61_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="scikit-learn.html" title="previous page">scikit-learn - Linear regression</a>
+    <a class='right-next' id="next-link" href="pandasDF.html" title="next page">pandas - DataFrame Intro</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
