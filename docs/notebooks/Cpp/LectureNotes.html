@@ -1,0 +1,3988 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computational Physics: Teach yourself C++ &#8212; Programming Seminars</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="LaTeX" href="../Tools/Latex.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Programming Seminars</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python Intro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W1_Lecture.html">
+   Variables and Decisions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W1_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W2_Lecture.html">
+   Lists and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W2_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W3_Lecture.html">
+   Data Processing and Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W3_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W4_Lecture.html">
+   Plotting and Correlation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W4_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/SetupAndLibraries.html">
+   Setup And Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/scikit-learn.html">
+   scikit-learn - Linear regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/scikit_learn_exercises.html">
+   scikit-learn - Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/pandasDF.html">
+   pandas - DataFrame Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/linalg.html">
+   Linalg and numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Python/linalg_numpy_exercises.html">
+   Linalg and numpy - Exercises
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Git.html">
+   Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Latex.html">
+   LaTeX
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  C++
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Computational Physics:  Teach yourself C++
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Cpp/LectureNotes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started-compiling-and-linking-first">
+   Getting Started, compiling and linking first
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brief-summary">
+   Brief summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#from-decimal-to-binary-representation">
+     From decimal to binary representation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technical-matter-in-c-c-pointers">
+   Technical Matter in C/C++: Pointers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-strings-instead-of-characters">
+   Using
+   <strong>
+    strings
+   </strong>
+   instead of characters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrices-in-c">
+   Matrices in C++
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-use-the-library-functions">
+   How to use the Library functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-armadillo-to-perform-an-lu-decomposition">
+   Using Armadillo to perform an LU decomposition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-and-profiling">
+   Optimization and profiling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectorization-and-the-basic-idea-behind-parallel-computing">
+   Vectorization and the basic idea behind parallel computing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-vectorization">
+   What is vectorization?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-simple-test-case-with-and-without-vectorization">
+   A simple test case with and without vectorization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measuring-performance">
+   Measuring performance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-measuring-time">
+   Problems with measuring time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-cold-start">
+   Problems with cold start
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-smart-compilers">
+   Problems with smart compilers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-interference">
+   Problems with interference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-measuring-performance">
+   Problems with measuring performance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#thomas-algorithm-for-tridiagonal-linear-algebra-equations">
+   Thomas algorithm for tridiagonal linear algebra equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-specialized-thomas-algorithm-project-1">
+   The specialized Thomas algorithm (Project 1)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-transpose-of-a-matrix">
+   Example: Transpose of a matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matrix-matrix-multiplication">
+   Matrix-matrix multiplication
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-do-we-define-speedup-simplest-form">
+   How do we define speedup? Simplest form
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-orientation">
+   Object orientation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overloading-operators">
+   Overloading operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#templates">
+   Templates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-matrix-vector-class-first-its-usage">
+   A matrix-vector class, first its usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-matrix-vector-class-the-class-definitions-themselves">
+   A matrix-vector class, the class definitions themselves
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-matrix-vector-class-and-finally-all-its-functions">
+   A matrix-vector class, and finally all its functions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <!-- dom:TITLE: Computational Physics:  Teach yourself C++ -->
+<div class="section" id="computational-physics-teach-yourself-c">
+<h1>Computational Physics:  Teach yourself C++<a class="headerlink" href="#computational-physics-teach-yourself-c" title="Permalink to this headline">¶</a></h1>
+<!-- dom:AUTHOR: Morten Hjorth-Jensen at Department of Physics, University of Oslo & Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University -->
+<!-- Author: -->  
+<p><strong>Morten Hjorth-Jensen</strong>, Department of Physics, University of Oslo and Department of Physics and Astronomy and National Superconducting Cyclotron Laboratory, Michigan State University</p>
+<p>Date: <strong>Aug 19, 2021</strong></p>
+<p>Copyright 1999-2021, Morten Hjorth-Jensen. Released under CC Attribution-NonCommercial 4.0 license</p>
+<div class="section" id="getting-started-compiling-and-linking-first">
+<h2>Getting Started, compiling and linking first<a class="headerlink" href="#getting-started-compiling-and-linking-first" title="Permalink to this headline">¶</a></h2>
+<p>The programming language C++ is a so-called <a class="reference external" href="https://en.wikipedia.org/wiki/Compiled_language">compiled language</a>. For help on how to use C++, we recommend highly the <a class="reference external" href="http://www.cplusplus.com/">cpplus website</a>.</p>
+<p>Assume we already have a program file, say <strong>myprogram.cpp</strong>. Note that C++ files have the extension <strong>.cpp</strong>.</p>
+<p>Here we discuss first how to obtain an executable without using IDEs like <a class="reference external" href="https://www.qt.io/">QT</a> creator or other types of integrated development environments (<a class="reference external" href="https://www.visualstudio.com/">Visual Studio</a> or other, see <a class="reference external" href="https://sourceforge.net/directory/development/ide/">list here</a> etc).</p>
+<p>It means that you need to compile the program (translate the human-like instructions into machine code) and link the resulting compiled file (a so-called <strong>object</strong> file) with various libraries in order to obtain an executable file.</p>
+<p>In order to obtain an executable file for a C++ program, the following
+instructions under Unix/Linux can be used (<a class="reference external" href="https://msdn.microsoft.com/en-us/library/ms235639.aspx">similar instructions apply to windows-like environments using DOS</a>).</p>
+<p>First you need to open a terminal on your Unix/Linux PC/laptop. You need also to have a C++ compiler installed. To check on Unix/Linux whether a C++ is installed or not simply type (in the terminal window)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    which c++
+</pre></div>
+</div>
+<p>If you get something like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Mortens-MacBook-Pro:~ hjensen$ which c++
+    /usr/bin/c++
+</pre></div>
+</div>
+<p>you are ok.
+Then compile and link your program as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -c -Wall myprogram.cpp
+    c++ -o myprogram.exe  myprogram.o
+</pre></div>
+</div>
+<p>where the compiler is called through the command c++/g++. The compiler
+option -Wall means that a warning is issued in case of non-standard
+language. The executable file is in this case <strong>myprogram.exe</strong>. The option
+<code class="docutils literal notranslate"><span class="pre">-c</span></code> is for compilation only, where the program is translated into machine code,
+while the <code class="docutils literal notranslate"><span class="pre">-o</span></code> option links the produced object file <strong>myprogram.o</strong> with other libraries
+and produces the executable <strong>myprogram.exe</strong>.</p>
+<p>You can skip the first step by simply writing</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -o myprogram.exe  myprogram.cpp
+</pre></div>
+</div>
+<p>Also, to speed up the code use compile options like (compiler flags will be dealt with later)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -O3 -c -Wall myprogram.cpp
+</pre></div>
+</div>
+<p>To run your program, simply write</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    myprogram.exe
+</pre></div>
+</div>
+<p>or if you wish to avoid creating executables which by accident have the same name as operating system commands (with sometime fatal consequences) write</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ./myprogram.exe
+</pre></div>
+</div>
+<p>Here, using . denotes the current directory. Since you want to run a file in your current directory and that directory is not in your $PATH, you need the ./ bit to tell the shell where the executable is.</p>
+<p>Under Linux/Unix it is often convenient to create a
+so-called makefile, which is a script which includes possible
+compiling commands.  By clicking on the link here you can see examples of <a class="reference external" href="https://www.gnu.org/software/make/manual/make.html">makefiles</a>.</p>
+<p>If you name your file for <strong>makefile</strong>, simply type the command
+<strong>make</strong> and Linux/Unix executes all possible statements included in your makefile.</p>
+<p>When you use an IDE like Qt, it creates automatically something similar to a makefile for you and you don’t need to hardcode the above statements.</p>
+<p>Our first program is the classic <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/hellow.cpp">Hello World</a>.</p>
+<p>Here we present the C++ version using <strong>namespace</strong>, see shortly below here for an explanation.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // A comment line begins like this in C++ programs
+    // Standard ANSI-C++ include files
+    #include &lt;cstdlib&gt; // atof function 
+    #include &lt;iostream&gt;   // input and output
+    #include &lt;cmath&gt;      // math functions
+    using namespace std;
+    int main (int argc, char* argv[])
+    {
+      // convert the text argv[1] to double using atof:
+      double r = atof(argv[1]);  // convert the text argv[1] to double
+      double s = sin(r);
+      cout &lt;&lt; &quot;Hello, World! sin(&quot; &lt;&lt; r &lt;&lt; &quot;) =&quot; &lt;&lt; s &lt;&lt; endl;
+      return 0;           // success execution of the program 
+    }
+</pre></div>
+</div>
+<p>The compiler must see a declaration of a function before you can
+call it (the compiler checks the argument and return types).
+The declaration of library functions appears
+in so-called “header files” that must be included in the program, as an example the following statement includes the so-called <strong>Standard Library Functions</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       #include &lt;cstdlib&gt; // atof function 
+</pre></div>
+</div>
+<p>We call three functions (atof, sin, cout)
+and these are declared in three different header files. These declarations should come first. The <strong>cout</strong> function is included in the <strong>isostream</strong>. In C++, input and output (I/O) operations  are performed by using so-called streams which a <em>stream of data</em> where a  stream is an object with properties that are defined by a class. Global objects are predefined for the standard I/O channels.   The <strong>sin</strong> function is defined by the <strong>cmath</strong> library and its header file and needs to be included. For those of you familiar with <strong>Python</strong> this is similar to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sin</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="http://en.cppreference.com/w/cpp/language/return">The main program is a function called main</a>
+with a return value set to an integer, int (0 if success).
+The operating system stores the return value,
+and other programs/utilities can check whether
+the execution was successful or not. The main program has thus to be declared as <strong>int main()</strong> in standard C++.
+The command-line arguments are transferred to the main function through</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       int main (int argc, char* argv[])
+</pre></div>
+</div>
+<p>The command-line arguments are transferred to the main function through</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       int main (int argc, char* argv[])
+</pre></div>
+</div>
+<p>The integer <strong>argc</strong> is the number  of command-line arguments (two in our case) while
+<strong>argv</strong> is a vector of strings containing the command-line arguments
+with <em>argv[0]</em> containing  the name of the program
+and <em>argv[1]</em>, <em>argv[2]</em>, … are the command-line args, i.e., the number of
+arguments that are  inputs to the program.</p>
+<p>We define floating point variables, see also below,
+through the keywords <strong>float</strong> for single precision real numbers and
+<strong>double</strong> for double precision real numbers. The function
+<strong>atof</strong> transforms a text string to a float, either single or double precision.
+The <strong>sine</strong> function is declared in <strong>cmath</strong>, a library which
+is not automatically included and needs to be linked when computing
+and producing the  executable file. Note that arrays in C++ begin by default with <span class="math notranslate nohighlight">\(0\)</span>. The first element is here <em>argv[0]</em>.</p>
+<p>A one-dimensional array like <strong>argv</strong> can be defined statically or dynamically. To reserve space in memory statically means defining a variable of this type as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    char argv[10]; 
+</pre></div>
+</div>
+<p>which contains in this case ten elements. Each element has a specific address in memory, see the discussions below on pointers. We anticipate partly the discussion here by declaring a pointer variable and allocating memory dynamically. In C++ this is done as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    char *argv;  // declaring first a pointer
+    argv = new char[10];   // Now reserving space for  ten elements in memory for a character variable (4 bytes or 32 bits).
+</pre></div>
+</div>
+<p>For a floating point variable of  8 bytes or 64 bits we would declare a similar array as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double *argv;  // declaring first a pointer
+    argv = new double[10];   // Now reserving space for  ten elements in memory for a character variable (4 bytes or 32 bits).
+</pre></div>
+</div>
+<p>In similar ways we can declare integer variable, single precisions floats etc.
+We can write the above in one line as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double *argv = new double[10];   
+</pre></div>
+</div>
+<p>After having compiled this program as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -o hw.exe hellowd.cpp
+</pre></div>
+</div>
+<p>we can run the executable and obtain</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Mortens-MacBook-Pro:cpp hjensen$ ./hw.exe 0.5
+    Hello, World! sin(0.5) =0.479426
+</pre></div>
+</div>
+<p>If we do not write the value of <span class="math notranslate nohighlight">\(x\)</span> on the command line we would get</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Mortens-MacBook-Pro:cpp hjensen$ ./hw.exe 
+    Segmentation fault: 11
+</pre></div>
+</div>
+<p>In this case, since reading from the command line with a number of arguments defined by the number of elements in the array <em>argv[]</em>, trying to access <em>argv[1]</em> results in a segmentation fault. In the last case there is only one command line argument, the name of the executable program. It means that we have only the array element <em>argv[0]</em>. The element <em>argv[1]</em> is not defined and we are trying to access something which is outside the memory slots reserved for <em>argv[]</em>.</p>
+<p>We can rewrite our <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/hellownonamespace.cpp">Hello World without the namespace usage</a>.</p>
+<p>Namespaces provide a method for preventing name conflicts in large projects and
+symbols declared inside a namespace block are placed in a named scope that prevents them from being mistaken for identically-named symbols in other scopes.
+Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.  This author likes to limit the usage of namespace to some few libraries, like the standard C library <strong>csdtlib</strong>.</p>
+<p>Here we present the C++ version without using namespace.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // A comment line begins like this in C++ programs
+    // Standard ANSI-C++ include files
+    #include &lt;cstdlib&gt; // atof function 
+    #include &lt;iostream&gt;   // input and output
+    #include &lt;cmath&gt;      // math functions
+    
+    int main (int argc, char* argv[])
+    {
+      // convert the text argv[1] to double using atof:
+      double r = atof(argv[1]);  // convert the text argv[1] to double
+      double s = sin(r);
+      // Note std::cout and std::endl
+      std::cout &lt;&lt; &quot;Hello, World! sin(&quot; &lt;&lt; r &lt;&lt; &quot;) =&quot; &lt;&lt; s &lt;&lt; std::endl;
+      return 0;           // success execution of the program 
+    }
+</pre></div>
+</div>
+<p>I personally tend to use <strong>namespace</strong> for input and output as I feel it increases the readability of my codes. Thus, all examples from here and on will have a statement like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    using namespace std;
+</pre></div>
+</div>
+</div>
+<div class="section" id="brief-summary">
+<h2>Brief summary<a class="headerlink" href="#brief-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>A C/C++ program begins with include statements of header files (libraries,intrinsic functions etc). This is similar to the <strong>import</strong> statement in Python.</p></li>
+<li><p>Functions which are used are normally defined at the top (details below)</p></li>
+<li><p>The main program is declared as an integer, it returns 0 (everything correct) or 1 (something went wrong)</p></li>
+<li><p>Standard <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> statements as in Java, Fortran, Python…</p></li>
+<li><p>A C/C++ array begins by indexing at 0!</p></li>
+<li><p>Array allocations are done by size, not by the final index value.If you allocate an array with 10 elements, you should index them from <span class="math notranslate nohighlight">\(0,1,\dots, 9\)</span>.</p></li>
+<li><p>Initialize always an array before a computation.</p></li>
+</ul>
+<div class="section" id="from-decimal-to-binary-representation">
+<h3>From decimal to binary representation<a class="headerlink" href="#from-decimal-to-binary-representation" title="Permalink to this headline">¶</a></h3>
+<p>Let us now write a program which translates an integer in the decimal representation to one in the binary representation. The mathematical formula for this is given by</p>
+<div class="math notranslate nohighlight">
+\[
+a_n2^n+a_{n-1}2^{n-1}  +a_{n-2}2^{n-2}  +\dots +a_{0}2^{0}.
+\]</div>
+<p>In binary notation we have thus <span class="math notranslate nohighlight">\((417)_{10} =(110110001)_2\)</span>
+since we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+(110100001)_2
+&amp;=1\times2^8+1\times 2^{7}+0\times 2^{6}+1\times 2^{5}+0\times 2^{4}+0\times 2^{3}\\
+&amp;+0\times 2^{2}+0\times 2^{2}+0\times 2^{1}+1\times 2^{0}.
+\end{align*}
+\end{split}\]</div>
+<p>To see this, we have performed the following divisions by 2</p>
+<table border="1">
+<tr></tr>
+<tbody>
+<tr><td align="center">   417/2=208    </td> <td align="center">   remainder 1    </td> <td align="center">   coefficient of $2^{0}$ is 1    </td> </tr>
+<tr><td align="center">   208/2=104    </td> <td align="center">   remainder 0    </td> <td align="center">   coefficient of $2^{1}$ is 0    </td> </tr>
+<tr><td align="center">   104/2=52     </td> <td align="center">   remainder 0    </td> <td align="center">   coefficient of $2^{2}$ is 0    </td> </tr>
+<tr><td align="center">   52/2=26      </td> <td align="center">   remainder 0    </td> <td align="center">   coefficient of $2^{3}$ is 0    </td> </tr>
+<tr><td align="center">   26/2=13      </td> <td align="center">   remainder 1    </td> <td align="center">   coefficient of $2^{4}$ is 0    </td> </tr>
+<tr><td align="center">   13/2= 6      </td> <td align="center">   remainder 1    </td> <td align="center">   coefficient of $2^{5}$ is 1    </td> </tr>
+<tr><td align="center">   6/2= 3       </td> <td align="center">   remainder 0    </td> <td align="center">   coefficient of $2^{6}$ is 0    </td> </tr>
+<tr><td align="center">   3/2= 1       </td> <td align="center">   remainder 1    </td> <td align="center">   coefficient of $2^{7}$ is 1    </td> </tr>
+<tr><td align="center">   1/2= 0       </td> <td align="center">   remainder 1    </td> <td align="center">   coefficient of $2^{8}$ is 1    </td> </tr>
+</tbody>
+</table>
+<p>Let us now look at the <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/program2.cpp">code which takes as input from the command line a number in the decimal representation and converts it into the binary representation</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;cstdio&gt;
+    #include &lt;cstdlib&gt;
+    using namespace std;
+    int main (int argc, char* argv[])
+    {
+      int terms[32]; // storage of a0, a1, etc, up to 32 bits
+      int number = atoi(argv[1]); 
+      // initialise the term a0, a1 etc
+      for (int i=0; i &lt; 32 ; i++) terms[i] = 0;
+      for (int i=0; i &lt; 32 ; i++){ 
+        terms[i] = number%2;   // modulo division done by %
+        number /= 2; 
+      }
+      // write out results
+      cout &lt;&lt; &quot;Number of bytes used= &quot; &lt;&lt; sizeof(number) &lt;&lt; endl;
+      for (i=0; i &lt; 32 ; i++){ 
+        cout &lt;&lt; &quot; Term nr: &quot; &lt;&lt; i &lt;&lt; &quot;Value= &quot; &lt;&lt; terms[i];
+        cout &lt;&lt; endl;
+      }
+      return 0;  
+    }
+</pre></div>
+</div>
+<p>To be noted here is the way we define a loop in C++. Our first encounter is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (i=0; i &lt; 32 ; i++){ terms[i] = 0;}
+</pre></div>
+</div>
+<p>The loop starts with the <strong>for</strong> declaration, followed by a parenthesis hwere we declare the starting values (<strong>i=0</strong>) and the end value
+(<strong>i &lt; 32</strong>). What would have happened if we declared the endpoint as <strong>i &lt;=32</strong>?</p>
+<p>This loop is just a oneliner that serves to initialize the array <em>terms[]</em> to zero. Note the way we can write increment by one via <strong>i++</strong>.</p>
+<p>Our next loop</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int i=0; i &lt; 32 ; i++){ 
+        terms[i] = number%2;   // modulo division done by %
+        number /= 2; 
+      }
+</pre></div>
+</div>
+<p>contains the actual algorithm for the translation of an integer in the decimal representation to an integer in the binary representation. We note the way we use the curly parentheses to mark where the content inside a loop starts and where it ends. It is useful to introduce some indentation (many text editors do this automatically for you when the file ends with <strong>.cpp</strong>) in order to increase readability.</p>
+<p>The function <strong>sizeof()</strong> tells how many bytes are used to store a given variable. An integer is by default defined in terms of four bytes or 32 bits.</p>
+<p>Our next example is a program that calculates the second derivative numerically  of a function (the exponential function here) and writes the result to a file declared by the user. The first thing to notice is declaration of the object <strong>ofile</strong> which inherits all functionality from the <strong>ofstream</strong> class. <a class="reference external" href="http://www.cplusplus.com/reference/fstream/ofstream/">This class</a> (to be discussed later below in connection with classes) overloads functions like writing to file, opening files, closing files etc. A similar class exists, the <strong>ifstream</strong> class, for input variables.
+Adding the header file <strong>fstream</strong> gives us access to the functionality of the <strong>ofstream</strong> class.
+The <strong>iomanip</strong> header files allows to format our output with functions like <strong>setprecision</strong>, <strong>setw</strong> etc.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;fstream&gt;
+    #include &lt;iomanip&gt;
+    // output file as global variable
+    ofstream ofile;
+    
+    // Begin of main program
+    
+    int main(int argc, char* argv[])
+    {
+      char *outfilename;
+      // Read in output file, abort if there are too few command-line arguments
+      if( argc &lt;= 3 ){
+        cout &lt;&lt; &quot;Bad Usage: &quot; &lt;&lt; argv[0] &lt;&lt;
+          &quot; read also output file, number of integration points and the final x values  on same line, four variables in total&quot; &lt;&lt; std::endl;
+        exit(1);
+      }
+      else{
+        outfilename=argv[1];
+      }
+      //  opening a file for the program
+      ofile.open(outfilename);
+      // extracting number of mesh points
+      int i = atoi(argv[2]);
+      double x = atof(argv[3]);  // reading x-value
+      double h = 1.0/((double) i); // setting up step size
+      double Derivative = (exp(x+h)-2.*exp(x)+exp(x-h))/(h*h);
+      double RelativeError = log10(fabs(Derivative-exp(x))/exp(x));
+      ofile &lt;&lt;  setw(15) &lt;&lt; setprecision(8) &lt;&lt; &quot;relative error=&quot; &lt;&lt; RelativeError &lt;&lt; endl;
+      ofile.close();  // close output file
+      return 0;
+    }
+</pre></div>
+</div>
+<p>We have in addition included some safety valves here. In case we have less than four variables on the command line, the program aborts.
+After having read the name of the output file we open the file  and by default we can write to it via the statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      ofile.open(outfilename);
+</pre></div>
+</div>
+<p>and we close it at the end by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      ofile.close();
+</pre></div>
+</div>
+<p>We have also defined how to write to file our result in a formatted way via the statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      ofile &lt;&lt;  setw(15) &lt;&lt; setprecision(8) &lt;&lt; &quot;relative error=&quot; &lt;&lt; RelativeError &lt;&lt; endl;
+</pre></div>
+</div>
+<p>where we reserve a field width of 15 characters and a precision of eight leading digits after the decimal point.</p>
+<p>The above example represents our first simple case where we write our results to file. Before we proceed now, we need to say something more about pointers.</p>
+</div>
+</div>
+<div class="section" id="technical-matter-in-c-c-pointers">
+<h2>Technical Matter in C/C++: Pointers<a class="headerlink" href="#technical-matter-in-c-c-pointers" title="Permalink to this headline">¶</a></h2>
+<p>Variables are stored in the memory of a computer and each location in memory is defined by a unique address. How is memory management done?</p>
+<p>The main memory contains the program data</p>
+<ul class="simple">
+<li><p>Cache memory contains a copy of the main memory data</p></li>
+<li><p>Cache is faster but consumes more space and power. It is normally assumed to be much faster than main memory</p></li>
+<li><p>Registers contain working data only</p></li>
+<li><p>Modern CPUs perform most or all operations only on data in register</p></li>
+<li><p>Multiple Cache memories contain a copy of the main memory data</p></li>
+<li><p>Cache items accessed by their address in main memory</p></li>
+<li><p>L1 cache is the fastest but has the least capacity</p></li>
+<li><p>L2, L3 provide intermediate performance/size tradeoffs</p></li>
+</ul>
+<p>Loads and stores to memory can be as important as floating point operations when we measure performance.</p>
+<ul class="simple">
+<li><p>Most communication in a computer is carried out in chunks, blocks of bytes of data that move together</p></li>
+<li><p>In the memory hierarchy, data moves between memory and cache, and between different levels of cache, in groups called lines</p></li>
+<li><p>Lines are typically 64-128 bytes, or 8-16 double precision words</p></li>
+<li><p>Even if you do not use the data, it is moved and occupies space in the cache</p></li>
+<li><p>This performance feature is not captured in most programming languages</p></li>
+</ul>
+<p>When we store variables in memory, each memory location is identified and referenced with an address (like a house number specifies where a particular family resides on a street).
+Pointers play a central role in understanding memory management in C++. A pointer is just another name for an address and a pointer specifies where a value resides in the computer’s memory.</p>
+<p>A pointer points to an address not to a data container of any kind! It is a variable (with its own address in memory) whose value is the address of some other memory location. C++ as programming language offers several operations that allow us to access say elements of an array in an efficient way by accessing data by their addresses.</p>
+<p>Let us look at some simple example declarations. We define four variables and each of them is storeed in memory schematically as shown here (think of every box as a slot in memory of say 32 bits or more for each slot)</p>
+<table border="1">
+<thead>
+<tr><th align="center">int a</th> <th align="center">int b</th> <th align="center">double c</th> <th align="center">int d</th> <th align="center">double e</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   112      </td> <td align="center">   -1       </td> <td align="center">   3.14        </td> <td align="center">   ?        </td> <td align="center">   ?           </td> </tr>
+</tbody>
+</table>
+We have put questions marks for the values of the variables **d** and **e**. 
+In the program here we define **a** and **b** as integers and **c** as a double. The variables **d** and **e** are declared as pointers.<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    using namespace std;
+    //  Declare functions before main
+    int main(int argc, char *argv[])
+    {
+      int a =112, b = -1;
+      double c = 3.14;
+      int *d = &amp;a;
+      double  *e = &amp;c;
+    
+      cout &lt;&lt; &quot;Address of the integer variable a :&quot; &lt;&lt; &amp;a &lt;&lt;endl;
+      cout &lt;&lt; &quot;Value of the integer pointer variable d:&quot; &lt;&lt; d &lt;&lt; endl;
+      cout &lt;&lt; &quot;Value which pointer d is pointing at :&quot; &lt;&lt; *d &lt;&lt; endl;
+      cout &lt;&lt; &quot;Address of the double variable c :&quot; &lt;&lt; &amp;c &lt;&lt;endl;
+      cout &lt;&lt; &quot;Value of the integer pointer variable e:&quot; &lt;&lt; e &lt;&lt; endl;
+      cout &lt;&lt; &quot;Value which pointer e is pointing at :&quot; &lt;&lt; *e &lt;&lt; endl;
+    
+    
+      return 0;
+    } // End: function main()
+</pre></div>
+</div>
+<p>Running this <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/program11.cpp">program</a> we get the following</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Address of the integer variable a :0x7fff56966a7c
+    Value of the integer pointer variable d:0x7fff56966a7c
+    Value which pointer d is pointing at :112
+    Address of the double variable c :0x7fff56966a70
+    Value of the integer pointer variable e:0x7fff56966a70
+    Value which pointer e is pointing at :3.14
+</pre></div>
+</div>
+<p>we see that the value of <strong>d</strong> is the address of <strong>a</strong> and it points to the value <span class="math notranslate nohighlight">\(112\)</span> stored in the memory slot reserved for <strong>a</strong>. Similarly, <strong>e</strong> is a pointer and gets as value the address of <strong>c</strong>, which is <span class="math notranslate nohighlight">\(0x7fff56966a70\)</span> which points to the value of <span class="math notranslate nohighlight">\(3.14\)</span>. The operation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      int *d = &amp;a;
+</pre></div>
+</div>
+<p>is called dereferencing. We could alternatively have written</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      int *d;
+      d = &amp;a;
+</pre></div>
+</div>
+<p>where the latter means that <strong>d</strong> gets as value the address of <strong>a</strong>. The print statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      cout &lt;&lt; &quot;Value which pointer d is pointing at :&quot; &lt;&lt; *d &lt;&lt; endl;
+</pre></div>
+</div>
+<p>then prints the actual number it points at, that is the vaue of the variable <strong>a</strong>.</p>
+<p><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/program7.cpp"> Another pPointer example </a> is the following program</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    int main()
+    {
+      int var;
+      int *p;
+      p = &amp;var;
+      var  = 421;
+      printf(&quot;Address of integer variable var : %p\n&quot;,&amp;var);
+      printf(&quot;Its value: %d\n&quot;, var);
+      printf(&quot;Value of integer pointer p : %p\n&quot;,p);
+      printf(&quot;The value p points at :  %d\n&quot;,*p);
+      printf(&quot;Address of the pointer p : %p\n&quot;,&amp;p);
+      return 0;
+    }
+</pre></div>
+</div>
+<p>Dissecting it we have (now with the <strong>printf</strong> function from standard C)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    int main()
+    {
+      int var;     // Define an integer variable var
+      int *p;      // Define a pointer to an integer
+      p = &amp;var;    // Extract the address of var
+      var = 421;   // Change content of var
+      printf(&quot;Address of integer variable var : %p\n&quot;, &amp;var);
+      printf(&quot;Its value: %d\n&quot;, var);  // 421
+      printf(&quot;Value of integer pointer p : %p\n&quot;, p);  // = &amp;var
+      // The content of the variable pointed to by p is *p
+      printf(&quot;The value p points at :  %d\n&quot;, *p);
+      // Address where the pointer is stored in memory
+      printf(&quot;Address of the pointer p : %p\n&quot;, &amp;p);
+      return 0;
+    }
+</pre></div>
+</div>
+<p>and running the code we get</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Address of integer variable var : 0x7fff5cfe6ae8
+    Its value: 421
+    Value of integer pointer p : 0x7fff5cfe6ae8
+    The value p points at :  421
+    Address of the pointer p : 0x7fff5cfe6ae0
+</pre></div>
+</div>
+<p>We see again that the value of the pointer <strong>p</strong> is the address of the variable <strong>var</strong>.</p>
+<p><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/IntroProgramming/cpp/program8.cpp">The next pointer example</a> deals with arrays and how to access array elements with pointer operations.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    int matr[2];    // Define integer array with two elements
+    int *p;         // Define pointer to integer
+    p = &amp;matr[0];   // Point to the address of the first element in matr
+    matr[0] = 321;  // Change the first element
+    matr[1] = 322;  // Change the second element
+    printf(&quot;\nAddress of matrix element matr[1]: %p&quot;, &amp;matr[0]);
+    printf(&quot;\nValue of the  matrix element  matr[1]; %d&quot;, matr[0]);
+    printf(&quot;\nAddress of matrix element matr[2]: %p&quot;, &amp;matr[1]);
+    printf(&quot;\nValue of the matrix element  matr[2]: %d\n&quot;, matr[1]);
+    printf(&quot;\nValue of the pointer p: %p&quot;, p);
+    printf(&quot;\nThe value p points to: %d&quot;, *p);
+    printf(&quot;\nThe value that (p+1) points to  %d\n&quot;, *(p+1));
+    printf(&quot;\nAddress of pointer p : %p\n&quot;, &amp;p);
+</pre></div>
+</div>
+<p>Here we define an array with two elements. The pointer <strong>p</strong> gets as value the address of the first element. The output of this program is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Address of the matrix element matr[1]: 0xbfffef70
+    Value of the  matrix element  matr[1]; 321
+    Address of the matrix element matr[2]: 0xbfffef74
+    Value of the matrix element  matr[2]: 322
+    Value of the pointer: 0xbfffef70
+    The value pointer points at: 321
+    The value that (pointer+1) points at:  322
+    Address of the pointer variable : 0xbfffef6c
+</pre></div>
+</div>
+<p>We note that the operation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    printf(&quot;\nThe value that (p+1) points to  %d\n&quot;, *(p+1));
+</pre></div>
+</div>
+<p>allows us to print the address of the second array element. This is the way we can use pointers to access array elements.</p>
+<p>Let us now discuss another subtle issue, that is transfer of data using call by value and call by reference, shown in the <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program6.cpp">program here</a>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    using namespace std;
+    //  Declare functions before main
+    void func(int, int*);
+    int main(int argc, char *argv[]) 
+    {
+      int a; 
+      int *b;
+      a = 10;
+      b = new int[10];
+      for(int i = 0; i &lt; 10; i++) {
+        b[i] = i;
+        cout &lt;&lt;  b[i] &lt;&lt; endl;
+      }
+      // the variable a is transferred by call by value. This means
+      //  that the function func cannot change a in the calling function
+      func( a,b);
+      
+      delete [] b ; 
+      return 0;
+    } // End: function main()
+    
+    void func( int x, int *y) 
+    {
+      // a becomes locally x  and it can be changed locally
+      x+=7;
+      //  func gets the address of the first element of y (b)
+      // it changes y[0] to 10 and when returning control to main
+      // it changes also b[0]. Call by reference
+      *y += 10;  //  *y = *y+10;
+      //  explicit element 
+      y[6] += 10;
+      //   in this function y[0]  and y[6] have been changed and when returning 
+      // control to main  this means that b[0] and b[6] are changed.  
+      return;
+    } // End: function func()
+</pre></div>
+</div>
+<p>There are several things to notice here. First, we have now declared a function <strong>func</strong>. This declaration is placed before the main function. If we don’t do that the main function does not know how this function is to be used. The function takes as input an integer and an integer pointer defined by the asterix in</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    void func(int, int*);
+</pre></div>
+</div>
+<p>This means that we transfer an address (in this case the address of the first element of the pointer <strong>b</strong>). This is called <strong>call by reference</strong>.
+It means that the function <strong>func</strong> can change the value of <strong>b</strong> upon returning the instruction pointer to the main program (or calling function).
+The other variable is transferred through what we label as  <strong>call by value</strong>. In this case the called function can change the value of <strong>a</strong> locally but cannot change the value of this variable in the calling function.
+The function <strong>func</strong> func gets the address of the first element of y (b) and changes y[0] to 10 and when returning control to main
+it changes also b[0]. This is done via</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      *y += 10;  
+</pre></div>
+</div>
+<p>This changes only the first element. To change another element, we would write (unless we use pointer operations)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      y[6] += 10;
+</pre></div>
+</div>
+<p>which changes <span class="math notranslate nohighlight">\(\mathbf{y[6]}\)</span>  to <span class="math notranslate nohighlight">\(16\)</span>, since its orginal value was <span class="math notranslate nohighlight">\(6\)</span>, as defined in the main function. Using pointer operations we could write this as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      *(y+6) += 10;
+</pre></div>
+</div>
+<p>and it produces the same result. It states that the value of the element which resides in <span class="math notranslate nohighlight">\(\mathbf{y[6]}\)</span> is to be changed to <span class="math notranslate nohighlight">\(16\)</span>.</p>
+<p>C++ allows the programmer to use solely call by reference (note that call by reference is implemented as pointers). To see the difference between C and C++, consider the following simple examples.
+In C we would write</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       int n; n =8;
+       func(&amp;n); /* &amp;n is a pointer to n */
+       ....
+       void func(int *i)
+       {
+         *i = 10; /* n is changed to 10 */
+         ....
+       }
+</pre></div>
+</div>
+<p>whereas in C++ we would write</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       int n; n =8;
+       func(n); // just transfer n itself
+       ....
+       void func(int&amp; i)
+       {
+         i = 10; // n is changed to 10
+         ....
+       }
+</pre></div>
+</div>
+<p>The reason why we emphasize the difference between call by value and call
+by reference is that it allows the programmer to avoid pitfalls
+like unwanted changes of variables. However, many people feel that this
+reduces the readability of the code.</p>
+<p>Let us look at further Example codes in C++, with writing to file and <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program5.cpp">dynamic allocation for arrays</a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;fstream&gt;
+    #include &lt;iomanip&gt;
+    using namespace std; 
+    
+    // output file as global variable
+    
+    ofstream ofile;  
+    
+    // Begin of main program   
+    
+    int main(int argc, char* argv[])
+    {
+      char *outfilename;
+      // Read in output file, abort if there are too few command-line arguments
+      if( argc &lt;= 2 ){
+        cout &lt;&lt; &quot;Bad Usage: &quot; &lt;&lt; argv[0] &lt;&lt; 
+          &quot; read also output file and number of elements on same line&quot; &lt;&lt; endl;
+        exit(1);
+      }
+      else{
+        outfilename=argv[1];
+      }
+    
+      //  opening a file for the program
+      ofile.open(outfilename); 
+      int i = atoi(argv[2]); 
+     /* we can define it as 
+      int *a;
+      a = new int[i];
+      or as
+     */
+      double *a = new double[i]; 
+      cout &lt;&lt; &quot; bytes for i=&quot; &lt;&lt; sizeof(i) &lt;&lt; endl;
+      for (int j = 0; j &lt; i; j++) {
+        a[j] = j*exp(2.0);
+        // ofile instead of cout
+        ofile &lt;&lt; setw(15) &lt;&lt; setprecision(8) &lt;&lt; &quot;a=&quot; &lt;&lt; a[j] &lt;&lt; endl;
+      }
+      delete [] a; // free memory
+      ofile.close();  // close output file
+      return 0;
+    }
+</pre></div>
+</div>
+<p>Here we read from the command line the number of elements <strong>i</strong> via</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      int i = atoi(argv[2]); 
+</pre></div>
+</div>
+<p>and allocate memory dynamically by declaring a pointer array (a vector here) <strong>a</strong> using</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      double *a = new double[i];
+</pre></div>
+</div>
+<p>Using dynamic memory allocation we actually allow  memory to be more flexibly and explicitly managed.
+When the memory is no longer needed, the pointer is passed to free which deallocates the memory so that it can be used for other purposes. This is done by the <strong>delete</strong> statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      delete [] a; // free memory
+</pre></div>
+</div>
+<p>In the loop</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int j = 0; j &lt; i; j++) {
+        a[j] = j*exp(2.0);
+        // ofile instead of cout
+        ofile &lt;&lt; setw(15) &lt;&lt; setprecision(8) &lt;&lt; &quot;a=&quot; &lt;&lt; a[j] &lt;&lt; endl;
+      }
+</pre></div>
+</div>
+<p>we assign a specific value to each array element and print to file.</p>
+<p>If we wish to time our function, the following <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program7.cpp">program</a> gives a typical example.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt; 
+    #include &quot;time.h&quot;   // Not the use time.h
+    
+    using namespace std; // note use of namespace                                       
+    int main (int argc, char* argv[])
+    {
+      int i = atoi(argv[1]); 
+      double *a, *b, *c;
+      a = new double[i]; 
+      b = new double[i]; 
+      c = new double[i]; 
+    
+      clock_t start, finish;
+      start = clock();
+      for (int j = 0; j &lt; i; j++) {
+        a[j] = cos(j*1.0);
+        b[j] = sin(j+3.0);
+        c[j] = 0.0;
+      }
+      for (int j = 0; j &lt; i; j++) {
+        c[j] = a[j]+b[j];
+      }
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for vector addition=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+      delete [] a;
+      delete [] b;
+      delete [] c;
+      return 0;           /* success execution of the program */
+    }
+</pre></div>
+</div>
+<p>When timing the program, you should carefully plan what to time. Here we calculate the time difference from the point where we start filling in the three arrays <strong>a</strong>, <strong>b</strong> and <strong>c</strong> defining the starting time as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      clock_t start, finish;
+      start = clock();
+      for (int j = 0; j &lt; i; j++) {
+</pre></div>
+</div>
+<p>The final time is when all operations we are interested in are concluded, namely at</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int j = 0; j &lt; i; j++) {
+        c[j] = a[j]+b[j];
+      }
+      finish = clock();
+</pre></div>
+</div>
+<p>The time difference from start to end, with its granularity is defined as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+</pre></div>
+</div>
+<p>When timing a program you should pay attention to the following:</p>
+<ol class="simple">
+<li><p>Timers are not infinitely accurate</p></li>
+<li><p>All clocks have a granularity, the minimum time that they can measure</p></li>
+<li><p>The error in a time measurement, even if everything is perfect, may be the size of this granularity (sometimes called a clock tick)</p></li>
+<li><p>Always know what your clock granularity is</p></li>
+<li><p>Ensure that your measurement is for a long enough duration (say 100 times the <strong>tick</strong>)</p></li>
+</ol>
+<p>What happens when the code is executed? The assumption is that the code is ready to
+execute. But</p>
+<ol class="simple">
+<li><p>Code may still be on disk, and not even read into memory.</p></li>
+<li><p>Data may be in slow memory rather than fast (which may be wrong or right for what you are measuring)</p></li>
+<li><p>Multiple tests often necessary to ensure that cold start effects are not present</p></li>
+<li><p>Special effort often required to ensure data in the intended part of the memory hierarchy.</p></li>
+</ol>
+<p>You should thus think of a numerical calculation as an experiment. To provide benchmark times you should thus run the timing measurement several times and then take the average over a series of simulations.</p>
+</div>
+<div class="section" id="using-strings-instead-of-characters">
+<h2>Using <strong>strings</strong> instead of characters<a class="headerlink" href="#using-strings-instead-of-characters" title="Permalink to this headline">¶</a></h2>
+<p>Till now we have used character variables when declaring for example filenames for output or input files. C++ offers a compact and flexible way of dealing with text strings through the <strong>string</strong> class. In the program below we wish for example to define several output files for our calculations byapending  to a basename read in on the command line various endings. These endings can then be used to recognize a specific calculation.
+Here we read the basic name of an ouput file and add to it the actual exponent used in a calculation by appending it to the file name. We show only the relevant parts</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &lt;fstream&gt;
+    #include &lt;iomanip&gt;
+    #include &lt;cmath&gt;
+    #include &lt;string&gt;
+    // use namespace for output and input
+    using namespace std;
+    
+    // object for output files
+    ofstream ofile;
+    
+    
+    // Begin main program
+    int main(int argc, char *argv[]){
+      int exponent; 
+        string filename;
+        // We read also the basic name for the output file and the highest power of 10^n we want
+        if( argc &lt;= 1 ){
+              cout &lt;&lt; &quot;Bad Usage: &quot; &lt;&lt; argv[0] &lt;&lt;
+                  &quot; read also file name on same line and max power 10^n&quot; &lt;&lt; endl;
+              exit(1);
+        }
+            else{
+            filename = argv[1]; // first command line argument after name of program
+            exponent = atoi(argv[2]);
+        }
+        // Loop over powers of 10
+        for (int i = 1; i &lt;= exponent; i++){
+          int  n = (int) pow(10.0,i);
+          // Declare new file name
+          string fileout = filename;
+          // Convert the power 10^i to a string
+          string argument = to_string(i);
+          // Final filename as filename-i- by appending the power of 10
+          fileout.append(argument);
+          ofile.open(fileout);
+          ofile &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+          //   Do something 
+          ofile.close();  // close output file wth given ending
+        }
+        return 0;
+    }
+</pre></div>
+</div>
+<p>Instead of our earlier definition</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      char *outfilename;
+</pre></div>
+</div>
+<p>we define now the same output file via the <strong>string</strong> statement, inheriting thus all functionality of the <strong>string</strong> class by writing</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        string filename;
+</pre></div>
+</div>
+<p>In the statement</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        filename = argv[1]; 
+</pre></div>
+</div>
+<p>the variable <strong>filename</strong> gets the name of file we declared on the command line.
+A new file for the specific calculation is then established via</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>          // Declare new file name
+          string fileout = filename;
+          // Convert the power 10^i to a string
+          string argument = to_string(i);
+          // Final filename as filename-i- by appending the power of 10
+          fileout.append(argument);
+          ofile.open(fileout);  // then open
+</pre></div>
+</div>
+<p>We recommend using the <strong>string</strong> class, it gives ou much more flexibility in handling strings.</p>
+</div>
+<div class="section" id="matrices-in-c">
+<h2>Matrices in C++<a class="headerlink" href="#matrices-in-c" title="Permalink to this headline">¶</a></h2>
+<p>Another quantity we end up using again and again are matrices.
+We have  an <span class="math notranslate nohighlight">\(N\times N\)</span> matrix A  with <span class="math notranslate nohighlight">\(N=100\)</span>
+In C/C++ this would be  defined as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       int N = 100;
+       double A[100][100];
+       //   initialize all elements to zero
+       for(i=0 ; i &lt; N ; i++) {
+          for(j=0 ; j &lt; N ; j++) {
+             A[i][j] = 0.0;
+</pre></div>
+</div>
+<p>Note the way the matrix is organized, row-major order.</p>
+<p>We have  <span class="math notranslate nohighlight">\(N\times N\)</span> matrices A, B and C and we wish to
+evaluate <span class="math notranslate nohighlight">\(A=B+C\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}= \mathbf{B}\pm\mathbf{C}  \Longrightarrow a_{ij} = b_{ij}\pm c_{ij},
+\]</div>
+<p>In C/C++ this would be coded like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       for(i=0 ; i &lt; N ; i++) {
+          for(j=0 ; j &lt; N ; j++) {
+             a[i][j] = b[i][j]+c[i][j]
+</pre></div>
+</div>
+<p>We have  <span class="math notranslate nohighlight">\(N\times N\)</span> matrices A, B and C and we wish to
+evaluate <span class="math notranslate nohighlight">\(A=BC\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}=\mathbf{BC}   \Longrightarrow a_{ij} = \sum_{k=1}^{n} b_{ik}c_{kj},
+\]</div>
+<p>In C/C++ this would be coded like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       for(i=0 ; i &lt; N ; i++) {
+          for(j=0 ; j &lt; N ; j++) {
+             for(k=0 ; k &lt; N ; k++) {
+                a[i][j]+=b[i][k]*c[k][j];
+</pre></div>
+</div>
+<p>The above matrices were all declared statically.
+For dynamic memory allocation in C++ there are
+several  possibilities</p>
+<ul class="simple">
+<li><p>Do it yourself</p></li>
+<li><p>Use the functions provided in the library package <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysics/blob/master/doc/Programs/LecturePrograms/programs/cppLibrary/lib.cpp">lib.cpp</a></p></li>
+<li><p>Use Armadillo <a class="reference external" href="http://arma.sourceforgenet">http://arma.sourceforgenet</a> (a C++ linear algebra library, discussion both here and at lab).</p></li>
+<li><p>Write yur own matrix-vector class (to be discussed later.</p></li>
+</ul>
+<p>A matrix in C++ is a double pointer, a pointer to a pointer. Here is how you would do it yourself.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    int N;
+    double **  A;
+    A = new double*[N]
+    for ( i = 0; i &lt; N; i++)
+        A[i] = new double[N];
+</pre></div>
+</div>
+<p>Always free space when you don’t need an array anymore.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    for ( i = 0; i &lt; N; i++)
+        delete[] A[i];
+    delete[] A;
+</pre></div>
+</div>
+<p>Before we discuss a library like Armadillo (see below) and classes (we will discuss how to write our own matrix-vector class) it is instructive to look at the following two examples. The first program is an example of a single <strong>main</strong> function where we allocate and deallocate memory for three matrices using what we will call the basic C++ way of allocating and deallocating matrices.
+“The first program<a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program9.cpp">:</a> is listed here. Both programs  compute the Froebenius norm of a matrix given by</p>
+<p>4</p>
+<p>&lt;
+&lt;
+&lt;
+!
+!
+M
+A
+T
+H
+_
+B
+L
+O
+C
+K</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;time.h&quot;
+    
+    using namespace std; // note use of namespace
+    int main (int argc, char* argv[])
+    {
+      // read in dimension of square matrix
+      int n = atoi(argv[1]);
+      double s = 1.0/sqrt( (double) n);
+      double **A, **B, **C;
+      // Start timing
+      clock_t start, finish;
+      start = clock();
+      // Allocate space for the three matrices
+      A = new double*[n]; B = new double*[n]; C = new double*[n];
+      for (int i = 0; i &lt; n; i++){
+        A[i] = new double[n];
+        B[i] = new double[n];
+        C[i] = new double[n];
+      }
+      // Set up values for matrix A and B and zero matrix C
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double angle = 2.0*M_PI*i*j/ (( double ) n);
+          A[i][j] = s * ( sin ( angle ) + cos ( angle ) );
+          B[j][i] =  A[i][j];
+        }
+      }
+      // Then perform the matrix-matrix multiplication
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double sum = 0.0;
+           for (int k = 0; k &lt; n; k++) {
+               sum += B[i][k]*A[k][j];
+           }
+           C[i][j] = sum;
+        }
+      }
+      // Compute now the Frobenius norm
+      double Fsum = 0.0;
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          Fsum += C[i][j]*C[i][j];
+        }
+      }
+      Fsum = sqrt(Fsum);
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for matrix-matrix multiplication=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+      cout &lt;&lt; &quot;  Frobenius norm  = &quot; &lt;&lt; Fsum &lt;&lt; endl;
+      // Free up space
+      for (int i = 0; i &lt; n; i++){
+        delete[] A[i];
+        delete[] B[i];
+        delete[] C[i];
+      }
+      delete[] A;
+      delete[] B;
+      delete[] C;
+      return 0;
+    }
+</pre></div>
+</div>
+<p>Here we have defined three different matrices which we have declared as double pointers</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      // Allocate space for the three matrices
+      A = new double*[n]; B = new double*[n]; C = new double*[n];
+      for (int i = 0; i &lt; n; i++){
+        A[i] = new double[n];
+        B[i] = new double[n];
+        C[i] = new double[n];
+      }
+    ....
+    // and finally we free space
+      // Free up space
+      for (int i = 0; i &lt; n; i++){
+        delete[] A[i];
+        delete[] B[i];
+        delete[] C[i];
+      }
+      delete[] A;
+      delete[] B;
+      delete[] C;
+</pre></div>
+</div>
+<p>The matrices are defined as real <span class="math notranslate nohighlight">\(n\times n\)</span> matrices. It is easy to imagine that if we are to need many more matrices either in the main function or other user defined functions, we would have to write these operations again and again. This is something which can easily lead to errors. In the <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program10.cpp">next program</a>  we have written four functions that allow us to hide these operations.
+Two of the functions allocate and deallocate memory for a matrix declared as a floating point variable, while the other two functions do the same for an integer type matrix. The allocation functions for the doubles and integers are practically identical except for the the matrices being either doubles or integer. This is not a very elegant way of programming.
+With classes we can generalize these operations to just two functions, as well as being able to add much more functionality.
+We will come back to this below. Our new program</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // This program uses its own function for allocating and freeing memory for matrices
+    // It can be seen as an intermediate step towards the construction of a more general 
+    // matrix vector class
+    
+    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;time.h&quot;
+    
+    //  Declaring functions to allocate and free space for a matrix
+    
+    double ** CreateMatrix(int m, int n);
+    void DestroyMatrix(double ** mat, int m, int n); 
+    
+    int ** ICreateMatrix(int m, int n);
+    void IDestroyMatrix(int ** mat, int m, int n);
+    
+    
+    using namespace std; // note use of namespace
+    int main (int argc, char* argv[])
+    {
+      // read in dimension of square matrix
+      int n = atoi(argv[1]);
+      double s = 1.0/sqrt( (double) n);
+      double **A, **B, **C;
+      // Start timing
+      clock_t start, finish;
+      start = clock();
+      // Allocate space for the three matrices
+      A = CreateMatrix(n, n);
+      B = CreateMatrix(n, n);
+      C = CreateMatrix(n, n);
+      // Set up values for matrix A and B and zero matrix C
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double angle = 2.0*M_PI*i*j/ (( double ) n);
+          A[i][j] = s * ( sin ( angle ) + cos ( angle ) );
+          B[j][i] =  A[i][j];
+        }
+      }
+      // Then perform the matrix-matrix multiplication
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double sum = 0.0;
+           for (int k = 0; k &lt; n; k++) {
+               sum += B[i][k]*A[k][j];
+           }
+           C[i][j] = sum;
+        }
+      }
+      // Compute now the Frobenius norm
+      double Fsum = 0.0;
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          Fsum += C[i][j]*C[i][j];
+        }
+      }
+      Fsum = sqrt(Fsum);
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for matrix-matrix multiplication=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+      cout &lt;&lt; &quot;  Frobenius norm  = &quot; &lt;&lt; Fsum &lt;&lt; endl;
+      // Free up space
+      DestroyMatrix(A, n, n);   DestroyMatrix(B, n, n);   DestroyMatrix(C, n, n);
+      return 0;
+    }
+    
+    
+    //  Allocating space for a double type matrix
+    double ** CreateMatrix(int m, int n){
+      double ** mat;
+      mat = new double*[m];
+      for(int i=0;i&lt;m;i++){
+        mat[i] = new double[n];
+        for(int j=0;j&lt;m;j++)
+          mat[i][j] = 0.0;
+      }
+      return mat;
+    }
+    
+    //  Allocating space for an integer type  matrix
+    int ** ICreateMatrix(int m, int n){
+      int ** mat;
+      mat = new int*[m];
+      for(int i=0;i&lt;m;i++){
+        mat[i] = new int[n];
+        for(int j=0;j&lt;m;j++)
+          mat[i][j] = 0;
+      }
+      return mat;
+    }
+    
+    // Freeing space for a double type matrix 
+    void DestroyMatrix(double ** mat, int m, int n){
+      for(int i=0;i&lt;m;i++)
+        delete[] mat[i];
+      delete[] mat;
+    }
+    
+    // Freeing space for an integer type matrix 
+    void IDestroyMatrix(int ** mat, int m, int n){
+      for(int i=0;i&lt;m;i++)
+        delete[] mat[i];
+      delete[] mat;
+    }
+</pre></div>
+</div>
+<p>has now the desired functionality. A simple call like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      A = CreateMatrix(n, n);
+</pre></div>
+</div>
+<p>allocates now space for matrix <span class="math notranslate nohighlight">\(\hat{A}\)</span> of dimensionality <span class="math notranslate nohighlight">\(n\ times n\)</span>. This increases the readibility of the program and makes easier to declare and delete matrices.  In order to allocated memory for a floating point variable matrix we have defined the function</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    //  Allocating space for a double type matrix
+    double ** CreateMatrix(int m, int n){
+      double ** mat;
+      mat = new double*[m];
+      for(int i=0;i&lt;m;i++){
+        mat[i] = new double[n];
+        for(int j=0;j&lt;m;j++)
+          mat[i][j] = 0.0;
+      }
+      return mat;
+    }
+</pre></div>
+</div>
+<p>Note that here we initialize the matrix elements to zero. We always recommend to initialize variables in order to avoid random initialization values. Similarly, we free memory by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // Freeing space for a double type matrix 
+    void DestroyMatrix(double ** mat, int m, int n){
+      for(int i=0;i&lt;m;i++)
+        delete[] mat[i];
+      delete[] mat;
+    }
+</pre></div>
+</div>
+<p>Before we venture into the world of object orientation, we would like to introduce to you the popular  linear algebra library
+<a class="reference external" href="http://arma.sourceforge.net/">Armadillo</a>.</p>
+<ul class="simple">
+<li><p>Armadillo is a C++ linear algebra library (matrix maths) aiming towards a good balance between speed and ease of use. The syntax is deliberately similar to Matlab.</p></li>
+<li><p>Integer, floating point and complex numbers are supported, as well as a subset of trigonometric and statistics functions. Various matrix decompositions are provided through optional integration with LAPACK, or one of its high performance drop-in replacements (such as the multi-threaded MKL or ACML libraries).</p></li>
+<li><p>A delayed evaluation approach is employed (at compile-time) to combine several operations into one and reduce (or eliminate) the need for temporaries. This is accomplished through recursive templates and template meta-programming.</p></li>
+<li><p>Useful for conversion of research code into production environments, or if C++ has been decided as the language of choice, due to speed and/or integration capabilities.</p></li>
+<li><p>The library is open-source software, and is distributed under a license that is useful in both open-source and commercial/proprietary contexts.</p></li>
+</ul>
+<p>Here are simple examples.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &lt;armadillo&gt;
+    
+    using namespace std;
+    using namespace arma;
+    
+    int main(int argc, char** argv)
+      {
+      mat A = randu&lt;mat&gt;(5,5);
+      mat B = randu&lt;mat&gt;(5,5);
+    
+      cout &lt;&lt; A*B &lt;&lt; endl;
+    
+      return 0;
+</pre></div>
+</div>
+<p>For people using Ubuntu, Debian, Linux Mint, simply go to the synaptic package manager and install
+armadillo from there.
+You may have to install Lapack as well.
+For Mac and Windows users, follow the instructions from the webpage
+<a class="reference external" href="http://arma.sourceforge.net">http://arma.sourceforge.net</a>.  For MacOSX users we strongly recommend using <a class="reference external" href="https://brew.sh/">Brew</a>  to install additional software.
+To compile, use for example (linux/ubuntu)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -O2 -o program.x program.cpp  -larmadillo -llapack -lblas
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">-l</span></code> option indicates the library you wish to link to.</p>
+<p>For OS X users you may have to declare the paths to the include files and the libraries as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -O2 -o program.x program.cpp  -L/usr/local/lib -I/usr/local/include -larmadillo -llapack -lblas
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &quot;armadillo&quot;
+    using namespace arma;
+    using namespace std;
+    
+    int main(int argc, char** argv)
+      {
+      // directly specify the matrix size (elements are uninitialised)
+      mat A(2,3);
+      // .n_rows = number of rows    (read only)
+      // .n_cols = number of columns (read only)
+      cout &lt;&lt; &quot;A.n_rows = &quot; &lt;&lt; A.n_rows &lt;&lt; endl;
+      cout &lt;&lt; &quot;A.n_cols = &quot; &lt;&lt; A.n_cols &lt;&lt; endl;
+      // directly access an element (indexing starts at 0)
+      A(1,2) = 456.0;
+      A.print(&quot;A:&quot;);
+      // scalars are treated as a 1x1 matrix,
+      // hence the code below will set A to have a size of 1x1
+      A = 5.0;
+      A.print(&quot;A:&quot;);
+      // if you want a matrix with all elements set to a particular value
+      // the .fill() member function can be used
+      A.set_size(3,3);
+      A.fill(5.0);  A.print(&quot;A:&quot;);
+      mat B;
+    
+      // endr indicates &quot;end of row&quot;
+      B &lt;&lt; 0.555950 &lt;&lt; 0.274690 &lt;&lt; 0.540605 &lt;&lt; 0.798938 &lt;&lt; endr
+        &lt;&lt; 0.108929 &lt;&lt; 0.830123 &lt;&lt; 0.891726 &lt;&lt; 0.895283 &lt;&lt; endr
+        &lt;&lt; 0.948014 &lt;&lt; 0.973234 &lt;&lt; 0.216504 &lt;&lt; 0.883152 &lt;&lt; endr
+        &lt;&lt; 0.023787 &lt;&lt; 0.675382 &lt;&lt; 0.231751 &lt;&lt; 0.450332 &lt;&lt; endr;
+    
+      // print to the cout stream
+      // with an optional string before the contents of the matrix
+      B.print(&quot;B:&quot;);
+    
+      // the &lt;&lt; operator can also be used to print the matrix
+      // to an arbitrary stream (cout in this case)
+      cout &lt;&lt; &quot;B:&quot; &lt;&lt; endl &lt;&lt; B &lt;&lt; endl;
+      // save to disk
+      B.save(&quot;B.txt&quot;, raw_ascii);
+      // load from disk
+      mat C;
+      C.load(&quot;B.txt&quot;);
+      C += 2.0 * B;
+      C.print(&quot;C:&quot;);
+      // submatrix types:
+      //
+      // .submat(first_row, first_column, last_row, last_column)
+      // .row(row_number)
+      // .col(column_number)
+      // .cols(first_column, last_column)
+      // .rows(first_row, last_row)
+    
+      cout &lt;&lt; &quot;C.submat(0,0,3,1) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; C.submat(0,0,3,1) &lt;&lt; endl;
+    
+      // generate the identity matrix
+      mat D = eye&lt;mat&gt;(4,4);
+    
+      D.submat(0,0,3,1) = C.cols(1,2);
+      D.print(&quot;D:&quot;);
+    
+      // transpose
+      cout &lt;&lt; &quot;trans(B) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; trans(B) &lt;&lt; endl;
+    
+      // maximum from each column (traverse along rows)
+      cout &lt;&lt; &quot;max(B) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; max(B) &lt;&lt; endl;
+    
+      // maximum from each row (traverse along columns)
+      cout &lt;&lt; &quot;max(B,1) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; max(B,1) &lt;&lt; endl;
+      // maximum value in B
+      cout &lt;&lt; &quot;max(max(B)) = &quot; &lt;&lt; max(max(B)) &lt;&lt; endl;
+      // sum of each column (traverse along rows)
+      cout &lt;&lt; &quot;sum(B) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; sum(B) &lt;&lt; endl;
+      // sum of each row (traverse along columns)
+      cout &lt;&lt; &quot;sum(B,1) =&quot; &lt;&lt; endl;
+      cout &lt;&lt; sum(B,1) &lt;&lt; endl;
+      // sum of all elements
+      cout &lt;&lt; &quot;sum(sum(B)) = &quot; &lt;&lt; sum(sum(B)) &lt;&lt; endl;
+      cout &lt;&lt; &quot;accu(B)     = &quot; &lt;&lt; accu(B) &lt;&lt; endl;
+      // trace = sum along diagonal
+      cout &lt;&lt; &quot;trace(B)    = &quot; &lt;&lt; trace(B) &lt;&lt; endl;
+      // random matrix -- values are uniformly distributed in the [0,1] interval
+      mat E = randu&lt;mat&gt;(4,4);
+      E.print(&quot;E:&quot;);
+    
+      // row vectors are treated like a matrix with one row
+      rowvec r;
+      r &lt;&lt; 0.59499 &lt;&lt; 0.88807 &lt;&lt; 0.88532 &lt;&lt; 0.19968;
+      r.print(&quot;r:&quot;);
+    
+      // column vectors are treated like a matrix with one column
+      colvec q;
+      q &lt;&lt; 0.81114 &lt;&lt; 0.06256 &lt;&lt; 0.95989 &lt;&lt; 0.73628;
+      q.print(&quot;q:&quot;);
+    
+      // dot or inner product
+      cout &lt;&lt; &quot;as_scalar(r*q) = &quot; &lt;&lt; as_scalar(r*q) &lt;&lt; endl;
+    
+        // outer product
+      cout &lt;&lt; &quot;q*r =&quot; &lt;&lt; endl;
+      cout &lt;&lt; q*r &lt;&lt; endl;
+    
+    
+      // sum of three matrices (no temporary matrices are created)
+      mat F = B + C + D;
+      F.print(&quot;F:&quot;);
+    
+        return 0;
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &quot;armadillo&quot;
+    using namespace arma;
+    using namespace std;
+    
+    int main(int argc, char** argv)
+      {
+      cout &lt;&lt; &quot;Armadillo version: &quot; &lt;&lt; arma_version::as_string() &lt;&lt; endl;
+    
+      mat A;
+    
+      A &lt;&lt; 0.165300 &lt;&lt; 0.454037 &lt;&lt; 0.995795 &lt;&lt; 0.124098 &lt;&lt; 0.047084 &lt;&lt; endr
+        &lt;&lt; 0.688782 &lt;&lt; 0.036549 &lt;&lt; 0.552848 &lt;&lt; 0.937664 &lt;&lt; 0.866401 &lt;&lt; endr
+        &lt;&lt; 0.348740 &lt;&lt; 0.479388 &lt;&lt; 0.506228 &lt;&lt; 0.145673 &lt;&lt; 0.491547 &lt;&lt; endr
+        &lt;&lt; 0.148678 &lt;&lt; 0.682258 &lt;&lt; 0.571154 &lt;&lt; 0.874724 &lt;&lt; 0.444632 &lt;&lt; endr
+        &lt;&lt; 0.245726 &lt;&lt; 0.595218 &lt;&lt; 0.409327 &lt;&lt; 0.367827 &lt;&lt; 0.385736 &lt;&lt; endr;
+    
+      A.print(&quot;A =&quot;);
+    
+      // determinant
+      cout &lt;&lt; &quot;det(A) = &quot; &lt;&lt; det(A) &lt;&lt; endl;
+      // inverse
+      cout &lt;&lt; &quot;inv(A) = &quot; &lt;&lt; endl &lt;&lt; inv(A) &lt;&lt; endl;
+      double k = 1.23;
+    
+      mat    B = randu&lt;mat&gt;(5,5);
+      mat    C = randu&lt;mat&gt;(5,5);
+    
+      rowvec r = randu&lt;rowvec&gt;(5);
+      colvec q = randu&lt;colvec&gt;(5);
+    
+    
+      // examples of some expressions
+      // for which optimised implementations exist
+      // optimised implementation of a trinary expression
+      // that results in a scalar
+      cout &lt;&lt; &quot;as_scalar( r*inv(diagmat(B))*q ) = &quot;;
+      cout &lt;&lt; as_scalar( r*inv(diagmat(B))*q ) &lt;&lt; endl;
+    
+      // example of an expression which is optimised
+      // as a call to the dgemm() function in BLAS:
+      cout &lt;&lt; &quot;k*trans(B)*C = &quot; &lt;&lt; endl &lt;&lt; k*trans(B)*C;
+    
+        return 0;
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-use-the-library-functions">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/tree/master/doc/Programs/LecturePrograms/programs/cppLibrary">How to use the Library functions</a><a class="headerlink" href="#how-to-use-the-library-functions" title="Permalink to this headline">¶</a></h2>
+<p>Standard C/C++: fetch the files <code class="docutils literal notranslate"><span class="pre">lib.cpp</span></code> and <code class="docutils literal notranslate"><span class="pre">lib.h</span></code>. You can make a directory where you store
+these files, and eventually its compiled version lib.o. The example here is <a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/LinAlgebra/cpp/program1.cpp">program1.cpp from chapter 6</a> and performs the matrix inversion.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    //  Simple matrix inversion example
+    #include &lt;iostream&gt;
+    #include &lt;new&gt;
+    #include &lt;cstdio&gt;
+    #include &lt;cstdlib&gt;
+    #include &lt;cmath&gt;
+    #include &lt;cstring&gt;
+    #include &quot;lib.h&quot;
+    
+    using namespace std;
+    
+    /* function declarations */
+    
+    void inverse(double **, int);
+    
+    void inverse(double **a, int n)
+    {
+      int          i,j, *indx;
+      double       d, *col, **y;
+      // allocate space in memory
+      indx = new int[n];
+      col  = new double[n];
+      y    = (double **) matrix(n, n, sizeof(double));
+      ludcmp(a, n, indx, &amp;d);   // LU decompose  a[][]
+      printf(&quot;\n\nLU form of matrix of a[][]:\n&quot;);
+      for(i = 0; i &lt; n; i++) {
+        printf(&quot;\n&quot;);
+        for(j = 0; j &lt; n; j++) {
+          printf(&quot; a[%2d][%2d] = %12.4E&quot;,i, j, a[i][j]);
+      // find inverse of a[][] by columns
+      for(j = 0; j &lt; n; j++) {
+        // initialize right-side of linear equations
+        for(i = 0; i &lt; n; i++) col[i] = 0.0;
+        col[j] = 1.0;
+        lubksb(a, n, indx, col);
+        // save result in y[][]
+        for(i = 0; i &lt; n; i++) y[i][j] = col[i];
+      }   //j-loop over columns
+      // return the inverse matrix in a[][]
+      for(i = 0; i &lt; n; i++) {
+        for(j = 0; j &lt; n; j++) a[i][j] = y[i][j];
+    
+      free_matrix((void **) y);     // release local memory
+      delete [] col;
+      delete []indx;
+    }  // End: function inverse()
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-armadillo-to-perform-an-lu-decomposition">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/CppQtCodesLectures/MatrixTest/main.cpp">Using Armadillo to perform an LU decomposition</a><a class="headerlink" href="#using-armadillo-to-perform-an-lu-decomposition" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &quot;armadillo&quot;
+    using namespace arma;
+    using namespace std;
+    
+    int main()
+      {
+       mat A = randu&lt;mat&gt;(5,5);
+       vec b = randu&lt;vec&gt;(5);
+    
+      A.print(&quot;A =&quot;);
+      b.print(&quot;b=&quot;);
+      // solve Ax = b
+      vec x = solve(A,b);
+      // print x
+      x.print(&quot;x=&quot;);
+      // find LU decomp of A, if needed, P is the permutation matrix
+      mat L, U;
+      lu(L,U,A);
+      // print l
+      L.print(&quot; L= &quot;);
+      // print U
+      U.print(&quot; U= &quot;);
+      //Check that A = LU
+      (A-P*L*U).print(&quot;Test of LU decomposition&quot;);
+        return 0;
+      }
+</pre></div>
+</div>
+</div>
+<div class="section" id="optimization-and-profiling">
+<h2>Optimization and profiling<a class="headerlink" href="#optimization-and-profiling" title="Permalink to this headline">¶</a></h2>
+<p>Till now we have not paid much attention to speed and possible optimization possibilities
+inherent in the various compilers. We have compiled and linked as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++  -c  mycode.cpp
+    c++  -o  mycode.exe  mycode.o
+</pre></div>
+</div>
+<p>For Fortran replace with for example <strong>gfortran</strong> or <strong>ifort</strong>.
+This is what we call a flat compiler option and should be used when we develop the code.
+It produces normally a very large and slow code when translated to machine instructions.
+We use this option for debugging and for establishing the correct program output because
+every operation is done precisely as the user specified it.</p>
+<p>It is instructive to look up the compiler manual for further instructions by writing</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    man c++
+</pre></div>
+</div>
+<p>We have additional compiler options for optimization. These may include procedure inlining where
+performance may be improved, moving constants inside loops outside the loop,
+identify potential parallelism, include automatic vectorization or replace a division with a reciprocal
+and a multiplication if this speeds up the code.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++  -O3 -c  mycode.cpp
+    c++  -O3 -o  mycode.exe  mycode.o
+</pre></div>
+</div>
+<p>This (other options are -O2 or -Ofast) is the recommended option.</p>
+<p>It is also useful to profile your program under the development stage.
+You would then compile with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++  -pg -O3 -c  mycode.cpp
+    c++  -pg -O3 -o  mycode.exe  mycode.o
+</pre></div>
+</div>
+<p>After you have run the code you can obtain the profiling information via</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    gprof mycode.exe &gt;  ProfileOutput
+</pre></div>
+</div>
+<p>When you have profiled properly your code, you must take out this option as it
+slows down performance.
+For memory tests use <a class="reference external" href="http://www.valgrind.org">valgrind</a>. An excellent environment for all these aspects, and much  more, is  Qt creator.</p>
+<p>Adding debugging options is a very useful alternative under the development stage of a program.
+You would then compile with</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++  -g -O0 -c  mycode.cpp
+    c++  -g -O0 -o  mycode.exe  mycode.o
+</pre></div>
+</div>
+<p>This option generates debugging information allowing you to trace for example if an array is properly allocated. Some compilers work best with the no optimization option <strong>-O0</strong>.</p>
+<p>Depending on the compiler, one can add flags which generate code that catches integer overflow errors.
+The flag <strong>-ftrapv</strong> does this for the CLANG compiler on OS X operating systems.</p>
+<p>In general, irrespective of compiler options, it is useful to</p>
+<ul class="simple">
+<li><p>avoid if tests or call to functions inside loops, if possible.</p></li>
+<li><p>avoid multiplication with constants inside loops if possible</p></li>
+</ul>
+<p>Here is an example of a part of a program where specific operations lead to a slower code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    k = n-1;
+    for (i = 0; i &lt; n; i++){
+        a[i] = b[i] +c*d;
+        e = g[k];
+    }
+</pre></div>
+</div>
+<p>A better code is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    temp = c*d;
+    for (i = 0; i &lt; n; i++){
+        a[i] = b[i] + temp;
+    }
+    e = g[n-1];
+</pre></div>
+</div>
+<p>Here we avoid a repeated multiplication inside a loop.
+Most compilers, depending on compiler flags, identify and optimize such bottlenecks on their own, without requiring any particular action by the programmer. However, it is always useful to single out and avoid code examples like the first one discussed here.</p>
+</div>
+<div class="section" id="vectorization-and-the-basic-idea-behind-parallel-computing">
+<h2>Vectorization and the basic idea behind parallel computing<a class="headerlink" href="#vectorization-and-the-basic-idea-behind-parallel-computing" title="Permalink to this headline">¶</a></h2>
+<p>Present CPUs are highly parallel processors with varying levels of parallelism. The typical situation can be described via the following three statements.</p>
+<ul class="simple">
+<li><p>Pursuit of shorter computation time and larger simulation size gives rise to parallel computing.</p></li>
+<li><p>Multiple processors are involved to solve a global problem.</p></li>
+<li><p>The essence is to divide the entire computation evenly among collaborative processors.  Divide and conquer.</p></li>
+</ul>
+<p>Before we proceed with a more detailed discussion of topics like vectorization and parallelization, we need to remind ourselves about some basic features of different hardware models. We have</p>
+<ul class="simple">
+<li><p>Conventional single-processor computers are named SISD (single-instruction-single-data) machines.</p></li>
+<li><p>SIMD (single-instruction-multiple-data) machines incorporate the idea of parallel processing, using a large number of processing units to execute the same instruction on different data.</p></li>
+<li><p>Modern parallel computers are so-called MIMD (multiple-instruction-multiple-data) machines and can execute different instruction streams in parallel on different data.</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-vectorization">
+<h2>What is vectorization?<a class="headerlink" href="#what-is-vectorization" title="Permalink to this headline">¶</a></h2>
+<p>Vectorization is a special
+case of <strong>Single Instructions Multiple Data</strong> (SIMD) to denote a single
+instruction stream capable of operating on multiple data elements in
+parallel.
+We can think of vectorization as the unrolling of loops accompanied with SIMD instructions.</p>
+<p>Vectorization is the process of converting an algorithm that performs scalar operations
+(typically one operation at the time) to vector operations where a single operation can refer to many simultaneous operations.
+Consider the following example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    for (i = 0; i &lt; n; i++){
+        a[i] = b[i] + c[i];
+    }
+</pre></div>
+</div>
+<p>If the code is not vectorized, the compiler will simply start with the first element and
+then perform subsequent additions operating on one address in memory at the time.</p>
+<p>A SIMD instruction can operate  on multiple data elements in one single instruction.
+It uses the so-called 128-bit SIMD floating-point register.
+In this sense,vectorization adds some form of parallelism since one instruction is applied<br />
+to many parts of say a vector.</p>
+<p>The number of elements which can be operated on in parallel
+range from four single-precision floating point data elements in so-called
+Streaming SIMD Extensions and two double-precision floating-point data
+elements in Streaming SIMD Extensions 2 to sixteen byte operations in
+a 128-bit register in Streaming SIMD Extensions 2. Thus, vector-length
+ranges from 2 to 16, depending on the instruction extensions used and
+on the data type.</p>
+<p>We start with the simple scalar operations given by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    for (i = 0; i &lt; n; i++){
+        a[i] = b[i] + c[i];
+    }
+</pre></div>
+</div>
+<p>If the code is not vectorized  and we have a 128-bit register to store a 32 bits floating point number,
+it means that we have <span class="math notranslate nohighlight">\(3\times 32\)</span> bits that are not used. For the first element we have</p>
+<table border="1">
+<thead>
+<tr><th align="center">  0  </th> <th align="center">   1    </th> <th align="center">   2    </th> <th align="center">   3    </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   a[0]=    </td> <td align="center">   not used    </td> <td align="center">   not used    </td> <td align="center">   not used    </td> </tr>
+<tr><td align="center">   b[0]+    </td> <td align="center">   not used    </td> <td align="center">   not used    </td> <td align="center">   not used    </td> </tr>
+<tr><td align="center">   c[0]     </td> <td align="center">   not used    </td> <td align="center">   not used    </td> <td align="center">   not used    </td> </tr>
+</tbody>
+</table>
+We have thus unused space in our SIMD registers. These registers could hold three additional integers.
+<p>If we vectorize the code, we can perform, with a 128-bit register four simultaneous operations, that is
+we have</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    for (i = 0; i &lt; n; i+=4){
+        a[i] = b[i] + c[i];
+        a[i+1] = b[i+1] + c[i+1];
+        a[i+2] = b[i+2] + c[i+2];
+        a[i+3] = b[i+3] + c[i+3];
+    }
+</pre></div>
+</div>
+<p>displayed here as</p>
+<table border="1">
+<thead>
+<tr><th align="center">  0  </th> <th align="center">  1  </th> <th align="center">  2  </th> <th align="center">  3  </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   a[0]=    </td> <td align="center">   a[1]=    </td> <td align="center">   a[2]=    </td> <td align="center">   a[3]=    </td> </tr>
+<tr><td align="center">   b[0]+    </td> <td align="center">   b[1]+    </td> <td align="center">   b[2]+    </td> <td align="center">   b[3]+    </td> </tr>
+<tr><td align="center">   c[0]     </td> <td align="center">   c[1]     </td> <td align="center">   c[2]     </td> <td align="center">   c[3]     </td> </tr>
+</tbody>
+</table>
+Four additions are now done in a single step.
+</div>
+<div class="section" id="a-simple-test-case-with-and-without-vectorization">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program7.cpp">A simple test case with and without vectorization</a><a class="headerlink" href="#a-simple-test-case-with-and-without-vectorization" title="Permalink to this headline">¶</a></h2>
+<p>We implement these operations in a simple c++ program as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;time.h&quot; 
+    
+    using namespace std; // note use of namespace                                       
+    int main (int argc, char* argv[])
+    {
+      int i = atoi(argv[1]); 
+      double *a, *b, *c;
+      a = new double[i]; 
+      b = new double[i]; 
+      c = new double[i]; 
+      for (int j = 0; j &lt; i; j++) {
+        a[j] = 0.0;
+        b[j] = cos(j*1.0);
+        c[j] = sin(j*3.0);
+      }
+      clock_t start, finish;
+      start = clock();
+      for (int j = 0; j &lt; i; j++) {
+        a[j] = b[j]+b[j]*c[j];
+      }
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for vector addition and multiplication=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+      delete [] a;
+      delete [] b;
+      delete [] c;
+      return 0;     
+    }
+</pre></div>
+</div>
+<p>We can compile and link without vectorization</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -o novec.x vecexample.cpp
+</pre></div>
+</div>
+<p>vand with vectorization (and additional optimizations)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c++ -O3 -o  vec.x vecexample.cpp 
+</pre></div>
+</div>
+<p>The speedup depends on the size of the vectors. In the example here we have run with <span class="math notranslate nohighlight">\(10^7\)</span> elements.
+The example here was run on a PC with ubuntu 14.04 as operating system and an Intel i7-4790 CPU running at 3.60 GHz.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Compphys:~ hjensen$ ./vec.x 10000000
+    Time used  for vector addition = 0.0100000
+    Compphys:~ hjensen$ ./novec.x 10000000
+    Time used  for vector addition = 0.03000000000
+</pre></div>
+</div>
+<p>This particular C++ compiler speeds up the above loop operations with a factor of 3.
+Performing the same operations for <span class="math notranslate nohighlight">\(10^8\)</span> elements results only in a factor <span class="math notranslate nohighlight">\(1.4\)</span>.
+The result will however vary from compiler to compiler. In general however, with optimization flags like <span class="math notranslate nohighlight">\(-O3\)</span> or <span class="math notranslate nohighlight">\(-Ofast\)</span>, we gain a considerable speedup if our code can be vectorized. Many of these operations can be done automatically by your compiler. These automatic or near automatic compiler techniques improve performance considerably.</p>
+<p>Not all loops can be vectorized, as discussed in <a class="reference external" href="https://software.intel.com/en-us/articles/a-guide-to-auto-vectorization-with-intel-c-compilers">Intel’s guide to vectorization</a></p>
+<p>An important criteria is that the loop counter <span class="math notranslate nohighlight">\(n\)</span> is known at the entry of the loop.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int j = 0; j &lt; n; j++) {
+        a[j] = cos(j*1.0);
+      }
+</pre></div>
+</div>
+<p>The variable <span class="math notranslate nohighlight">\(n\)</span> does need to be known at compile time. However, this variable must stay the same for the entire duration of the loop. It implies that an exit statement inside the loop cannot be data dependent.</p>
+<p>An exit statement should in general be avoided.
+If the exit statement contains data-dependent conditions, the loop cannot be vectorized.
+The following is an example of a non-vectorizable loop</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int j = 0; j &lt; n; j++) {
+        a[j] = cos(j*1.0);
+        if (a[j] &lt; 0 ) break;
+      }
+</pre></div>
+</div>
+<p>Avoid loop termination conditions and opt for a single entry loop variable <span class="math notranslate nohighlight">\(n\)</span>. The lower and upper bounds have to be kept fixed within the loop.</p>
+<p>SIMD instructions perform the same type of operations multiple times.
+A <strong>switch</strong> statement leads thus to a non-vectorizable loop since different statemens cannot branch.
+The following code can however be vectorized since the <strong>if</strong> statement is implemented as a masked assignment.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int j = 0; j &lt; n; j++) {
+        double x  = cos(j*1.0);
+        if (x &gt; 0 ) {
+           a[j] =  x*sin(j*2.0); 
+        }
+        else {
+           a[j] = 0.0;
+        }
+      }
+</pre></div>
+</div>
+<p>These operations can be performed for all data elements but only those elements which the mask evaluates as true are stored. In general, one should avoid branches such as <strong>switch</strong>, <strong>go to</strong>, or <strong>return</strong> statements or <strong>if</strong> constructs that cannot be treated as masked assignments.</p>
+<p>Only the innermost loop of the following example is vectorized</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int i = 0; i &lt; n; i++) {
+          for (int j = 0; j &lt; n; j++) {
+               a[i][j] += b[i][j];
+          }  
+      }
+</pre></div>
+</div>
+<p>The exception is if an original outer loop is transformed into an inner loop as the result of compiler optimizations.</p>
+<p>Calls to programmer defined functions ruin vectorization. However, calls to intrinsic functions like
+<span class="math notranslate nohighlight">\(\sin{x}\)</span>, <span class="math notranslate nohighlight">\(\cos{x}\)</span>, <span class="math notranslate nohighlight">\(\exp{x}\)</span> etc are allowed since they are normally efficiently vectorized.
+The following example is fully vectorizable</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int i = 0; i &lt; n; i++) {
+          a[i] = log10(i)*cos(i);
+      }
+</pre></div>
+</div>
+<p>Similarly, <strong>inline</strong> functions defined by the programmer, allow for vectorization since the function statements are glued into the actual place where the function is called.</p>
+<p>One has to keep in mind that vectorization changes the order of operations inside a loop. A so-called
+read-after-write statement with an explicit flow dependency cannot be vectorized. The following code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      double b = 15.;
+      for (int i = 1; i &lt; n; i++) {
+          a[i] = a[i-1] + b;
+      }
+</pre></div>
+</div>
+<p>is an example of flow dependency and results in wrong numerical results if vectorized. For a scalar operation, the value <span class="math notranslate nohighlight">\(a[i-1]\)</span> computed during the iteration is loaded into the right-hand side and the results are fine. In vector mode however, with a vector length of four, the values <span class="math notranslate nohighlight">\(a[0]\)</span>, <span class="math notranslate nohighlight">\(a[1]\)</span>, <span class="math notranslate nohighlight">\(a[2]\)</span> and <span class="math notranslate nohighlight">\(a[3]\)</span> from the previous loop will be loaded into the right-hand side and produce wrong results. That is, we have</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       a[1] = a[0] + b;
+       a[2] = a[1] + b;
+       a[3] = a[2] + b;
+       a[4] = a[3] + b;
+</pre></div>
+</div>
+<p>and if the two first iterations are  executed at the same by the SIMD instruction, the value of say <span class="math notranslate nohighlight">\(a[1]\)</span> could be used by the second iteration before it has been calculated by the first iteration, leading thereby to wrong results.</p>
+<p>On the other hand,  a so-called
+write-after-read statement can be vectorized. The following code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      double b = 15.;
+      for (int i = 1; i &lt; n; i++) {
+          a[i-1] = a[i] + b;
+      }
+</pre></div>
+</div>
+<p>is an example of flow dependency that can be vectorized since no iteration with a higher value of <span class="math notranslate nohighlight">\(i\)</span>
+can complete before an iteration with a lower value of <span class="math notranslate nohighlight">\(i\)</span>. However, such code leads to problems with parallelization.</p>
+<p>For C++ programmers  it is also worth keeping in mind that an array notation is preferred to the more compact use of pointers to access array elements. The compiler can often not tell if it is safe to vectorize the code.</p>
+<p>When dealing with arrays, you should also avoid memory stride, since this slows down considerably vectorization. When you access array element, write for example the inner loop to vectorize using unit stride, that is, access successively the next array element in memory, as shown here</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      for (int i = 0; i &lt; n; i++) {
+          for (int j = 0; j &lt; n; j++) {
+               a[i][j] += b[i][j];
+          }  
+      }
+</pre></div>
+</div>
+<p>We can compile and link without vectorization using the clang c++ (on OSX for example) compiler</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang -o novec.x vecexample.cpp
+</pre></div>
+</div>
+<p>and with vectorization (and additional optimizations)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang++ -O3 -Rpass=loop-vectorize -o  vec.x vecexample.cpp 
+</pre></div>
+</div>
+<p>The speedup depends on the size of the vectors. In the example here we have run with <span class="math notranslate nohighlight">\(10^7\)</span> elements.
+The example here was run on an IMac17.1 with OSX El Capitan (10.11.4) as operating system and an Intel i5 3.3 GHz CPU.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Compphys:~ hjensen$ ./vec.x 10000000
+    Time used  for norm computation=0.04720500000
+    Compphys:~ hjensen$ ./novec.x 10000000
+    Time used  for norm computation=0.03311700000
+</pre></div>
+</div>
+<p>This particular C++ compiler speeds up the above loop operations with a factor of 1.5
+Performing the same operations for <span class="math notranslate nohighlight">\(10^9\)</span> elements results in a smaller speedup since reading from main memory is required. The non-vectorized code is seemingly faster.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Compphys:~ hjensen$ ./vec.x 1000000000
+    Time used  for norm computation=58.41391100
+    Compphys:~ hjensen$ ./novec.x 1000000000
+    Time used  for norm computation=46.51295300
+</pre></div>
+</div>
+<p>We will discuss these issues below.</p>
+<p>We can compile and link without vectorization with clang compiler</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang++ -o -fno-vectorize novec.x vecexample.cpp
+</pre></div>
+</div>
+<p>and with vectorization</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang++ -O3 -Rpass=loop-vectorize -o  vec.x vecexample.cpp 
+</pre></div>
+</div>
+<p>We can also add vectorization analysis, see for example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang++ -O3 -Rpass-analysis=loop-vectorize -o  vec.x vecexample.cpp 
+</pre></div>
+</div>
+<p>or figure out if vectorization was missed</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    clang++ -O3 -Rpass-missed=loop-vectorize -o  vec.x vecexample.cpp 
+</pre></div>
+</div>
+</div>
+<div class="section" id="measuring-performance">
+<h2>Measuring performance<a class="headerlink" href="#measuring-performance" title="Permalink to this headline">¶</a></h2>
+<p>How do we measure erformance? What is wrong with this code to time a loop?</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      clock_t start, finish;
+      start = clock();
+      for (int j = 0; j &lt; i; j++) {
+        a[j] = b[j]+b[j]*c[j];
+      }
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+</pre></div>
+</div>
+</div>
+<div class="section" id="problems-with-measuring-time">
+<h2>Problems with measuring time<a class="headerlink" href="#problems-with-measuring-time" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Timers are not infinitely accurate</p></li>
+<li><p>All clocks have a granularity, the minimum time that they can measure</p></li>
+<li><p>The error in a time measurement, even if everything is perfect, may be the size of this granularity (sometimes called a clock tick)</p></li>
+<li><p>Always know what your clock granularity is</p></li>
+<li><p>Ensure that your measurement is for a long enough duration (say 100 times the <strong>tick</strong>)</p></li>
+</ol>
+</div>
+<div class="section" id="problems-with-cold-start">
+<h2>Problems with cold start<a class="headerlink" href="#problems-with-cold-start" title="Permalink to this headline">¶</a></h2>
+<p>What happens when the code is executed? The assumption is that the code is ready to
+execute. But</p>
+<ol class="simple">
+<li><p>Code may still be on disk, and not even read into memory.</p></li>
+<li><p>Data may be in slow memory rather than fast (which may be wrong or right for what you are measuring)</p></li>
+<li><p>Multiple tests often necessary to ensure that cold start effects are not present</p></li>
+<li><p>Special effort often required to ensure data in the intended part of the memory hierarchy.</p></li>
+</ol>
+</div>
+<div class="section" id="problems-with-smart-compilers">
+<h2>Problems with smart compilers<a class="headerlink" href="#problems-with-smart-compilers" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>If the result of the computation is not used, the compiler may eliminate the code</p></li>
+<li><p>Performance will look impossibly fantastic</p></li>
+<li><p>Even worse, eliminate some of the code so the performance looks plausible</p></li>
+<li><p>Ensure that the results are (or may be) used.</p></li>
+</ol>
+</div>
+<div class="section" id="problems-with-interference">
+<h2>Problems with interference<a class="headerlink" href="#problems-with-interference" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Other activities are sharing your processor</p></li>
+</ol>
+<ul class="simple">
+<li><p>Operating system, system demons, other users</p></li>
+<li><p>Some parts of the hardware do not always perform with exactly the same performance</p></li>
+</ul>
+<ol class="simple">
+<li><p>Make multiple tests and report</p></li>
+<li><p>Easy choices include</p></li>
+</ol>
+<ul class="simple">
+<li><p>Average tests represent what users might observe over time</p></li>
+</ul>
+</div>
+<div class="section" id="problems-with-measuring-performance">
+<h2>Problems with measuring performance<a class="headerlink" href="#problems-with-measuring-performance" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Accurate, reproducible performance measurement is hard</p></li>
+<li><p>Think carefully about your experiment:</p></li>
+<li><p>What is it, precisely, that you want to measure</p></li>
+<li><p>How representative is your test to the situation that you are trying to measure?</p></li>
+</ol>
+</div>
+<div class="section" id="thomas-algorithm-for-tridiagonal-linear-algebra-equations">
+<h2>Thomas algorithm for tridiagonal linear algebra equations<a class="headerlink" href="#thomas-algorithm-for-tridiagonal-linear-algebra-equations" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left( \begin{array}{ccccc}
+        b_0 &amp; c_0 &amp;        &amp;         &amp;         \\
+	a_0 &amp;  b_1 &amp;  c_1    &amp;         &amp;         \\
+	   &amp;    &amp; \ddots  &amp;         &amp;         \\
+	      &amp;	    &amp; a_{m-3} &amp; b_{m-2} &amp; c_{m-2} \\
+	         &amp;    &amp;         &amp; a_{m-2} &amp; b_{m-1}
+   \end{array} \right)
+\left( \begin{array}{c}
+       x_0     \\
+       x_1     \\
+       \vdots  \\
+       x_{m-2} \\
+       x_{m-1}
+   \end{array} \right)=\left( \begin{array}{c}
+       f_0     \\
+       f_1     \\
+       \vdots  \\
+       f_{m-2} \\
+       f_{m-1} \\
+   \end{array} \right)
+\end{split}\]</div>
+<p>The first step is to multiply the first row by <span class="math notranslate nohighlight">\(a_0/b_0\)</span> and subtract it from the second row.  This is known as the forward substitution step. We obtain then</p>
+<div class="math notranslate nohighlight">
+\[
+a_i = 0,
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+b_i = b_i - \frac{a_{i-1}}{b_{i-1}}c_{i-1},
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+f_i = f_i - \frac{a_{i-1}}{b_{i-1}}f_{i-1}.
+\]</div>
+<p>At this point the simplified equation, with only an upper triangular matrix takes the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left( \begin{array}{ccccc}
+    b_0 &amp; c_0 &amp;        &amp;         &amp;         \\
+       &amp; b_1 &amp;  c_1    &amp;         &amp;         \\
+          &amp;    &amp; \ddots &amp;         &amp;         \\
+	     &amp;     &amp;        &amp; b_{m-2} &amp; c_{m-2} \\
+	        &amp;    &amp;        &amp;         &amp; b_{m-1}
+   \end{array} \right)\left( \begin{array}{c}
+       x_0     \\
+       x_1     \\
+       \vdots  \\
+       x_{m-2} \\
+       x_{m-1}
+   \end{array} \right)=\left( \begin{array}{c}
+       f_0     \\
+       f_1     \\
+       \vdots  \\
+       f_{m-2} \\
+       f_{m-1} \\
+   \end{array} \right)
+\end{split}\]</div>
+<p>The next step is  the backward substitution step.  The last row is multiplied by <span class="math notranslate nohighlight">\(c_{N-3}/b_{N-2}\)</span> and subtracted from the second to last row, thus eliminating <span class="math notranslate nohighlight">\(c_{N-3}\)</span> from the last row.  The general backward substitution procedure is</p>
+<div class="math notranslate nohighlight">
+\[
+c_i = 0,
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+f_{i-1} = f_{i-1} - \frac{c_{i-1}}{b_i}f_i
+\]</div>
+<p>All that remains to be computed is the solution, which is the very straight forward process of</p>
+<div class="math notranslate nohighlight">
+\[
+x_i = \frac{f_i}{b_i}
+\]</div>
+<table border="1">
+<thead>
+<tr><th align="center">   Operation   </th> <th align="center">Floating Point</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   Memory Reads       </td> <td align="center">   $14(N-2)$         </td> </tr>
+<tr><td align="center">   Memory Writes      </td> <td align="center">   $4(N-2)$          </td> </tr>
+<tr><td align="center">   Subtractions       </td> <td align="center">   $3(N-2)$          </td> </tr>
+<tr><td align="center">   Multiplications    </td> <td align="center">   $3(N-2)$          </td> </tr>
+<tr><td align="center">   Divisions          </td> <td align="center">   $4(N-2)$          </td> </tr>
+</tbody>
+</table><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // Forward substitution    
+    // Note that we can simplify by precalculating a[i-1]/b[i-1]
+      for (int i=1; i &lt; n; i++) {
+         b[i] = b[i] - (a[i-1]*c[i-1])/b[i-1];
+         f[i] = g[i] - (a[i-1]*f[i-1])/b[i-1];
+      }
+      x[n-1] = f[n-1] / b[n-1];
+      // Backwards substitution                                                           
+      for (int i = n-2; i &gt;= 0; i--) {
+         f[i] = f[i] - c[i]*f[i+1]/b[i+1];
+         x[i] = f[i]/b[i];
+      }
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-specialized-thomas-algorithm-project-1">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysics/blob/master/doc/Projects/2016/Project1/Examples/TridiagonalTiming.cpp">The specialized Thomas algorithm (Project 1)</a><a class="headerlink" href="#the-specialized-thomas-algorithm-project-1" title="Permalink to this headline">¶</a></h2>
+<table border="1">
+<thead>
+<tr><th align="center">  Operation  </th> <th align="center">Floating Point</th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   Memory Reads     </td> <td align="center">   $6(N-2)$          </td> </tr>
+<tr><td align="center">   Memory Writes    </td> <td align="center">   $2(N-2)$          </td> </tr>
+<tr><td align="center">   Additions        </td> <td align="center">   $2(N-2)$          </td> </tr>
+<tr><td align="center">   Divisions        </td> <td align="center">   $2(N-2)$          </td> </tr>
+</tbody>
+</table><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>          // Forward substitution cannot be vectorized
+          for (int i = 2; i &lt; n; i++) b[i] = b[i] + b[i-1]/d[i-1];
+          // Backward substitution  cannot be vectorized
+          solution[n-1] = b[n-1]/d[n-1];
+          for (int i = n-2; i &gt; 0; i--) solution[i] = (b[i]+solution[i+1])/d[i];
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-transpose-of-a-matrix">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program8.cpp">Example: Transpose of a matrix</a><a class="headerlink" href="#example-transpose-of-a-matrix" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;time.h&quot;
+    
+    using namespace std; // note use of namespace
+    int main (int argc, char* argv[])
+    {
+      // read in dimension of square matrix
+      int n = atoi(argv[1]);
+      double **A, **B;
+      // Allocate space for the two matrices
+      A = new double*[n]; B = new double*[n];
+      for (int i = 0; i &lt; n; i++){
+        A[i] = new double[n];
+        B[i] = new double[n];
+      }
+      // Set up values for matrix A
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          A[i][j] =  cos(i*1.0)*sin(j*3.0);
+        }
+      }
+      clock_t start, finish;
+      start = clock();
+      // Then compute the transpose
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          B[i][j]= A[j][i];
+        }
+      }
+    
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for setting up transpose of matrix=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+    
+      // Free up space
+      for (int i = 0; i &lt; n; i++){
+        delete[] A[i];
+        delete[] B[i];
+      }
+      delete[] A;
+      delete[] B;
+      return 0;
+    }
+</pre></div>
+</div>
+</div>
+<div class="section" id="matrix-matrix-multiplication">
+<h2><a class="reference external" href="https://github.com/CompPhysics/ComputationalPhysicsMSU/blob/master/doc/Programs/LecturePrograms/programs/Classes/cpp/program9.cpp">Matrix-matrix multiplication</a><a class="headerlink" href="#matrix-matrix-multiplication" title="Permalink to this headline">¶</a></h2>
+<p>This the matrix-matrix multiplication code with plain c++ memory allocation. It computes at the end the Frobenius norm.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cstdlib&gt;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;time.h&quot;
+    
+    using namespace std; // note use of namespace
+    int main (int argc, char* argv[])
+    {
+      // read in dimension of square matrix
+      int n = atoi(argv[1]);
+      double s = 1.0/sqrt( (double) n);
+      double **A, **B, **C;
+      // Start timing
+      clock_t start, finish;
+      start = clock();
+      // Allocate space for the two matrices
+      A = new double*[n]; B = new double*[n]; C = new double*[n];
+      for (int i = 0; i &lt; n; i++){
+        A[i] = new double[n];
+        B[i] = new double[n];
+        C[i] = new double[n];
+      }
+      // Set up values for matrix A and B and zero matrix C
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double angle = 2.0*M_PI*i*j/ (( double ) n);
+          A[i][j] = s * ( sin ( angle ) + cos ( angle ) );
+          B[j][i] =  A[i][j];
+        }
+      }
+      // Then perform the matrix-matrix multiplication
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          double sum = 0.0;
+           for (int k = 0; k &lt; n; k++) {
+               sum += B[i][k]*A[k][j];
+           }
+           C[i][j] = sum;
+        }
+      }
+      // Compute now the Frobenius norm
+      double Fsum = 0.0;
+      for (int i = 0; i &lt; n; i++){
+        for (int j = 0; j &lt; n; j++) {
+          Fsum += C[i][j]*C[i][j];
+        }
+      }
+      Fsum = sqrt(Fsum);
+      finish = clock();
+      double timeused = (double) (finish - start)/(CLOCKS_PER_SEC );
+      cout &lt;&lt; setiosflags(ios::showpoint | ios::uppercase);
+      cout &lt;&lt; setprecision(10) &lt;&lt; setw(20) &lt;&lt; &quot;Time used  for matrix-matrix multiplication=&quot; &lt;&lt; timeused  &lt;&lt; endl;
+      cout &lt;&lt; &quot;  Frobenius norm  = &quot; &lt;&lt; Fsum &lt;&lt; endl;
+      // Free up space
+      for (int i = 0; i &lt; n; i++){
+        delete[] A[i];
+        delete[] B[i];
+        delete[] C[i];
+      }
+      delete[] A;
+      delete[] B;
+      delete[] C;
+      return 0;
+    }
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-we-define-speedup-simplest-form">
+<h2>How do we define speedup? Simplest form<a class="headerlink" href="#how-do-we-define-speedup-simplest-form" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Speedup(code,sys,p) = <span class="math notranslate nohighlight">\(T_b/T_p\)</span></p></li>
+<li><p>Speedup measures the ratio of performance between two objects</p></li>
+<li><p>Versions of same code, with different number of processors</p></li>
+<li><p>Serial and vector versions</p></li>
+<li><p>Try different programing languages, C++ and Fortran</p></li>
+<li><p>Two algorithms computing the <strong>same</strong> result</p></li>
+</ul>
+<p>The key is choosing the correct baseline for comparison</p>
+<ul class="simple">
+<li><p>For our serial vs. vectorization examples, using compiler-provided vectorization, the baseline is simple; the same code, with vectorization turned off</p></li>
+<li><p>For parallel applications, this is much harder:</p></li>
+<li><p>Choice of algorithm, decomposition, performance of baseline case etc.</p></li>
+</ul>
+</div>
+<div class="section" id="object-orientation">
+<h2>Object orientation<a class="headerlink" href="#object-orientation" title="Permalink to this headline">¶</a></h2>
+<p>Why object orientation?</p>
+<ul class="simple">
+<li><p>Three main topics: objects, class hierarchies and polymorphism</p></li>
+<li><p>The aim here is to be to be able to write a more general code which can easily be tailored to new situations.</p></li>
+<li><p><strong>Polymorphism</strong> is a term used in software development to describe a variety of techniques employed by programmers to create flexible and reusable software components. The term is Greek and it loosely translates to “many forms”. Strategy: try to single out the variables needed to describe a given system and those needed to describe a given solver.</p></li>
+</ul>
+<p>In programming languages, a polymorphic object is an entity, such as a variable or a procedure, that can hold or operate on values of differing types during the program’s execution. Because a polymorphic object can operate on a variety of values and types, it can also be used in a variety of programs, sometimes with little or no change by the programmer. The idea of write once, run many, also known as code reusability, is an important characteristic to the programming paradigm known as Object-Oriented Programming (OOP).</p>
+<p>OOP describes an approach to programming where a program is viewed as a collection of interacting, but mostly independent software components. These software components are known as objects in OOP and they are typically implemented in a programming language as an entity that encapsulates both data and procedures.</p>
+<p>In Fortran a vector or matrix start with <span class="math notranslate nohighlight">\(1\)</span>, but it is easy
+to change a vector so that it starts with zero or even a negative number.
+If we have a double precision Fortran vector  which starts at <span class="math notranslate nohighlight">\(-10\)</span> and ends at <span class="math notranslate nohighlight">\(10\)</span>, we could declare it as
+<code class="docutils literal notranslate"><span class="pre">REAL(KIND=8)</span> <span class="pre">::</span>&#160; <span class="pre">vector(-10:10)</span></code>. Similarly, if we want to start at zero and end at 10 we could write
+<code class="docutils literal notranslate"><span class="pre">REAL(KIND=8)</span> <span class="pre">::</span>&#160; <span class="pre">vector(0:10)</span></code>.
+We have also seen that Fortran  allows us to write a matrix addition <span class="math notranslate nohighlight">\(\mathbf{A} = \mathbf{B}+\mathbf{C}\)</span> as
+<code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">B</span> <span class="pre">+</span> <span class="pre">C</span></code>.  This means that we have overloaded the addition operator so that it translates this operation into
+two loops and an addition of two matrix elements <span class="math notranslate nohighlight">\(a_{ij} = b_{ij}+c_{ij}\)</span>.</p>
+<p>The way the matrix addition is written is very close to the way we express this relation mathematically. The benefit for the
+programmer is that our code is easier to read. Furthermore, such a way of coding makes it  more likely  to spot eventual
+errors as well.</p>
+<p>In Ansi C and C++ arrays start by default from <span class="math notranslate nohighlight">\(i=0\)</span>.  Moreover, if we  wish to add two matrices we need to explicitely write out
+the two loops as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>       for(i=0 ; i &lt; n ; i++) {
+          for(j=0 ; j &lt; n ; j++) {
+             a[i][j]=b[i][j]+c[i][j]
+</pre></div>
+</div>
+<p>However,
+the strength of C++ is the possibility
+to define new data types, tailored to some particular problem.
+Via new data types and overloading of operations such as addition and subtraction, we can easily define
+sets of operations and data types which allow us to write a matrix addition in exactly the same
+way as we would do in Fortran.  We could also change the way we declare a C++ matrix elements <span class="math notranslate nohighlight">\(a_{ij}\)</span>, from  <span class="math notranslate nohighlight">\(a[i][j]\)</span>
+to say <span class="math notranslate nohighlight">\(a(i,j)\)</span>, as we would do in Fortran. Similarly, we could also change the default range from <span class="math notranslate nohighlight">\(0:n-1\)</span> to <span class="math notranslate nohighlight">\(1:n\)</span>.</p>
+<p>To achieve this we need to introduce two important entities in C++ programming, classes and templates.</p>
+<p>The function and class declarations are fundamental concepts within C++.  Functions are abstractions
+which encapsulate an algorithm or parts of it and perform specific tasks in a program.
+We have already met several examples on how to use  functions.
+Classes can be defined as abstractions which encapsulate
+data and operations on these data.
+The data can be very complex data structures  and the class can contain particular functions
+which operate on these data. Classes allow therefore for a higher level of abstraction in computing.
+The elements (or components) of the data
+type are the class data members, and the procedures are the class
+member functions.</p>
+<p>Classes are user-defined tools used to create multi-purpose software which can be reused by other classes or functions.
+These user-defined data types contain data (variables) and
+functions operating on the data.</p>
+<p>A simple example is that of a point in two dimensions.
+The data could be the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> coordinates of a given  point. The functions
+we define could be simple read and write functions or the possibility to compute the distance between two points.</p>
+<p>C++ has a class complex in its standard
+template library (STL). The standard usage in a given function could then look like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // Program to calculate addition and multiplication of two complex numbers
+    using namespace std;
+    #include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    #include &lt;complex&gt;
+    int main()
+    {
+      complex&lt;double&gt; x(6.1,8.2), y(0.5,1.3);
+      // write out x+y
+      cout &lt;&lt; x + y &lt;&lt; x*y  &lt;&lt; endl;
+      return 0;
+</pre></div>
+</div>
+<p>where we add and multiply two complex numbers <span class="math notranslate nohighlight">\(x=6.1+\imath 8.2\)</span> and <span class="math notranslate nohighlight">\(y=0.5+\imath 1.3\)</span> with the obvious results
+<span class="math notranslate nohighlight">\(z=x+y=6.6+\imath 9.5\)</span> and <span class="math notranslate nohighlight">\(z=x\cdot y= -7.61+\imath 12.03\)</span>.</p>
+<p>We proceed by  splitting our task in three files.</p>
+<p>We define first a header file complex.h  which contains the declarations of
+the class. The header file contains the class declaration (data and
+functions), declaration of stand-alone functions, and all inlined
+functions, starting as follows</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #ifndef Complex_H
+    #define Complex_H
+    //   various include statements and definitions
+    #include &lt;iostream&gt;          // Standard ANSI-C++ include files
+    #include &lt;new&gt;
+    #include ....
+    
+    class Complex
+    {...
+    definition of variables and their character
+    };
+    //   declarations of various functions used by the class
+    ...
+    #endif
+</pre></div>
+</div>
+<p>Next we provide a file complex.cpp where the code and algorithms of
+different functions (except inlined functions) declared within the
+class are written.  The files <code class="docutils literal notranslate"><span class="pre">complex.h</span></code> and <code class="docutils literal notranslate"><span class="pre">complex.cpp</span></code> are normally
+placed in a directory with other classes and libraries we have
+defined.</p>
+<p>Finally, we discuss here an example of a main program which uses this
+particular class.  An example of a program which uses our complex
+class is given below. In particular we would like our class to perform
+tasks like declaring complex variables, writing out the real and
+imaginary part and performing algebraic operations such as adding or
+multiplying two complex numbers.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &quot;Complex.h&quot;
+    ...  other include and declarations
+    int main ()
+    {
+      Complex a(0.1,1.3);    // we declare a complex variable a
+      Complex b(3.0), c(5.0,-2.3);  // we declare  complex variables b and c
+      Complex d = b;         //  we declare  a new complex variable d
+      cout &lt;&lt; &quot;d=&quot; &lt;&lt; d &lt;&lt; &quot;, a=&quot; &lt;&lt; a &lt;&lt; &quot;, b=&quot; &lt;&lt; b &lt;&lt; endl;
+      d = a*c + b/a;  //   we add, multiply and divide two complex numbers
+      cout &lt;&lt; &quot;Re(d)=&quot; &lt;&lt; d.Re() &lt;&lt; &quot;, Im(d)=&quot; &lt;&lt; d.Im() &lt;&lt; endl;  // write out of the real and imaginary parts
+</pre></div>
+</div>
+<p>We include the header file complex.h and define four different complex variables. These
+are <span class="math notranslate nohighlight">\(a=0.1+\imath 1.3\)</span>, <span class="math notranslate nohighlight">\(b=3.0+\imath 0\)</span> (note that if you don’t define a value for the imaginary part  this is set to
+zero), <span class="math notranslate nohighlight">\(c=5.0-\imath 2.3\)</span> and <span class="math notranslate nohighlight">\(d=b\)</span>.  Thereafter we have defined standard algebraic operations and the member functions
+of the class which allows us to print out the real and imaginary part of a given variable.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    class Complex
+    {
+    private:
+       double re, im; // real and imaginary part
+    public:
+       Complex ();                              // Complex c;
+       Complex (double re, double im = 0.0); // Definition of a complex variable;
+       Complex (const Complex&amp; c);              // Usage: Complex c(a);   // equate two complex variables
+       Complex&amp; operator= (const Complex&amp; c); // c = a;   //  equate two complex variables, same as previous
+    ....
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>      ~Complex () {}                        // destructor
+       double   Re () const;        // double real_part = a.Re();
+       double   Im () const;        // double imag_part = a.Im();
+       double   abs () const;       // double m = a.abs(); // modulus
+       friend Complex operator+ (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator- (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator* (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator/ (const Complex&amp;  a, const Complex&amp; b);
+    };
+</pre></div>
+</div>
+<p>The class is defined via the statement <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Complex</span></code>. We must first use the key word
+<code class="docutils literal notranslate"><span class="pre">class</span></code>, which in turn is followed by the user-defined variable name  <code class="docutils literal notranslate"><span class="pre">Complex</span></code>.
+The body of the class, data and functions, is encapsulated  within the parentheses <code class="docutils literal notranslate"><span class="pre">{...}</span></code>.</p>
+<p>Data and specific functions can be private, which means that they cannot be accessed from outside the class.
+This means also that access cannot be inherited by other functions outside the class. If we use <code class="docutils literal notranslate"><span class="pre">protected</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">private</span></code>, then data and functions can be inherited outside the class.</p>
+<p>The key word <code class="docutils literal notranslate"><span class="pre">public</span></code> means  that data and functions can be accessed from outside the class.
+Here we have defined several functions  which can be accessed by functions outside the class.
+The declaration <code class="docutils literal notranslate"><span class="pre">friend</span></code> means that stand-alone functions can work on privately declared  variables  of the type
+<code class="docutils literal notranslate"><span class="pre">(re,</span> <span class="pre">im)</span></code>.  Data members of a class should be declared as private variables.</p>
+<p>The first public function we encounter is a so-called
+constructor, which  tells how we declare a variable of type <code class="docutils literal notranslate"><span class="pre">Complex</span></code>
+and how this variable is initialized. We have chose  three possibilities in the example above:</p>
+<p>A declaration like <code class="docutils literal notranslate"><span class="pre">Complex</span> <span class="pre">c;</span></code> calls the member function <code class="docutils literal notranslate"><span class="pre">Complex()</span></code> which can have the following implementation</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex:: Complex () { re = im = 0.0; }
+</pre></div>
+</div>
+<p>meaning that it sets the real and imaginary parts to zero. Note the
+way a member function is defined. The constructor is the first
+function that is called when an object is instantiated.</p>
+<p>Another possibility is</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex:: Complex () {}
+</pre></div>
+</div>
+<p>which means that there is no initialization of the real and imaginary parts. The drawback is that a given compiler can then assign random values to a given variable.</p>
+<p>A call like <code class="docutils literal notranslate"><span class="pre">Complex</span> <span class="pre">a(0.1,1.3);</span></code> means that we could call the member function <code class="docutils literal notranslate"><span class="pre">Complex(double,</span> <span class="pre">double)</span></code>as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex:: Complex (double re_a, double im_a) {
+        re = re_a; im = im_a; }
+</pre></div>
+</div>
+<p>The simplest member function are those we defined to extract
+the real and imaginary part of a variable. Here you have to recall that these are private data,
+that is they invisible for users of the class.  We obtain a copy of these variables by defining the
+functions</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double Complex:: Re () const { return re; }} //  getting the real part
+    double Complex:: Im () const { return im; }  //   and the imaginary part
+</pre></div>
+</div>
+<p>Note that we have introduced   the declaration  <code class="docutils literal notranslate"><span class="pre">const</span></code>.  What does it mean?
+This declaration means that a variabale cannot be changed within  a called function.</p>
+<p>If we define a variable as
+<code class="docutils literal notranslate"><span class="pre">const</span> <span class="pre">double</span> <span class="pre">p</span> <span class="pre">=</span> <span class="pre">3;</span></code> and then try to change its value, we will get an error when we
+compile our program. This means that constant arguments in functions cannot be changed.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // const arguments (in functions) cannot be changed:
+    void myfunc (const Complex&amp; c)
+    { c.re = 0.2; /* ILLEGAL!! compiler error... */  }
+</pre></div>
+</div>
+<p>If we declare the function and try to change the value to <span class="math notranslate nohighlight">\(0.2\)</span>, the compiler will complain by sending
+an error message.</p>
+<p>If we define a function to compute the absolute value of complex variable like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double Complex:: abs ()  { return sqrt(re*re + im*im);}
+</pre></div>
+</div>
+<p>without the constant declaration  and define thereafter a function
+<code class="docutils literal notranslate"><span class="pre">myabs</span></code> as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double myabs (const Complex&amp; c)
+    { return c.abs(); }   // Not ok because c.abs() is not a const func.
+</pre></div>
+</div>
+<p>the compiler would not allow the c.abs() call in myabs
+since <code class="docutils literal notranslate"><span class="pre">Complex::abs</span></code> is not a constant member function.</p>
+<p>Constant functions cannot change the object’s state.
+To avoid this we declare the function <code class="docutils literal notranslate"><span class="pre">abs</span></code> as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    double Complex:: abs () const { return sqrt(re*re + im*im); }
+</pre></div>
+</div>
+</div>
+<div class="section" id="overloading-operators">
+<h2>Overloading operators<a class="headerlink" href="#overloading-operators" title="Permalink to this headline">¶</a></h2>
+<p>C++ (and Fortran) allow for overloading of operators. That means we
+can define algebraic operations on for example vectors or any
+arbitrary object.  As an example, a vector addition of the type
+<span class="math notranslate nohighlight">\(\mathbf{c} = \mathbf{a} + \mathbf{b}\)</span> means that we need to write a small part of
+code with a for-loop over the dimension of the array.  We would rather
+like to write this statement as <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a+b;</span></code> as this makes the code much
+more readable and close to eventual equations we want to code.  To
+achieve this we need to extend the definition of operators.</p>
+<p>Let us study the declarations in our complex class.
+In our main function we have a statement like <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">b;</span></code>, which means
+that we call <code class="docutils literal notranslate"><span class="pre">d.operator=</span> <span class="pre">(b)</span></code> and we have defined a so-called assignment operator
+as a part of the class defined as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex&amp; Complex:: operator= (const Complex&amp; c)
+    {
+       re = c.re;
+       im = c.im;
+       return *this;
+    }
+</pre></div>
+</div>
+<p>With this function, statements like
+<code class="docutils literal notranslate"><span class="pre">Complex</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">b;</span></code> or <code class="docutils literal notranslate"><span class="pre">Complex</span> <span class="pre">d(b);</span></code>
+make a new object <span class="math notranslate nohighlight">\(d\)</span>, which becomes a copy of <span class="math notranslate nohighlight">\(b\)</span>.
+We can make simple implementations in terms of the assignment</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex:: Complex (const Complex&amp; c)
+    { *this = c; }
+</pre></div>
+</div>
+<p>which  is a pointer to “this object”, <code class="docutils literal notranslate"><span class="pre">*this</span></code> is the present object,
+so <code class="docutils literal notranslate"><span class="pre">*this</span> <span class="pre">=</span> <span class="pre">c;</span></code> means setting the present object equal to <span class="math notranslate nohighlight">\(c\)</span>, that is
+<code class="docutils literal notranslate"><span class="pre">this-&gt;operator=</span> <span class="pre">(c);</span></code>.</p>
+<p>The meaning of the addition operator <span class="math notranslate nohighlight">\(+\)</span> for Complex objects is defined in the
+function
+<code class="docutils literal notranslate"><span class="pre">Complex</span> <span class="pre">operator+</span> <span class="pre">(const</span> <span class="pre">Complex&amp;</span> <span class="pre">a,</span> <span class="pre">const</span> <span class="pre">Complex&amp;</span> <span class="pre">b);</span> <span class="pre">//</span> <span class="pre">a+b</span></code>
+The compiler translates <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b;</span></code> into <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">operator+</span> <span class="pre">(a,</span> <span class="pre">b);</span></code>.
+Since this implies the call to function, it brings in an additional overhead. If speed
+is crucial and this function call is performed inside a loop, then it is more difficult for a
+given compiler to perform optimizations of a loop.</p>
+<p>The solution to this is to inline functions.   We discussed inlining in chapter
+2 of the lecture notes.
+Inlining means that the function body is copied directly into
+the calling code, thus avoiding calling the function.
+Inlining is enabled by the inline keyword</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    inline Complex operator+ (const Complex&amp; a, const Complex&amp; b)
+    { return Complex (a.re + b.re, a.im + b.im); }
+</pre></div>
+</div>
+<p>Inline functions, with complete bodies must be written in the header file  complex.h.</p>
+<p>Consider  the case <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b;</span></code>
+that is,  <code class="docutils literal notranslate"><span class="pre">c.operator=</span> <span class="pre">(operator+</span> <span class="pre">(a,b));</span></code>
+If <code class="docutils literal notranslate"><span class="pre">operator+</span></code>, <code class="docutils literal notranslate"><span class="pre">operator=</span></code> and the constructor <code class="docutils literal notranslate"><span class="pre">Complex(r,i)</span></code> all
+are inline functions, this transforms to</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    c.re = a.re + b.re;
+    c.im = a.im + b.im;
+</pre></div>
+</div>
+<p>by the compiler, i.e., no function calls</p>
+<p>The stand-alone function <code class="docutils literal notranslate"><span class="pre">operator+</span></code> is a friend of the Complex  class</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    class Complex
+    {
+       ...
+       friend Complex operator+ (const Complex&amp; a, const Complex&amp; b);
+       ...
+    };
+</pre></div>
+</div>
+<p>so it can read (and manipulate) the private data parts <span class="math notranslate nohighlight">\(re\)</span> and
+<span class="math notranslate nohighlight">\(im\)</span> via</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    inline Complex operator+ (const Complex&amp; a, const Complex&amp; b)
+    { return Complex (a.re + b.re, a.im + b.im); }
+</pre></div>
+</div>
+<p>Since we do not need to alter the re and im variables, we can
+get the values by Re() and Im(), and there is no need to be a
+friend function</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    inline Complex operator+ (const Complex&amp; a, const Complex&amp; b)
+    { return Complex (a.Re() + b.Re(), a.Im() + b.Im()); }
+</pre></div>
+</div>
+<p>The multiplication functionality can now be extended to imaginary numbers by the following code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    inline Complex operator* (const Complex&amp; a, const Complex&amp; b)
+    {
+      return Complex(a.re*b.re - a.im*b.im, a.im*b.re + a.re*b.im);
+</pre></div>
+</div>
+<p>It will be convenient to inline all functions used by this operator.</p>
+<p>To inline the complete expression <code class="docutils literal notranslate"><span class="pre">a*b;</span></code>, the constructors and
+<code class="docutils literal notranslate"><span class="pre">operator=</span></code>  must also be inlined.  This can be achieved via the following piece of code</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    inline Complex:: Complex () { re = im = 0.0; }
+    inline Complex:: Complex (double re_, double im_)
+    { ... }
+    inline Complex:: Complex (const Complex&amp; c)
+    { ... }
+    inline Complex:: operator= (const Complex&amp; c)
+    { ... }
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // e, c, d are complex
+    e = c*d;
+    // first compiler translation:
+    e.operator= (operator* (c,d));
+    // result of nested inline functions
+    // operator=, operator*, Complex(double,double=0):
+    e.re = c.re*d.re - c.im*d.im;
+    e.im = c.im*d.re + c.re*d.im;
+</pre></div>
+</div>
+<p>The definitions <code class="docutils literal notranslate"><span class="pre">operator-</span></code> and <code class="docutils literal notranslate"><span class="pre">operator/</span></code> follow the same set up.</p>
+<p>Finally, if we wish to write to file or another device a complex number using the simple syntax
+<code class="docutils literal notranslate"><span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">c;</span></code>, we obtain this by defining
+the effect of <span class="math notranslate nohighlight">\(&lt;&lt;\)</span> for a Complex object as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ostream&amp; operator&lt;&lt; (ostream&amp; o, const Complex&amp; c)
+    { o &lt;&lt; &quot;(&quot; &lt;&lt; c.Re() &lt;&lt; &quot;,&quot; &lt;&lt; c.Im() &lt;&lt; &quot;) &quot;; return o;}
+</pre></div>
+</div>
+</div>
+<div class="section" id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>What if we wanted to make a class which takes integers
+or floating point numbers with single precision?
+A simple way to achieve this is copy and paste our class and replace <code class="docutils literal notranslate"><span class="pre">double</span></code> with for
+example <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>C++  allows us to do this automatically via the usage of templates, which
+are the C++ constructs for parameterizing parts of
+classes. Class templates  is a template for producing classes. The declaration consists
+of the keyword <code class="docutils literal notranslate"><span class="pre">template</span></code> followed by a list of template arguments enclosed in brackets.</p>
+<p>We can therefore make a more general class by rewriting our original example as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    template&lt;class T&gt;
+    class Complex
+    {
+    private:
+       T re, im; // real and imaginary part
+    public:
+       Complex ();                              // Complex c;
+       Complex (T re, T im = 0); // Definition of a complex variable;
+       Complex (const Complex&amp; c);              // Usage: Complex c(a);   // equate two complex variables
+       Complex&amp; operator= (const Complex&amp; c); // c = a;   //  equate two complex variables, same as previous
+      ~Complex () {}                        // destructor
+       T   Re () const;        // T real_part = a.Re();
+       T   Im () const;        // T imag_part = a.Im();
+       T   abs () const;       // T m = a.abs(); // modulus
+       friend Complex operator+ (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator- (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator* (const Complex&amp;  a, const Complex&amp; b);
+       friend Complex operator/ (const Complex&amp;  a, const Complex&amp; b);
+    };
+</pre></div>
+</div>
+<p>What it says is that <code class="docutils literal notranslate"><span class="pre">Complex</span></code> is a parameterized type with <span class="math notranslate nohighlight">\(T\)</span> as a parameter and <span class="math notranslate nohighlight">\(T\)</span> has to be a type such as double
+or float.
+The class complex is now a class template
+and we would define variables in a code as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    Complex&lt;double&gt; a(10.0,5.1);
+    Complex&lt;int&gt; b(1,0);
+</pre></div>
+</div>
+<p>Member functions of our class are defined by preceding the name of the function with the <code class="docutils literal notranslate"><span class="pre">template</span></code> keyword.
+Consider the function we defined as <code class="docutils literal notranslate"><span class="pre">Complex::</span> <span class="pre">Complex</span> <span class="pre">(double</span> <span class="pre">re_a,</span> <span class="pre">double</span> <span class="pre">im_a)</span></code>.
+We would rewrite this function as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    template&lt;class T&gt;
+    Complex&lt;T&gt;:: Complex (T re_a, T im_a)
+    { re = re_a; im = im_a; }
+</pre></div>
+</div>
+<p>The member functions  are otherwise defined following ordinary member function definitions.</p>
+<p>Here follows a very simple first class in the file squared.h</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    // Not all declarations here
+    // Class to compute the square of a number
+    template&lt;class T&gt;
+    class Squared{
+      public:
+        // Default constructor, not used here
+        Squared(){}
+    
+        // Overload the function operator()
+        T operator()(T x){return x*x;}
+    
+    };
+</pre></div>
+</div>
+<p>and we would use it as</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;iostream&gt;
+    #include &quot;squared.h&quot;
+    using namespace std;
+    
+    int main(){
+      Squared&lt;double&gt; s;
+      cout &lt;&lt; s(3) &lt;&lt; endl;
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-matrix-vector-class-first-its-usage">
+<h2>A matrix-vector class, first its usage<a class="headerlink" href="#a-matrix-vector-class-first-its-usage" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &lt;cmath&gt;
+    #include &lt;iostream&gt;
+    #include &lt;fstream&gt;
+    #include &lt;iomanip&gt;
+    #include &quot;/Users/hjensen/Teaching/fys4411/programs/cgm/vectorclass.h&quot;
+    
+    using namespace  std;
+    
+      Vector ConjugateGradient(Matrix A, Vector b, Vector x0){
+      int dim = x0.Dimension();
+      const double tolerance = 1.0e-14;
+      Vector x(dim),r(dim),v(dim),z(dim);
+      double c,t,d;
+    
+      x = x0;
+      r = b - A*x;
+      v = r;
+      c = dot(r,r);
+      for(int i=0;i&lt;dim;i++){
+        if(sqrt(dot(v,v))&lt;tolerance){
+          cerr &lt;&lt; &quot;An error has occurred in ConjugateGradient: execution of function terminated&quot; &lt;&lt; endl;
+          break;
+        }
+        z = A*v;
+        t = c/dot(v,z);
+        x = x + t*v;
+        r = r - t*z;
+        d = dot(r,r);
+        if(sqrt(d) &lt; tolerance)
+          break;
+        v = r + (d/c)*v;
+        c = d;
+      }
+      return x;
+    }
+    
+    
+    Vector SteepestDescent(Matrix A, Vector b, Vector x0){
+      int IterMax, i;
+      int dim = x0.Dimension();
+      const double tolerance = 1.0e-14;
+      Vector x(dim),f(dim),z(dim);
+      double c,alpha,d;
+      IterMax = 30;
+      x = x0;
+      f = A*x-b;
+      i = 0;
+      while (i &lt;= IterMax || sqrt(dot(f,f)) &lt; tolerance ){
+        if(sqrt(dot(f,f))&lt;tolerance){
+           cerr &lt;&lt; &quot;An error has occurred: execution of function terminated&quot; &lt;&lt; endl;
+           break;
+        }
+        z = A*f;
+        c = dot(f,f);
+        alpha = c/dot(f,z);
+        x = x - alpha*f;
+        f =  A*x-b;
+        if(sqrt(dot(f,f)) &lt; tolerance) break;
+        i++;
+      }
+      return x;
+    }
+    
+    //   Main function begins here
+    int main(int  argc, char * argv[]){
+      int dim = 2;
+      Vector x(dim),xsd(dim), b(dim),x0(dim);
+      Matrix A(dim,dim);
+    
+      // Set our initial guess
+      x0(0) = x0(1) = 0;
+      // Set the matrix
+      A(0,0) =  3;    A(1,0) =  2;   A(0,1) =  2;   A(1,1) =  6;
+    
+      cout &lt;&lt; &quot;The Matrix A that we are using: &quot; &lt;&lt; endl;
+      A.Print();
+      cout &lt;&lt; endl;
+    
+      Vector y(dim);
+      y(0) = 2.;
+      y(1) = -2.;
+    
+      cout &lt;&lt; &quot;The exact solution is: &quot; &lt;&lt; endl;
+      y.Print();
+      cout &lt;&lt; endl;
+      b = A*y;
+    
+      cout &lt;&lt; &quot;The right hand side, b, of the expression Ax=b: &quot; &lt;&lt; endl;
+      b.Print();
+      cout &lt;&lt; endl;
+    
+      x = ConjugateGradient(A,b,x0);
+    
+      xsd = SteepestDescent(A,b,x0);
+    
+      cout &lt;&lt; &quot;The approximate solution using Conjugate Gradient is: &quot; &lt;&lt; endl;
+      x.Print();
+      cout &lt;&lt; endl;
+    
+      cout &lt;&lt; &quot;The approximate solution using Steepest Descent is: &quot; &lt;&lt; endl;
+      xsd.Print();
+      cout &lt;&lt; endl;
+    }
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-matrix-vector-class-the-class-definitions-themselves">
+<h2>A matrix-vector class, the class definitions themselves<a class="headerlink" href="#a-matrix-vector-class-the-class-definitions-themselves" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #ifndef _vectorclass
+    #define _vectorclass
+    
+    
+    #include &lt;cmath&gt;
+    #include &lt;iostream&gt;
+    using namespace  std;
+    
+    
+    
+    class Point;
+    class Vector;
+    class Matrix;
+    
+    
+    /********************************/
+    /*        Point Class        */
+    /********************************/
+    
+    class Point{
+     private:
+      int   dimension;
+      double *data;
+      
+     public:
+      Point(int dim);
+      Point(const Point&amp; v);
+      ~Point();
+      
+      int    Dimension() const;
+    
+      //************************
+      // User Defined Operators
+      //************************
+      int operator==(const Point&amp; v) const;
+      int operator!=(const Point&amp; v) const;
+      Point &amp; operator=(const Point&amp; v);
+    
+      double  operator()(const int i) const;
+      double&amp; operator()(const int i);
+    
+      void Print() const;
+    };
+    
+    
+    
+    /********************************/
+    /*        Vector Class        */
+    /********************************/
+    
+    class Vector{
+     private:
+      int   dimension;
+      double *data;
+      
+     public:
+      Vector();
+      Vector(int dim);
+      Vector(const Vector&amp; v);
+      Vector(int col, const Matrix &amp;A);
+      ~Vector();
+      
+      void Initialize(int dim);
+      int    Dimension() const;
+      double Length();     /* Euclidean Norm of the Vector */
+      void   Normalize();
+    
+      double Norm_l1();
+      double Norm_l2();
+      double Norm_linf();
+      double MaxMod();
+      double ElementofMaxMod();
+      int MaxModindex();
+      
+      //************************
+      // User Defined Operators
+      //************************
+      int operator==(const Vector&amp; v) const;
+      int operator!=(const Vector&amp; v) const;
+      Vector &amp; operator=(const Vector&amp; v);
+    
+      double  operator()(const int i) const;
+      double&amp; operator()(const int i);
+    
+      void Print() const;
+      void Initialize(double a);
+      void Initialize(double *v);
+    };
+    
+    
+    
+    /********************************/
+    /*        Matrix Class        */
+    /********************************/
+    
+    class Matrix {
+    private:
+      int rows, columns;
+      double **data;
+      
+    public:
+    
+      Matrix(int dim);
+      Matrix(int rows1, int columns1);
+      Matrix(const Matrix&amp; m);
+      Matrix(int num_vectors, const Vector * q);
+      Matrix(int rows1, int columns1, double **rowptrs);
+      ~Matrix();
+    
+      int Rows() const;
+      int Columns() const;
+      double ** GetPointer();
+      void GetColumn(int col, Vector &amp;x);
+      void GetColumn(int col, Vector &amp;x, int rowoffset);
+      void PutColumn(int col, const Vector &amp;x);
+      double Norm_l1();
+      double Norm_linf();
+    
+      //************************
+      // User Defined Operators
+      //************************
+      Matrix&amp; operator=(const Matrix&amp; m);
+      double operator()(const int i, const int j) const;
+      double&amp; operator()(const int i, const int j);
+    
+      double MaxModInRow(int row);
+      double MaxModInRow(int row, int starting_column);
+      int MaxModInRowindex(int row);
+      int MaxModInRowindex(int row, int starting_column);
+     
+      double MaxModInColumn(int column);
+      double MaxModInColumn(int column, int starting_row);
+      int MaxModInColumnindex(int column);
+      int MaxModInColumnindex(int column, int starting_row);
+    
+      void RowSwap(int row1, int row2);
+    
+      void Print() const;
+    
+    };
+    
+    
+    /********************************/
+    /*   Operator Declarations      */
+    /********************************/
+    
+    // Unitary operator -
+    Vector operator-(const Vector&amp; v);
+    
+    // Binary operator +,-
+    Vector operator+(const Vector&amp; v1, const Vector&amp; v2);
+    Vector operator-(const Vector&amp; v1, const Vector&amp; v2);
+    
+    // Vector Scaling (multiplication by a scaler : defined commutatively)
+    Vector operator*(const double s, const Vector&amp; v);
+    Vector operator*(const Vector&amp; v, const double s);
+    
+    // Vector Scaling (division by a scaler)
+    Vector operator/(const Vector&amp; v, const double s);
+    
+    Vector operator*(const Matrix&amp; A, const Vector&amp; x); 
+    
+    
+    /********************************/
+    /*   Function Declarations      */
+    /********************************/
+    
+    int min_dimension(const Vector&amp; u, const Vector&amp; v);
+    double dot(const Vector&amp; u, const Vector&amp; v); 
+    double dot(int N, double *a, double *b);
+    double dot(int N, const Vector &amp;u, const Vector &amp;v); 
+    void Swap(double &amp;a, double &amp;b);
+    double Sign(double x);
+    
+    /* Misc. useful functions to have */
+    double log2(double x);
+    double GammaF(double x);
+    int Factorial(int n);
+    double ** CreateMatrix(int m, int n);
+    void DestroyMatrix(double ** mat, int m, int n); 
+    
+    int ** ICreateMatrix(int m, int n);
+    void IDestroyMatrix(int ** mat, int m, int n);
+    
+    #endif
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-matrix-vector-class-and-finally-all-its-functions">
+<h2>A matrix-vector class, and finally all its functions<a class="headerlink" href="#a-matrix-vector-class-and-finally-all-its-functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    #include &quot;vectorclass.h&quot;
+    
+    Point::Point(int dim){
+      dimension = dim;
+      data = new double[dimension];
+    
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = 0.0;
+    }
+    
+    
+    Point::Point(const Point &amp;v){
+      dimension = v.Dimension();
+      data = new double[dimension];
+    
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = v.data[i];
+    }
+    
+    
+    Point::~Point(){
+      dimension = 0;
+      delete[] data;
+      data = NULL;
+    }
+    
+    
+    int Point::Dimension() const{
+      return(dimension);
+    }
+    
+    
+    double Point::operator()(const int i) const{
+      if(i&gt;=0 &amp;&amp; i&lt;dimension)
+        return data[i];
+    
+      cerr &lt;&lt; &quot;Point::Invalid index &quot; &lt;&lt; i &lt;&lt; &quot; for Point of dimension &quot; &lt;&lt; dimension &lt;&lt; endl;
+      return(0);
+    }
+    
+    
+    
+    double&amp; Point::operator()(const int i){
+      if(i&gt;=0 &amp;&amp; i&lt;dimension)
+        return data[i];
+    
+      cerr &lt;&lt; &quot;Point::Invalid index &quot; &lt;&lt; i &lt;&lt; &quot; for Point of dimension &quot; &lt;&lt; dimension &lt;&lt; endl;
+      return(data[0]);
+    }
+    
+    
+    Point&amp; Point::operator=(const Point &amp;v) {
+      dimension = v.Dimension();
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = v.data[i];
+      return *this;
+    };
+    
+    void Point::Print() const{
+      cout &lt;&lt; endl;
+      cout &lt;&lt; &quot;[ &quot;;
+      if(dimension&gt;0)
+        cout &lt;&lt; data[0];
+      for(int i=1;i&lt;dimension;i++)
+        cout &lt;&lt; &quot;; &quot; &lt;&lt; data[i];
+      cout &lt;&lt; &quot; ]&quot; &lt;&lt; endl;
+    }
+    
+    Vector::Vector(){
+      dimension = 0;
+      data = NULL;
+    }
+    
+    
+    Vector::Vector(int dim){
+      dimension = dim;
+      data = new double[dimension];
+    
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = 0.0;
+    }
+    
+    
+    Vector::Vector(const Vector &amp;v){
+      dimension = v.Dimension();
+      data = new double[dimension];
+    
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = v.data[i];
+    }
+    
+    
+    Vector::Vector(int col, const Matrix &amp;A){
+      dimension = A.Rows();
+    
+      data = new double[dimension];
+      
+      for(int i=0;i&lt;A.Rows();i++)
+        data[i] = A(i,col);
+    
+    }
+    
+    
+    Vector::~Vector(){
+      dimension = 0;
+      delete[] data;
+      data = NULL;
+    }
+    
+    
+    void Vector::Initialize(int dim){
+      if(dimension!=0)
+        delete[] data;
+    
+      dimension = dim;
+      data = new double[dimension];
+      
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = 0.0;
+    }
+    
+    
+    int Vector::Dimension() const{
+      return(dimension);
+    }
+    
+    
+    double Vector::operator()(const int i) const{
+      if(i&gt;=0 &amp;&amp; i&lt;dimension)
+        return data[i];
+    
+      cerr &lt;&lt; &quot;Vector::Invalid index &quot; &lt;&lt; i &lt;&lt; &quot; for Vector of dimension &quot; &lt;&lt; dimension &lt;&lt; endl;
+      return(0);
+    }
+    
+    
+    
+    double&amp; Vector::operator()(const int i){
+      if(i&gt;=0 &amp;&amp; i&lt;dimension)
+        return data[i];
+    
+      cerr &lt;&lt; &quot;Vector::Invalid index &quot; &lt;&lt; i &lt;&lt; &quot; for Vector of dimension &quot; &lt;&lt; dimension &lt;&lt; endl;
+      return(data[0]);
+    }
+    
+    
+    Vector&amp; Vector::operator=(const Vector &amp;v) {
+      dimension = v.Dimension();
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = v.data[i];
+      return *this;
+    };
+    
+    void Vector::Print() const{
+      cout &lt;&lt; endl;
+      cout &lt;&lt; &quot;[ &quot;;
+      if(dimension&gt;0)
+        cout &lt;&lt; data[0];
+      for(int i=1;i&lt;dimension;i++)
+        cout &lt;&lt; &quot;; &quot; &lt;&lt; data[i];
+      cout &lt;&lt; &quot; ]&quot; &lt;&lt; endl;
+    }
+    
+    
+    double Vector::Norm_l1(){
+      double sum = 0.0;
+      for(int i=0;i&lt;dimension;i++)
+        sum += fabs(data[i]);
+      return(sum);
+    }
+    
+    
+    double Vector::Norm_l2(){
+      double sum = 0.0;
+      for(int i=0;i&lt;dimension;i++)
+        sum += data[i]*data[i];
+      return(sqrt(sum));
+    }
+    
+    void Vector::Normalize(){
+      double tmp = 1.0/Norm_l2();
+      for(int i=0;i&lt;dimension;i++)
+        data[i] = data[i]*tmp;
+    }
+    
+    
+    double Vector::Norm_linf(){
+      double maxval = 0.0,tmp;
+      
+      for(int i=0;i&lt;dimension;i++){
+        tmp = fabs(data[i]);
+        maxval = (maxval &gt; tmp)?maxval:tmp;
+      }
+      return(maxval);
+    }
+    
+    double Vector::MaxMod(){
+      double maxm = -1.0e+10;
+    
+      for(int i=0; i&lt;dimension; i++)
+        maxm = (maxm &gt; fabs(data[i]))?maxm:fabs(data[i]);
+      
+      return maxm;
+    }
+    
+    double Vector::ElementofMaxMod(){
+      return(data[MaxModindex()]);
+    }
+    
+    
+    int Vector::MaxModindex(){
+      double maxm = -1.0e+10;
+      int maxmindex = 0;
+    
+      for(int i=0; i&lt;dimension; i++){
+        if(maxm&lt;fabs(data[i])){
+          maxm = fabs(data[i]);
+          maxmindex = i;
+        }
+      }
+      
+      return maxmindex;
+    }
+    
+    void Vector::Initialize(double a){
+      for(int i=0; i&lt;dimension; i++)
+        data[i] = a;
+    }
+    
+    void Vector::Initialize(double *v){
+      for(int i=0; i&lt;dimension; i++)
+        data[i] = v[i];
+    }
+    
+    Matrix::Matrix(int dim){
+      rows = dim;
+      columns = dim;
+      data = new double*[rows];
+      for(int i=0;i&lt;rows;i++){
+        data[i] = new double[columns];
+        for(int j=0;j&lt;columns;j++)
+          data[i][j] = 0.0;
+      }
+    }
+    
+      
+    Matrix::Matrix(int rows1, int columns1){
+      rows = rows1;
+      columns = columns1;
+    
+      data = new double*[rows];
+      for(int i=0;i&lt;rows;i++){
+        data[i] = new double[columns];
+        for(int j=0;j&lt;columns;j++)
+          data[i][j] = 0.0;
+      }
+    }
+    
+    Matrix::Matrix(const Matrix&amp; m){
+      rows = m.rows;
+      columns = m.columns;
+    
+      data = new double*[rows];
+    
+      for(int i=0;i&lt;rows;i++){
+        data[i] = new double[columns];
+        for(int j=0; j&lt;columns; j++)
+          data[i][j] = m.data[i][j];
+      }
+    }
+    
+    Matrix::Matrix(int num_Vectors, const Vector * q){
+      rows = q[0].Dimension();
+      columns = num_Vectors;
+    
+      data = new double*[rows];
+    
+      for(int i=0;i&lt;rows;i++){
+        data[i] = new double[columns];
+        for(int j=0; j&lt;columns; j++)
+          data[i][j] = q[j](i);
+      }
+    }
+    
+    Matrix::Matrix(int rows1, int columns1, double **rowptrs){
+      rows = rows1;
+      columns = columns1;
+    
+      data = new double*[rows];
+    
+      for(int i=0;i&lt;rows;i++)
+        data[i] = rowptrs[i];
+    }
+    
+    
+    Matrix::~Matrix(){
+      for(int i=0;i&lt;rows;i++)
+        delete[] data[i];
+    
+      rows = 0;
+      columns = 0;
+      delete[] data;
+    }
+    
+    int Matrix::Rows() const{
+      return(rows);
+    }  
+    
+    int Matrix::Columns() const{
+      return(columns);
+    }  
+    
+    
+    double **Matrix::GetPointer(){
+      return(data);
+    }
+    
+    void Matrix::GetColumn(int col, Vector &amp;x){
+      x.Initialize(0.0);
+      for(int i=0;i&lt;rows;i++)
+        x(i) = data[i][col];
+    }
+    
+    void Matrix::GetColumn(int col, Vector &amp;x, int rowoffset){
+      x.Initialize(0.0);
+      for(int i=0;i&lt;rows-rowoffset;i++)
+        x(i) = data[i+rowoffset][col];
+    }
+    
+    void Matrix::PutColumn(int col, const Vector &amp;x){
+      for(int i=0;i&lt;rows;i++)
+        data[i][col] = x(i);
+    }
+    
+    
+    double Matrix::Norm_linf(){
+      double maxval = 0.0,sum;
+      
+      for(int i=0;i&lt;rows;i++){
+        sum = 0.0;
+        for(int j=0;j&lt;columns;j++)
+          sum += fabs(data[i][j]);
+        maxval = (maxval &gt; sum)?maxval:sum;
+      }
+      return(maxval);
+    }
+    
+    
+    double Matrix::Norm_l1(){
+      double maxval = 0.0,sum;
+    
+      for(int j=0;j&lt;columns;j++){
+        sum = 0.0;
+        for(int i=0;i&lt;rows;i++)
+          sum += fabs(data[i][j]);
+        maxval = (maxval &gt; sum)?maxval:sum;
+      }
+      return(maxval);
+    }
+    
+    
+    
+    Matrix&amp; Matrix::operator=(const Matrix &amp;m){
+      if( (rows == m.rows) &amp;&amp; (columns == m.columns)){
+        for(int i=0; i&lt;rows; i++)
+          for(int j=0;j&lt;columns;j++){
+    	data[i][j] = m.data[i][j];
+          }
+      }
+      else
+        cerr &lt;&lt; &quot;Matrix Error: Cannot equate matrices of different sizes\n&quot;;
+      return *this;
+    }
+    
+      
+    double Matrix::operator()(const int i, const int j) const {
+      if( (i&gt;=0) &amp;&amp; (j&gt;=0) &amp;&amp; (i&lt;rows) &amp;&amp; (j&lt;columns))
+        return(data[i][j]);  
+      else
+        cerr &lt;&lt; &quot;Matrix Error: Invalid Matrix indices (&quot; &lt;&lt; i &lt;&lt; &quot;,&quot; &lt;&lt; j &lt;&lt; 
+          &quot;), for Matrix of size &quot; &lt;&lt; rows &lt;&lt; &quot; X &quot; &lt;&lt; columns &lt;&lt; endl;
+      return((double)0);
+    }
+      
+    
+    double&amp; Matrix::operator()(const int i, const int j) {
+      if( (i&gt;=0) &amp;&amp; (j&gt;=0) &amp;&amp; (i&lt;rows) &amp;&amp; (j&lt;columns))
+        return(data[i][j]);  
+      else
+        cerr &lt;&lt; &quot;Matrix Error: Invalid Matrix indices (&quot; &lt;&lt; i &lt;&lt; &quot;,&quot; &lt;&lt; j &lt;&lt; 
+          &quot;), for Matrix of size &quot; &lt;&lt; rows &lt;&lt; &quot; X &quot; &lt;&lt; columns &lt;&lt; endl;;
+      return(data[0][0]);
+    }
+    
+    
+    void Matrix::Print() const{
+      cout &lt;&lt; endl;
+    
+    
+      cout &lt;&lt; &quot;[ &quot;;
+      for(int i=0;i&lt;rows;i++){
+        cout &lt;&lt; data[i][0];
+        for(int j=1;j&lt;columns;j++)
+          cout &lt;&lt; &quot; &quot; &lt;&lt; data[i][j];
+        if(i!=(rows-1))
+          cout &lt;&lt; &quot;;\n&quot;;
+      }
+      cout &lt;&lt; &quot; ]&quot; &lt;&lt; endl;
+    }
+    
+    
+    double Matrix::MaxModInRow(int row){
+      double maxv = -1.0e+10;
+      for(int i=0;i&lt;columns;i++)
+        maxv = (fabs(data[row][i])&gt;maxv)?fabs(data[row][i]):maxv;
+    
+      return maxv;
+    }
+    
+    double Matrix::MaxModInRow(int row, int starting_column){
+      double maxv = -1.0e+10;
+      for(int i=starting_column;i&lt;columns;i++)
+        maxv = (fabs(data[row][i])&gt;maxv)?fabs(data[row][i]):maxv;
+    
+      return maxv;
+    }
+    
+    int Matrix::MaxModInRowindex(int row){
+      int maxvindex = 0;
+      double maxv = -1.0e+10;
+      
+      for(int i=0;i&lt;columns;i++){
+        if(maxv &lt; fabs(data[row][i])){
+          maxv = fabs(data[row][i]);
+          maxvindex = i;
+        }
+      }
+    
+      return maxvindex;
+    }
+    
+    int Matrix::MaxModInRowindex(int row, int starting_column){
+      int maxvindex = 0;
+      double maxv = -1.0e+10;
+    
+      for(int i=starting_column;i&lt;columns;i++){
+        if(maxv &lt; fabs(data[row][i])){
+          maxv = fabs(data[row][i]);
+          maxvindex = i;
+        }
+      }
+      
+      return maxvindex;
+    }
+    
+    double Matrix::MaxModInColumn(int column){
+      double maxv = -1.0e+10;
+      for(int i=0;i&lt;rows;i++)
+        maxv = (fabs(data[i][column])&gt;maxv)?fabs(data[i][column]):maxv;
+    
+      return maxv;
+    }
+    
+    double Matrix::MaxModInColumn(int column, int starting_row){
+      double maxv = -1.0e+10;
+      for(int i=starting_row;i&lt;rows;i++)
+        maxv = (fabs(data[i][column])&gt;maxv)?fabs(data[i][column]):maxv;
+    
+      return maxv;
+    }
+    
+    int Matrix::MaxModInColumnindex(int column){
+      int maxvindex = 0;
+      double maxv = -1.0e+10;
+      
+      for(int i=0;i&lt;rows;i++){
+        if(maxv &lt; fabs(data[i][column])){
+          maxv = fabs(data[i][column]);
+          maxvindex = i;
+        }
+      }
+    
+      return maxvindex;
+    }
+    
+    int Matrix::MaxModInColumnindex(int column, int starting_column){
+      int maxvindex = 0;
+      double maxv = -1.0e+10;
+    
+      for(int i=starting_column;i&lt;rows;i++){
+        if(maxv &lt; fabs(data[i][column])){
+          maxv = fabs(data[i][column]);
+          maxvindex = i;
+        }
+      }
+      
+      return maxvindex;
+    }
+    
+    void Matrix::RowSwap(int row1, int row2){
+      double * tmp = data[row1];
+      data[row1] = data[row2];
+      data[row2] = tmp;
+    }
+    
+    
+    
+    /****************************************************************/
+    /*                 Operator Definitions                         */
+    /****************************************************************/
+    
+    
+    Vector operator-(const Vector&amp; v){
+      Vector x(v.Dimension());
+      for(int i=0;i&lt;v.Dimension();i++)
+        x(i) = -v(i);
+      return x;
+    }
+    
+    
+    Vector operator+(const Vector&amp; v1, const Vector&amp; v2){
+      int min_dim = min_dimension(v1,v2);
+      Vector x(min_dim);
+      for(int i=0;i&lt;min_dim;i++)
+        x(i) = v1(i) + v2(i);
+      return x;
+    }
+    
+    
+    Vector operator-(const Vector&amp; v1, const Vector&amp; v2){
+      int min_dim = min_dimension(v1,v2);
+      Vector x(min_dim);
+      for(int i=0;i&lt;min_dim;i++)
+        x(i) = v1(i) - v2(i);
+      return x;
+    }
+    
+    
+    Vector operator/(const Vector&amp; v, const double s) {
+      Vector x(v.Dimension());
+      for(int i=0;i&lt;v.Dimension();i++)
+        x(i) = v(i)/s;
+      return x;
+    }
+    
+    
+    
+    Vector operator*(const double s, const Vector &amp;v) {
+      Vector x(v.Dimension());
+      for(int i=0;i&lt;v.Dimension();i++)
+        x(i) = s*v(i);
+      return x;
+    }
+    
+    
+    Vector operator*(const Vector&amp; v, const double s) {
+      Vector x(v.Dimension());
+      for(int i=0;i&lt;v.Dimension();i++)
+        x(i) = s*v(i);
+      return x;
+    }
+    
+    Vector operator*(const Matrix&amp; A, const Vector&amp; x){
+      int rows = A.Rows(), columns = A.Columns();
+      int dim = x.Dimension();
+      Vector b(dim);
+      
+      if(columns != dim){
+        cerr &lt;&lt; &quot;Invalid dimensions given in matrix-vector multiply&quot; &lt;&lt; endl;
+        return(b);
+      }
+      
+      for(int i=0;i&lt;rows;i++){
+        b(i) = 0.0;
+        for(int j=0;j&lt;columns;j++){
+          b(i) += A(i,j)*x(j);
+        }
+      }
+      
+      return b;
+    }
+    
+    
+    /****************************************************************/
+    /*                 Function Definitions                         */
+    /****************************************************************/
+    
+    int min_dimension(const Vector&amp; v1, const Vector&amp; v2){
+      int min_dim = (v1.Dimension()&lt;v2.Dimension())?v1.Dimension():v2.Dimension();
+      return(min_dim);
+    }
+    
+    
+    double dot(const Vector&amp; u, const Vector&amp; v){
+      double sum = 0.0;
+      int min_dim = min_dimension(u,v);
+    
+      for(int i=0;i&lt;min_dim;i++)
+        sum += u(i)*v(i);
+      
+      return sum; 
+    }
+    
+    
+    double dot(int N, const Vector&amp; u, const Vector&amp; v){
+      double sum = 0.0;
+    
+      for(int i=0;i&lt;N;i++)
+        sum += u(i)*v(i);
+      
+      return sum;
+    }
+    
+    
+    double dot(int N, double *a, double *b){
+      double sum = 0.0;
+      
+      for(int i=0;i&lt;N;i++)
+        sum += a[i]*b[i];
+    
+      return sum;
+    }
+    
+    
+    /*******************************/
+    /*   Log base 2 of a number    */
+    /*******************************/
+    
+    double log2(double x){
+      return(log(x)/log(2.0));
+    }
+    
+    void Swap(double &amp;a, double &amp;b){
+      double tmp = a;
+      a = b;
+      b = tmp;
+    }
+    
+    double Sign(double x){
+      double xs;
+    
+      xs = (x&gt;=0.0)?1.0:-1.0;
+    
+      return xs;
+    }
+    
+    //GammaF function valid for x integer, or x (integer+0.5)
+    double GammaF(double x){
+      double gamma = 1.0;
+      
+      if (x == -0.5) 
+        gamma = -2.0*sqrt(M_PI);
+      else if (!x) return gamma;
+      else if ((x-(int)x) == 0.5){ 
+        int n = (int) x;
+        double tmp = x;
+        
+        gamma = sqrt(M_PI);
+        while(n--){
+          tmp   -= 1.0;
+          gamma *= tmp;
+        }
+      }
+      else if ((x-(int)x) == 0.0){
+        int n = (int) x;
+        double tmp = x;
+        
+        while(--n){
+          tmp   -= 1.0;
+          gamma *= tmp;
+        }
+      }  
+      
+      return gamma;
+    }
+    
+    
+    int Factorial(int n){
+      int value=1;
+      for(int i=n;i&gt;0;i--)
+        value = value*i;
+    
+      return value;
+    }
+    
+    double ** CreateMatrix(int m, int n){
+      double ** mat;
+      mat = new double*[m];
+      for(int i=0;i&lt;m;i++){
+        mat[i] = new double[n];
+        for(int j=0;j&lt;m;j++)
+          mat[i][j] = 0.0;
+      }
+      return mat;
+    }
+    
+    int ** ICreateMatrix(int m, int n){
+      int ** mat;
+      mat = new int*[m];
+      for(int i=0;i&lt;m;i++){
+        mat[i] = new int[n];
+        for(int j=0;j&lt;m;j++)
+          mat[i][j] = 0;
+      }
+      return mat;
+    }
+    
+    void DestroyMatrix(double ** mat, int m, int n){
+      for(int i=0;i&lt;m;i++)
+        delete[] mat[i];
+      delete[] mat;
+    }
+    
+    void IDestroyMatrix(int ** mat, int m, int n){
+      for(int i=0;i&lt;m;i++)
+        delete[] mat[i];
+      delete[] mat;
+    }
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Cpp"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Tools/Latex.html" title="previous page">LaTeX</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karl Henrik Fredly<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
