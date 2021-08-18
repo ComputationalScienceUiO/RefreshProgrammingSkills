@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setup &#8212; Programming Seminars</title>
+    <title>Linalg and numpy - Exercises &#8212; Programming Seminars</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,10 +50,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="C++ Intro Lecture Notes" href="LectureNotes.html" />
-    <link rel="prev" title="LaTeX" href="../Tools/Latex.html" />
+    <link rel="next" title="Git" href="../Tools/Git.html" />
+    <link rel="prev" title="Linalg and numpy" href="linalg.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -168,39 +170,39 @@
   Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/SetupAndLibraries.html">
+  <a class="reference internal" href="SetupAndLibraries.html">
    Setup And Libraries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit-learn.html">
+  <a class="reference internal" href="scikit-learn.html">
    scikit-learn - Linear regression
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit_learn_exercises.html">
+  <a class="reference internal" href="scikit_learn_exercises.html">
    scikit-learn - Exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandas.html">
+  <a class="reference internal" href="pandas.html">
    pandas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandasDF.html">
+  <a class="reference internal" href="pandasDF.html">
    pandas - DataFrame Intro
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg.html">
+  <a class="reference internal" href="linalg.html">
    Linalg and numpy
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg_numpy_exercises.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Linalg and numpy - Exercises
   </a>
  </li>
@@ -227,14 +229,14 @@
   C++
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/Setup.html">
    Setup
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="LectureNotes.html">
+  <a class="reference internal" href="../Cpp/LectureNotes.html">
    C++ Intro Lecture Notes
   </a>
  </li>
@@ -275,7 +277,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Cpp/Setup.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Python/linalg_numpy_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -300,6 +302,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-some-basic-numpy-operations">
+   Task 1) Some basic numpy operations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-a-bit-of-linear-algebra">
+   Task 2) A bit of linear algebra
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -308,8 +328,71 @@
         
               <div>
                 
-  <div class="section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="linalg-and-numpy-exercises">
+<h1>Linalg and numpy - Exercises<a class="headerlink" href="#linalg-and-numpy-exercises" title="Permalink to this headline">¶</a></h1>
+<p>In these exercises you will practice linear algebra in addition to the numpy library</p>
+<div class="section" id="task-1-some-basic-numpy-operations">
+<h2>Task 1) Some basic numpy operations<a class="headerlink" href="#task-1-some-basic-numpy-operations" title="Permalink to this headline">¶</a></h2>
+<p>a) Check your numpy version and make sure the newest version is installed. You can use the following command:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.20.3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The newest version per 18/8/21 should be version 1.21.0</p>
+<p>b) Create a matrix fillesd with 1’s at each element. The matrix should be of shape 10x10, do not use numpy</p>
+<p>c) Now do the same thing as in b), but use numpy this time. <strong>Bonus exercise:</strong> Measure the time difference between the two implementations in ecercise b) and c)</p>
+<p>d1) First create an array of elements in an aranged order from 0 to 9, using np.arange.</p>
+<p>d2) Then use np.reshape to resahpe the array into the following matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{pmatrix}
+1 &amp; 4 &amp; 7  \\
+2 &amp; 5 &amp; 8  \\
+3  &amp; 6  &amp; 9
+\end{pmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>d3) Next task is to create some conditional statement, making all elements that are larger than 5 to be set as 1, and all elements that are less than 5 is set to 0, elements equal to 5 is unchanged.</p>
+<p>e) Create three random 1d arrays x, y and z of length 3. Use the numpy function vstack and hstack to stack the arrays both vertically and horizontally as a matrix.</p>
+<p>f) Create a random array of size 10. Print the mean, standard deviation and the variance using numpy</p>
+</div>
+<div class="section" id="task-2-a-bit-of-linear-algebra">
+<h2>Task 2) A bit of linear algebra<a class="headerlink" href="#task-2-a-bit-of-linear-algebra" title="Permalink to this headline">¶</a></h2>
+<p>a) Create a random matrix of size 3x3, containing only integers. Find the eigenvalues and eigenvectors using numpy.</p>
+<p>b) Is this matrix invertible? Compute the determinant</p>
+<p>c) If the matrix is invertible, find the invertible matrix</p>
+<p>d) Check if the following matrix is symmetric, real orthogonal, hermitian and unitary. Also find the norm of the matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+\begin{pmatrix}
+1-i &amp; 1+i  \\
+1+i &amp; 1-i
+\end{pmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>e) Find the LU decomposition of matrix A:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation*}
+A=\begin{pmatrix}
+1 &amp; 2 &amp; 4  \\
+3 &amp; 8 &amp; 14  \\
+2  &amp; 6  &amp; 13
+\end{pmatrix}
+\end{equation*}
+\end{split}\]</div>
+<p>What are the matrices L and U? You can try using numpy or scipy.linalg</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -325,7 +408,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks/Cpp"
+            path: "./notebooks/Python"
         },
         predefinedOutput: true
     }
@@ -337,8 +420,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Tools/Latex.html" title="previous page">LaTeX</a>
-    <a class='right-next' id="next-link" href="LectureNotes.html" title="next page">C++ Intro Lecture Notes</a>
+    <a class='left-prev' id="prev-link" href="linalg.html" title="previous page">Linalg and numpy</a>
+    <a class='right-next' id="next-link" href="../Tools/Git.html" title="next page">Git</a>
 
         </div>
         

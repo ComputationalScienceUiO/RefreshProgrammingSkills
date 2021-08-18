@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Setup &#8212; Programming Seminars</title>
+    <title>scikit-learn - Exercises &#8212; Programming Seminars</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -50,10 +50,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="C++ Intro Lecture Notes" href="LectureNotes.html" />
-    <link rel="prev" title="LaTeX" href="../Tools/Latex.html" />
+    <link rel="next" title="pandas" href="pandas.html" />
+    <link rel="prev" title="scikit-learn - Linear regression" href="scikit-learn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -168,39 +170,39 @@
   Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/SetupAndLibraries.html">
+  <a class="reference internal" href="SetupAndLibraries.html">
    Setup And Libraries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit-learn.html">
+  <a class="reference internal" href="scikit-learn.html">
    scikit-learn - Linear regression
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit_learn_exercises.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    scikit-learn - Exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandas.html">
+  <a class="reference internal" href="pandas.html">
    pandas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandasDF.html">
+  <a class="reference internal" href="pandasDF.html">
    pandas - DataFrame Intro
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg.html">
+  <a class="reference internal" href="linalg.html">
    Linalg and numpy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg_numpy_exercises.html">
+  <a class="reference internal" href="linalg_numpy_exercises.html">
    Linalg and numpy - Exercises
   </a>
  </li>
@@ -227,14 +229,14 @@
   C++
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/Setup.html">
    Setup
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="LectureNotes.html">
+  <a class="reference internal" href="../Cpp/LectureNotes.html">
    C++ Intro Lecture Notes
   </a>
  </li>
@@ -275,7 +277,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Cpp/Setup.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Python/scikit_learn_exercises.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -300,6 +302,49 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-1-load-create-the-dataset">
+   Task 1) Load/Create the dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-2-create-a-linear-regression-object-and-predict">
+   Task 2) Create a linear regression object and predict
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-3-find-the-following-statistical-values">
+   Task 3) Find the following statistical values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-4-plot-the-results">
+   Task 4) Plot the results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-5-switching-up-the-target-function">
+   Task 5) Switching up the target function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-6-polynomial-regression">
+   Task 6) Polynomial regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#task-7-extra-task-if-you-have-time">
+   Task 7) Extra task, if you have time
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -308,8 +353,50 @@
         
               <div>
                 
-  <div class="section" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scikit-learn-exercises">
+<h1>scikit-learn - Exercises<a class="headerlink" href="#scikit-learn-exercises" title="Permalink to this headline">¶</a></h1>
+<p>In this exercise you are going to perform regression on a dataset you create yourself</p>
+<div class="section" id="task-1-load-create-the-dataset">
+<h2>Task 1) Load/Create the dataset<a class="headerlink" href="#task-1-load-create-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The first thing to do when dealing with machine learning is to have the dataset ready. Make a dataset containing 100 datapoints generated using an uniform distribution. The target variable y is given by the following formula:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+    y = 2.0+5x+0.1*N(0,1)
+\end{equation*}
+\]</div>
+</div>
+<div class="section" id="task-2-create-a-linear-regression-object-and-predict">
+<h2>Task 2) Create a linear regression object and predict<a class="headerlink" href="#task-2-create-a-linear-regression-object-and-predict" title="Permalink to this headline">¶</a></h2>
+<p>Create a linear regression object using scikit, and use it to perform a prediction on the dataset created in the task above.</p>
+</div>
+<div class="section" id="task-3-find-the-following-statistical-values">
+<h2>Task 3) Find the following statistical values<a class="headerlink" href="#task-3-find-the-following-statistical-values" title="Permalink to this headline">¶</a></h2>
+<p>Find the following statistical values for your prediction: intercept alpha, coefficient beta, mean squared error, the variance score, mean squared log error and the mean absolute error.</p>
+</div>
+<div class="section" id="task-4-plot-the-results">
+<h2>Task 4) Plot the results<a class="headerlink" href="#task-4-plot-the-results" title="Permalink to this headline">¶</a></h2>
+<p>Plot the predicted values in the same plot as the targeted values as a function of x.</p>
+</div>
+<div class="section" id="task-5-switching-up-the-target-function">
+<h2>Task 5) Switching up the target function<a class="headerlink" href="#task-5-switching-up-the-target-function" title="Permalink to this headline">¶</a></h2>
+<p>Do the same thing again, but switch up the target function with the following:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation*}
+    y = x+2.0x^3+0.1*N(0,1)
+\end{equation*}
+\]</div>
+<p>Now how does the prediction go?</p>
+</div>
+<div class="section" id="task-6-polynomial-regression">
+<h2>Task 6) Polynomial regression<a class="headerlink" href="#task-6-polynomial-regression" title="Permalink to this headline">¶</a></h2>
+<p>Now try predicting again using polynomial regression. How does the degree of polynomial you choose affect the predictions? What is the optimal degree of polynomial? Why, why not?</p>
+</div>
+<div class="section" id="task-7-extra-task-if-you-have-time">
+<h2>Task 7) Extra task, if you have time<a class="headerlink" href="#task-7-extra-task-if-you-have-time" title="Permalink to this headline">¶</a></h2>
+<p>Experiment with more types of machine learning models which can be found in the scikit learn library. For instance, ridge regression, lasso regression and logistic regression.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -325,7 +412,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks/Cpp"
+            path: "./notebooks/Python"
         },
         predefinedOutput: true
     }
@@ -337,8 +424,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Tools/Latex.html" title="previous page">LaTeX</a>
-    <a class='right-next' id="next-link" href="LectureNotes.html" title="next page">C++ Intro Lecture Notes</a>
+    <a class='left-prev' id="prev-link" href="scikit-learn.html" title="previous page">scikit-learn - Linear regression</a>
+    <a class='right-next' id="next-link" href="pandas.html" title="next page">pandas</a>
 
         </div>
         
