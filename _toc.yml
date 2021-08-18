@@ -35,5 +35,4 @@ parts:
     
   - caption: C++
     chapters:
-    - file: notebooks/Cpp/Setup
-    - file: notebooks/Cpp/CppNotes
+    - file: notebooks/Cpp/LectureNotes
