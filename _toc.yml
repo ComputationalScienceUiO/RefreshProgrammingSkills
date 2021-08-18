@@ -21,9 +21,12 @@ parts:
     chapters:
     - file: notebooks/Python/SetupAndLibraries
     - file: notebooks/Python/scikit-learn
+    - file: notebooks/Python/scikit_learn_exercises
     - file: notebooks/Python/pandas
     - file: notebooks/Python/pandasDF
     - file: notebooks/Python/linalg
+    - file: notebooks/Python/linalg_numpy_exercises
+
     
   - caption: Tools
     chapters:
