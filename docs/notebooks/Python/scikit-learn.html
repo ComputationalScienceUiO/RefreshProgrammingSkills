@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>scikit-learn - Linear regression &#8212; Programming Seminars</title>
+    <title>Simple linear regression model using scikit-learn &#8212; Programming Seminars</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -179,7 +179,10 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   scikit-learn - Linear regression
+   Simple linear regression model using
+   <strong>
+    scikit-learn
+   </strong>
   </a>
  </li>
  <li class="toctree-l1">
@@ -298,6 +301,27 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Simple linear regression model using
+   <strong>
+    scikit-learn
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-boston-housing-data-example">
+   The Boston housing data example
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -306,8 +330,8 @@
         
               <div>
                 
-  <div class="section" id="scikit-learn-linear-regression">
-<h1>scikit-learn - Linear regression<a class="headerlink" href="#scikit-learn-linear-regression" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="simple-linear-regression-model-using-scikit-learn">
+<h1>Simple linear regression model using <strong>scikit-learn</strong><a class="headerlink" href="#simple-linear-regression-model-using-scikit-learn" title="Permalink to this headline">¶</a></h1>
 <p>We start with perhaps our simplest possible example, using <strong>Scikit-Learn</strong> to perform linear regression analysis on a data set produced by us.</p>
 <p>What follows is a simple Python code where we have defined a function
 <span class="math notranslate nohighlight">\(y\)</span> in terms of the variable <span class="math notranslate nohighlight">\(x\)</span>. Both are defined as vectors with  <span class="math notranslate nohighlight">\(100\)</span> entries.
@@ -348,7 +372,9 @@ data with a straight line.</p>
 <p>The Python code follows here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing various packages</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="c1"># Importing various packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -369,9 +395,6 @@ data with a straight line.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/scikit-learn_4_0.png" src="../../_images/scikit-learn_4_0.png" />
 </div>
 </div>
 <p>This example serves several aims. It allows us to demonstrate several
@@ -435,7 +458,7 @@ to be dominated by outliers.</p>
 <p>We can modify easily the above Python code and plot the relative error instead</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
 
@@ -454,9 +477,6 @@ to be dominated by outliers.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/scikit-learn_12_0.png" src="../../_images/scikit-learn_12_0.png" />
-</div>
 </div>
 <p>Depending on the parameter in front of the normal distribution, we may
 have a small or larger relative error. Try to play around with
@@ -470,7 +490,7 @@ other properties from the statistical data analysis.</p>
 example of the functionality of <strong>Scikit-Learn</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span> 
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">mean_squared_log_error</span><span class="p">,</span> <span class="n">mean_absolute_error</span>
@@ -499,19 +519,6 @@ example of the functionality of <strong>Scikit-Learn</strong>.</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The intercept alpha: 
- [1.73564461]
-Coefficient beta : 
- [[5.42387441]]
-Mean squared error: 0.24
-Variance score: 0.92
-Mean squared log error: 0.01
-Mean absolute error: 0.39
-</pre></div>
-</div>
-<img alt="../../_images/scikit-learn_14_1.png" src="../../_images/scikit-learn_14_1.png" />
 </div>
 </div>
 <p>The function <strong>coef</strong> gives us the parameter <span class="math notranslate nohighlight">\(\beta\)</span> of our fit while <strong>intercept</strong> yields
@@ -564,16 +571,16 @@ dimensionality reduction and normalization of data we will meet other
 ways of dealing with outliers.</p>
 <p>The Huber cost function is defined as</p>
 <div class="math notranslate nohighlight">
-\[
-H_{\delta}(a)= {\begin{cases}{\frac {1}{2}}{a^{2}}&amp;{\text{for }}|a|\leq \delta , \delta (|a|-{\frac {1}{2}}\delta ),&amp;{\text{otherwise}}\end{cases}}
-\]</div>
+\[\begin{split}
+H_{\delta}(a)={\begin{cases}{\frac {1}{2}}{a^{2}}&amp;{\text{for }}|a|\leq \delta ,\\\delta (|a|-{\frac {1}{2}}\delta ),&amp;{\text{otherwise.}}\end{cases}}}.
+\end{split}\]</div>
 <p>Here <span class="math notranslate nohighlight">\(a=\boldsymbol{y} - \boldsymbol{\tilde{y}}\)</span>.
 We will discuss in more
 detail these and other functions in the various lectures.  We conclude this part with another example. Instead of
 a linear <span class="math notranslate nohighlight">\(x\)</span>-dependence we study now a cubic polynomial and use the polynomial regression analysis tools of scikit-learn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
@@ -606,73 +613,241 @@ a linear <span class="math notranslate nohighlight">\(x\)</span>-dependence we s
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/scikit-learn_28_0.png" src="../../_images/scikit-learn_28_0.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.005000000000000002
+</div>
+</div>
+<div class="section" id="the-boston-housing-data-example">
+<h1>The Boston housing data example<a class="headerlink" href="#the-boston-housing-data-example" title="Permalink to this headline">¶</a></h1>
+<p>The Boston housing<br />
+data set was originally a part of UCI Machine Learning Repository
+and has been removed now. The data set is now included in <strong>Scikit-Learn</strong>’s
+library.  There are 506 samples and 13 feature (predictor) variables
+in this data set. The objective is to predict the value of prices of
+the house using the features (predictors) listed here.</p>
+<p>The features/predictors are</p>
+<ol class="simple">
+<li><p>CRIM: Per capita crime rate by town</p></li>
+<li><p>ZN: Proportion of residential land zoned for lots over 25000 square feet</p></li>
+<li><p>INDUS: Proportion of non-retail business acres per town</p></li>
+<li><p>CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)</p></li>
+<li><p>NOX: Nitric oxide concentration (parts per 10 million)</p></li>
+<li><p>RM: Average number of rooms per dwelling</p></li>
+<li><p>AGE: Proportion of owner-occupied units built prior to 1940</p></li>
+<li><p>DIS: Weighted distances to five Boston employment centers</p></li>
+<li><p>RAD: Index of accessibility to radial highways</p></li>
+<li><p>TAX: Full-value property tax rate per USD10000</p></li>
+<li><p>B: <span class="math notranslate nohighlight">\(1000(Bk - 0.63)^2\)</span>, where <span class="math notranslate nohighlight">\(Bk\)</span> is the proportion of [people of African American descent] by town</p></li>
+<li><p>LSTAT: Percentage of lower status of the population</p></li>
+<li><p>MEDV: Median value of owner-occupied homes in USD 1000s</p></li>
+</ol>
+<p>We start by importing the libraries</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let us now dive into  nuclear physics and remind ourselves briefly about some basic features about binding
-energies.  A basic quantity which can be measured for the ground
-states of nuclei is the atomic mass <span class="math notranslate nohighlight">\(M(N, Z)\)</span> of the neutral atom with
-atomic mass number <span class="math notranslate nohighlight">\(A\)</span> and charge <span class="math notranslate nohighlight">\(Z\)</span>. The number of neutrons is <span class="math notranslate nohighlight">\(N\)</span>. There are indeed several sophisticated experiments worldwide which allow us to measure this quantity to high precision (parts per million even).</p>
-<p>Atomic masses are usually tabulated in terms of the mass excess defined by</p>
-<div class="math notranslate nohighlight">
-\[
-\Delta M(N, Z) =  M(N, Z) - uA,
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(u\)</span> is the Atomic Mass Unit</p>
-<div class="math notranslate nohighlight">
-\[
-u = M(^{12}\mathrm{C})/12 = 931.4940954(57) \hspace{0.1cm} \mathrm{MeV}/c^2.
-\]</div>
-<p>The nucleon masses are</p>
-<div class="math notranslate nohighlight">
-\[
-m_p =  1.00727646693(9)u,
-\]</div>
-<p>and</p>
-<div class="math notranslate nohighlight">
-\[
-m_n = 939.56536(8)\hspace{0.1cm} \mathrm{MeV}/c^2 = 1.0086649156(6)u.
-\]</div>
-<p>In the <a class="reference external" href="http://nuclearmasses.org/resources_folder/Wang_2017_Chinese_Phys_C_41_030003.pdf">2016 mass evaluation of by W.J.Huang, G.Audi, M.Wang, F.G.Kondev, S.Naimi and X.Xu</a>
-there are data on masses and decays of 3437 nuclei.</p>
-<p>The nuclear binding energy is defined as the energy required to break
-up a given nucleus into its constituent parts of <span class="math notranslate nohighlight">\(N\)</span> neutrons and <span class="math notranslate nohighlight">\(Z\)</span>
-protons. In terms of the atomic masses <span class="math notranslate nohighlight">\(M(N, Z)\)</span> the binding energy is
-defined by</p>
-<div class="math notranslate nohighlight">
-\[
-BE(N, Z) = ZM_H c^2 + Nm_n c^2 - M(N, Z)c^2 ,
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(M_H\)</span> is the mass of the hydrogen atom and <span class="math notranslate nohighlight">\(m_n\)</span> is the mass of the neutron.
-In terms of the mass excess the binding energy is given by</p>
-<div class="math notranslate nohighlight">
-\[
-BE(N, Z) = Z\Delta_H c^2 + N\Delta_n c^2 -\Delta(N, Z)c^2 ,
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\Delta_H c^2 = 7.2890\)</span> MeV and <span class="math notranslate nohighlight">\(\Delta_n c^2 = 8.0713\)</span> MeV.</p>
-<p>A popular and physically intuitive model which can be used to parametrize
-the experimental binding energies as function of <span class="math notranslate nohighlight">\(A\)</span>, is the so-called
-<strong>liquid drop model</strong>. The ansatz is based on the following expression</p>
-<div class="math notranslate nohighlight">
-\[
-BE(N,Z) = a_1A-a_2A^{2/3}-a_3\frac{Z^2}{A^{1/3}}-a_4\frac{(N-Z)^2}{A},
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> stands for the number of nucleons and the <span class="math notranslate nohighlight">\(a_i\)</span>s are parameters which are determined by a fit
-to the experimental data.</p>
-<p>To arrive at the above expression we have assumed that we can make the following assumptions:</p>
-<ul class="simple">
-<li><p>There is a volume term <span class="math notranslate nohighlight">\(a_1A\)</span> proportional with the number of nucleons (the energy is also an extensive quantity). When an assembly of nucleons of the same size is packed together into the smallest volume, each interior nucleon has a certain number of other nucleons in contact with it. This contribution is proportional to the volume.</p></li>
-<li><p>There is a surface energy term <span class="math notranslate nohighlight">\(a_2A^{2/3}\)</span>. The assumption here is that a nucleon at the surface of a nucleus interacts with fewer other nucleons than one in the interior of the nucleus and hence its binding energy is less. This surface energy term takes that into account and is therefore negative and is proportional to the surface area.</p></li>
-<li><p>There is a Coulomb energy term <span class="math notranslate nohighlight">\(a_3\frac{Z^2}{A^{1/3}}\)</span>. The electric repulsion between each pair of protons in a nucleus yields less binding.</p></li>
-<li><p>There is an asymmetry term <span class="math notranslate nohighlight">\(a_4\frac{(N-Z)^2}{A}\)</span>. This term is associated with the Pauli exclusion principle and reflects the fact that the proton-neutron interaction is more attractive on the average than the neutron-neutron and proton-proton interactions.</p></li>
-</ul>
-<p>We could also add a so-called pairing term, which is a correction term that
-arises from the tendency of proton pairs and neutron pairs to
-occur. An even number of particles is more stable than an odd number.</p>
+<p>and load the Boston Housing DataSet from <strong>Scikit-Learn</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
+
+<span class="n">boston_dataset</span> <span class="o">=</span> <span class="n">load_boston</span><span class="p">()</span>
+
+<span class="c1"># boston_dataset is a dictionary</span>
+<span class="c1"># let&#39;s check what it contains</span>
+<span class="n">boston_dataset</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we invoke Pandas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">boston</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">boston_dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">boston_dataset</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">boston</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">boston</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">boston_dataset</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and preprocess the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># check for missing values in all the columns</span>
+<span class="n">boston</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then visualize the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set the size of the figure</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">:(</span><span class="mf">11.7</span><span class="p">,</span><span class="mf">8.27</span><span class="p">)})</span>
+
+<span class="c1"># plot a histogram showing the distribution of the target values</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">boston</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is now useful to look at the correlation matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># compute the pair wise correlation for all columns  </span>
+<span class="n">correlation_matrix</span> <span class="o">=</span> <span class="n">boston</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># use the heatmap function from seaborn to plot the correlation matrix</span>
+<span class="c1"># annot = True to print the values inside the square</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">correlation_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>From the above coorelation plot we can see that <strong>MEDV</strong> is strongly correlated to <strong>LSTAT</strong> and  <strong>RM</strong>. We see also that <strong>RAD</strong> and <strong>TAX</strong> are stronly correlated, but we don’t include this in our features together to avoid multi-colinearity</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span> <span class="s1">&#39;RM&#39;</span><span class="p">]</span>
+<span class="n">target</span> <span class="o">=</span> <span class="n">boston</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">)</span> <span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">boston</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">target</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;MEDV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we start training our model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">boston</span><span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">],</span> <span class="n">boston</span><span class="p">[</span><span class="s1">&#39;RM&#39;</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;LSTAT&#39;</span><span class="p">,</span><span class="s1">&#39;RM&#39;</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">boston</span><span class="p">[</span><span class="s1">&#39;MEDV&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We split the data into training and test sets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="c1"># splits the training and test data set in 80% : 20%</span>
+<span class="c1"># assign random_state to any value.This ensures consistency.</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we use the linear regression functionality from <strong>Scikit-Learn</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+
+<span class="n">lin_model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">lin_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span>
+
+<span class="c1"># model evaluation for training set</span>
+
+<span class="n">y_train_predict</span> <span class="o">=</span> <span class="n">lin_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y_train</span><span class="p">,</span> <span class="n">y_train_predict</span><span class="p">)))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y_train</span><span class="p">,</span> <span class="n">y_train_predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The model performance for training set&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rmse</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2 score is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># model evaluation for testing set</span>
+
+<span class="n">y_test_predict</span> <span class="o">=</span> <span class="n">lin_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="c1"># root mean square error of the model</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">y_test_predict</span><span class="p">)))</span>
+
+<span class="c1"># r-squared score of the model</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">y_test_predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The model performance for testing set&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RMSE is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rmse</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;R2 score is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># plotting the y_test vs y_pred</span>
+<span class="c1"># ideally should have been a straight line</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span> <span class="n">y_test_predict</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many Machine Learning problems involve thousands or even millions of
+features for each training instance. Not only does this make training
+extremely slow, it can also make it much harder to find a good
+solution, as we will see. This problem is often referred to as the
+curse of dimensionality.  Fortunately, in real-world problems, it is
+often possible to reduce the number of features considerably, turning
+an intractable problem into a tractable one.</p>
+<p>Later  we will discuss some of the most popular dimensionality reduction
+techniques: the principal component analysis (PCA), Kernel PCA, and
+Locally Linear Embedding (LLE).</p>
+<p>Principal component analysis and its various variants deal with the
+problem of fitting a low-dimensional <a class="reference external" href="https://en.wikipedia.org/wiki/Affine_space">affine
+subspace</a> to a set of of
+data points in a high-dimensional space. With its family of methods it
+is one of the most used tools in data modeling, compression and
+visualization.</p>
+<p>Before we proceed however, we will discuss how to preprocess our
+data. Till now and in connection with our previous examples we have
+not met so many cases where we are too sensitive to the scaling of our
+data. Normally the data may need a rescaling and/or may be sensitive
+to extreme values. Scaling the data renders our inputs much more
+suitable for the algorithms we want to employ.</p>
+<p><strong>Scikit-Learn</strong> has several functions which allow us to rescale the
+data, normally resulting in much better results in terms of various
+accuracy scores.  The <strong>StandardScaler</strong> function in <strong>Scikit-Learn</strong>
+ensures that for each feature/predictor we study the mean value is
+zero and the variance is one (every column in the design/feature
+matrix).  This scaling has the drawback that it does not ensure that
+we have a particular maximum or minimum in our data set. Another
+function included in <strong>Scikit-Learn</strong> is the <strong>MinMaxScaler</strong> which
+ensures that all features are exactly between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>. The</p>
+<p>The <strong>Normalizer</strong> scales each data
+point such that the feature vector has a euclidean length of one. In other words, it
+projects a data point on the circle (or sphere in the case of higher dimensions) with a
+radius of 1. This means every data point is scaled by a different number (by the
+inverse of it’s length).
+This normalization is often used when only the direction (or angle) of the data matters,
+not the length of the feature vector.</p>
+<p>The <strong>RobustScaler</strong> works similarly to the StandardScaler in that it
+ensures statistical properties for each feature that guarantee that
+they are on the same scale. However, the RobustScaler uses the median
+and quartiles, instead of mean and variance. This makes the
+RobustScaler ignore data points that are very different from the rest
+(like measurement errors). These odd data points are also called
+outliers, and might often lead to trouble for other scaling
+techniques.</p>
 </div>
 
     <script type="text/x-thebe-config">
