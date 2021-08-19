@@ -564,19 +564,7 @@ squared logarithmic (quadratic) error</p>
 estimate is best to use when targets having exponential growth, such
 as population counts, average sales of a commodity over a span of
 years etc.</p>
-<p>Finally, another cost function is the Huber cost function used in robust regression.</p>
-<p>The rationale behind this possible cost function is its reduced
-sensitivity to outliers in the data set. In our discussions on
-dimensionality reduction and normalization of data we will meet other
-ways of dealing with outliers.</p>
-<p>The Huber cost function is defined as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-H_{\delta}(a)={\begin{cases}{\frac {1}{2}}{a^{2}}&amp;{\text{for }}|a|\leq \delta ,\\\delta (|a|-{\frac {1}{2}}\delta ),&amp;{\text{otherwise.}}\end{cases}}}.
-\end{split}\]</div>
-<p>Here <span class="math notranslate nohighlight">\(a=\boldsymbol{y} - \boldsymbol{\tilde{y}}\)</span>.
-We will discuss in more
-detail these and other functions in the various lectures.  We conclude this part with another example. Instead of
+<p>We conclude this part with another example. Instead of
 a linear <span class="math notranslate nohighlight">\(x\)</span>-dependence we study now a cubic polynomial and use the polynomial regression analysis tools of scikit-learn.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
