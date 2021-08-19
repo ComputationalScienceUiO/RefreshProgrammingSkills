@@ -16,7 +16,7 @@ parts:
     - file: notebooks/PythonIntro/W4_Lecture
       sections:
       - file: notebooks/PythonIntro/exercises/W4_Exercises
-      
+
   - caption: Python
     chapters:
     - file: notebooks/Python/SetupAndLibraries
@@ -24,15 +24,16 @@ parts:
     - file: notebooks/Python/scikit_learn_exercises
     - file: notebooks/Python/pandas
     - file: notebooks/Python/pandasDF
+    - file: notebooks/Python/pandas_oppgaver
     - file: notebooks/Python/linalg
     - file: notebooks/Python/linalg_numpy_exercises
 
-    
+
   - caption: Tools
     chapters:
     - file: notebooks/Tools/Git
     - file: notebooks/Tools/Latex
-    
+
   - caption: C++
     chapters:
     - file: notebooks/Cpp/LectureNotes

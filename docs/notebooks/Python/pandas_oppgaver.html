@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Git and Github/GitLab and more &#8212; Programming Seminars</title>
+    <title>pandas - Exercises &#8212; Programming Seminars</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="LaTeX" href="Latex.html" />
-    <link rel="prev" title="Linalg and numpy - Exercises" href="../Python/linalg_numpy_exercises.html" />
+    <link rel="next" title="Linalg and numpy" href="linalg.html" />
+    <link rel="prev" title="pandas - DataFrame Intro" href="pandasDF.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -169,14 +169,14 @@
   Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/SetupAndLibraries.html">
+  <a class="reference internal" href="SetupAndLibraries.html">
    Setup And Libraries
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit-learn.html">
+  <a class="reference internal" href="scikit-learn.html">
    Simple linear regression model using
    <strong>
     scikit-learn
@@ -184,32 +184,32 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/scikit_learn_exercises.html">
+  <a class="reference internal" href="scikit_learn_exercises.html">
    scikit-learn - Exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandas.html">
+  <a class="reference internal" href="pandas.html">
    pandas
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandasDF.html">
+  <a class="reference internal" href="pandasDF.html">
    pandas - DataFrame Intro
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Python/pandas_oppgaver.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    pandas - Exercises
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg.html">
+  <a class="reference internal" href="linalg.html">
    Linalg and numpy
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Python/linalg_numpy_exercises.html">
+  <a class="reference internal" href="linalg_numpy_exercises.html">
    Linalg and numpy - Exercises
   </a>
  </li>
@@ -219,14 +219,14 @@
   Tools
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Git.html">
    Git and Github/GitLab and more
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Latex.html">
+  <a class="reference internal" href="../Tools/Latex.html">
    LaTeX
   </a>
  </li>
@@ -279,7 +279,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Tools/Git.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Python/pandas_oppgaver.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -312,29 +312,24 @@
         
               <div>
                 
-  <div class="section" id="git-and-github-gitlab-and-more">
-<h1>Git and Github/GitLab and more<a class="headerlink" href="#git-and-github-gitlab-and-more" title="Permalink to this headline">¶</a></h1>
-<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with
-speed and efficiency. <strong>Git</strong> is a version control software (VCS).</p>
-<p>Without a VCS in place, you’re probably working together in a shared
-folder on the same set of files. Shouting out to your team mates
-that you are currently working on file “xyz” and that, meanwhile, your
-teammates should keep their fingers off is not an acceptable
-workflow. It’s extremely error-prone as you’re essentially doing
-open-heart surgery all the time: sooner or later, someone will
-overwrite someone else’s changes.</p>
-<p>With a VCS, everybody on the team is able to work absolutely freely -
-on any file at any time. The VCS will later allow you to merge all the
-changes into a common version. There’s no question where the latest
-version of a file or the whole project is. It’s in a common, central
-place: your version control system.</p>
-<p>Other benefits of using a VCS are even independent of working in a team or on your own.</p>
-<p>“Git”:<a class="reference external" href="https://git-scm.com/">https://git-scm.com/</a>” is one of the more popular version control softwares, and combined with repositories like <a class="reference external" href="https://github.com/">GitHub</a>, <a class="reference external" href="https://about.gitlab.com/?utm_medium=cpc&amp;utm_source=google&amp;utm_campaign=brand_emea_pr_rsa_br_exact&amp;utm_content=homepage_digital_x-pr_english_&amp;_bt=363211725518&amp;_bk=gitlab&amp;_bm=e&amp;_bn=g&amp;_bg=75294586319&amp;gclid=EAIaIQobChMI1uiRi6288gIVFJ_VCh1dSgu8EAAYASAAEgKKxfD_BwE">GitLab</a>  and other, we have an efficient way of organizing our documents and always be able to keep updated versions across platforms and devices.</p>
-<p>The videos here give you a brief introduction to both <strong>Git</strong> and repositories like <strong>GitHub</strong>:</p>
+  <div class="section" id="pandas-exercises">
+<h1>pandas - Exercises<a class="headerlink" href="#pandas-exercises" title="Permalink to this headline">¶</a></h1>
+<p>Her følger øvingsopgaver som passer å gjøre etter første undervisningsøkt i kurset.</p>
+<p><strong>a)</strong> Last ned filen “bestsellers with categories.xls” <a class="reference external" href="https://www.kaggle.com/sootersaalu/amazon-top-50-bestselling-books-2009-2019">her</a>, og les den inn med pandas.</p>
+<p><strong>b)</strong> Behandling av data:</p>
 <ul class="simple">
-<li><p>Introduction to Git and GitHub/GitLab. Watch the video at <a class="reference external" href="https://mediaspace.msu.edu/media/t/1_8mgx3cyf">https://mediaspace.msu.edu/media/t/1_8mgx3cyf</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=SWYqp7iY_Tc&amp;ab_channel=TraversyMedia">Introductory videos on YouTube</a></p></li>
+<li><p>Datasettet har noen bøker med flere ganger. Fjern duplikatene med <code class="docutils literal notranslate"><span class="pre">.drop_duplicates(&quot;Name&quot;)</span></code></p></li>
+<li><p>Fjern navnet på boken og forfatteren fra dataen</p></li>
+<li><p>Fjern alle bøker med mindre enn 1000 anmeldelser</p></li>
 </ul>
+<p><strong>c)</strong> Plot</p>
+<ul class="simple">
+<li><p>Gjennomsnittlig anmeldelsesskårer for fiksjon og sakprosa</p></li>
+<li><p>Gjennomsnittlig anmeldelsesskårer for hvert utgivelsesår.</p></li>
+<li><p>Antall bøker for hver score</p></li>
+<li><p>Antall anmeldelser for hver score</p></li>
+</ul>
+<p><strong>d)</strong> Hvor mange fiksjonsbøker fra 2017 fikk en score bedre enn 4.6?</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -350,7 +345,7 @@ place: your version control system.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./notebooks/Tools"
+            path: "./notebooks/Python"
         },
         predefinedOutput: true
     }
@@ -362,8 +357,8 @@ place: your version control system.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../Python/linalg_numpy_exercises.html" title="previous page">Linalg and numpy - Exercises</a>
-    <a class='right-next' id="next-link" href="Latex.html" title="next page">LaTeX</a>
+    <a class='left-prev' id="prev-link" href="pandasDF.html" title="previous page">pandas - DataFrame Intro</a>
+    <a class='right-next' id="next-link" href="linalg.html" title="next page">Linalg and numpy</a>
 
         </div>
         
