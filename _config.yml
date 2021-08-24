@@ -5,7 +5,7 @@
 
 #######################################################################################
 # Book settings
-title                       : Programming Seminars  # The title of the book. Will be placed in the left navbar.
+title                       : Programming languages, useful software and many other items of interest  # The title of the book. Will be placed in the left navbar.
 author                      : Karl Henrik Fredly, Kaspara Skovli Gåsvær, Morten Hjorth-Jensen, Philip Karim Niane Sørli  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        :   # A path to the book logo
