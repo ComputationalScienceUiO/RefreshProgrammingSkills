@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pandas - DataFrame Intro &#8212; Programming languages, useful software and many other items of interest</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pandas - Exercises" href="pandas_oppgaver.html" />
+    <link rel="prev" title="pandas" href="pandas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programming languages, useful software and many other items of interest</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python Intro
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W1_Lecture.html">
+   Variables and Decisions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W1_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W2_Lecture.html">
+   Lists and Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W2_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W3_Lecture.html">
+   Data Processing and Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W3_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PythonIntro/W4_Lecture.html">
+   Plotting and Correlation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PythonIntro/exercises/W4_Exercises.html">
+     Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="SetupAndLibraries.html">
+   Setup And Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit-learn.html">
+   Simple linear regression model using
+   <strong>
+    scikit-learn
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="scikit_learn_exercises.html">
+   scikit-learn - Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   pandas - DataFrame Intro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas_oppgaver.html">
+   pandas - Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linalg.html">
+   Linalg and numpy
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linalg_numpy_exercises.html">
+   Linalg and numpy - Exercises
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tools
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Git.html">
+   Git and Github/GitLab and more
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Tools/Latex.html">
+   LaTeX
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  C++
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Cpp/LectureNotes.html">
+   Computational Physics:  Teach yourself C++
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notebooks/Python/pandasDF.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ComputationalScienceUiO/RefreshProgrammingSkills/master?urlpath=tree/notebooks/Python/pandasDF.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>pandas - DataFrame Intro</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas-dataframe-intro">
+<h1>pandas - DataFrame Intro<a class="headerlink" href="#pandas-dataframe-intro" title="Permalink to this headline">¶</a></h1>
+<p>A very useful Python package is
+<a class="reference external" href="https://pandas.pydata.org/">pandas</a>, which is an open source library
+providing high-performance, easy-to-use data structures and data
+analysis tools for Python. <strong>pandas</strong> stands for panel data, a term borrowed from econometrics and is an efficient library for data analysis with an emphasis on tabular data.
+<strong>pandas</strong> has two major classes, the <strong>DataFrame</strong> class with two-dimensional data objects and tabular data organized in columns and the class <strong>Series</strong> with a focus on one-dimensional data objects. Both classes allow you to index data easily as we will see in the examples below.
+<strong>pandas</strong> allows you also to perform mathematical operations on the data, spanning from simple reshapings of vectors and matrices to statistical operations.</p>
+<p>The following simple example shows how we can, in an easy way make tables of our data. Here we define a data set which includes names, place of birth and date of birth, and displays the data in an easy to read way. We will see repeated use of <strong>pandas</strong>, in particular in connection with classification of data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;First Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Frodo&quot;</span><span class="p">,</span> <span class="s2">&quot;Bilbo&quot;</span><span class="p">,</span> <span class="s2">&quot;Aragorn II&quot;</span><span class="p">,</span> <span class="s2">&quot;Samwise&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Last Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Baggins&quot;</span><span class="p">,</span> <span class="s2">&quot;Baggins&quot;</span><span class="p">,</span><span class="s2">&quot;Elessar&quot;</span><span class="p">,</span><span class="s2">&quot;Gamgee&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Place of birth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Shire&quot;</span><span class="p">,</span> <span class="s2">&quot;Shire&quot;</span><span class="p">,</span> <span class="s2">&quot;Eriador&quot;</span><span class="p">,</span> <span class="s2">&quot;Shire&quot;</span><span class="p">],</span>
+        <span class="s1">&#39;Date of Birth T.A.&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2968</span><span class="p">,</span> <span class="mi">2890</span><span class="p">,</span> <span class="mi">2931</span><span class="p">,</span> <span class="mi">2980</span><span class="p">]</span>
+        <span class="p">}</span>
+<span class="n">data_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Place of birth</th>
+      <th>Date of Birth T.A.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Frodo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2968</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Bilbo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2890</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aragorn II</td>
+      <td>Elessar</td>
+      <td>Eriador</td>
+      <td>2931</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Samwise</td>
+      <td>Gamgee</td>
+      <td>Shire</td>
+      <td>2980</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>In the above we have imported <strong>pandas</strong> with the shorthand <strong>pd</strong>, the latter has become the standard way we import <strong>pandas</strong>. We make then a list of various variables
+and reorganize the aboves lists into a <strong>DataFrame</strong> and then print out  a neat table with specific column labels as <em>Name</em>, <em>place of birth</em> and <em>date of birth</em>.
+Displaying these results, we see that the indices are given by the default numbers from zero to three.
+<strong>pandas</strong> is extremely flexible and we can easily change the above indices by defining a new type of indexing as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pandas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Frodo&#39;</span><span class="p">,</span><span class="s1">&#39;Bilbo&#39;</span><span class="p">,</span><span class="s1">&#39;Aragorn&#39;</span><span class="p">,</span><span class="s1">&#39;Sam&#39;</span><span class="p">])</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Place of birth</th>
+      <th>Date of Birth T.A.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Frodo</th>
+      <td>Frodo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2968</td>
+    </tr>
+    <tr>
+      <th>Bilbo</th>
+      <td>Bilbo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2890</td>
+    </tr>
+    <tr>
+      <th>Aragorn</th>
+      <td>Aragorn II</td>
+      <td>Elessar</td>
+      <td>Eriador</td>
+      <td>2931</td>
+    </tr>
+    <tr>
+      <th>Sam</th>
+      <td>Samwise</td>
+      <td>Gamgee</td>
+      <td>Shire</td>
+      <td>2980</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Thereafter we display the content of the row which begins with the index <strong>Aragorn</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Aragorn&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First Name            Aragorn II
+Last Name                Elessar
+Place of birth           Eriador
+Date of Birth T.A.          2931
+Name: Aragorn, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can easily append data to this, for example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_hobbit</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;First Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Peregrin&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Last Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Took&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Place of birth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Shire&quot;</span><span class="p">],</span>
+              <span class="s1">&#39;Date of Birth T.A.&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2990</span><span class="p">]</span>
+              <span class="p">}</span>
+<span class="n">data_pandas</span><span class="o">=</span><span class="n">data_pandas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_hobbit</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pippin&#39;</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">data_pandas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ipython-input-4-e084b99be6b5&gt;:6: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
+  data_pandas=data_pandas.append(pd.DataFrame(new_hobbit, index=[&#39;Pippin&#39;]))
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Place of birth</th>
+      <th>Date of Birth T.A.</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Frodo</th>
+      <td>Frodo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2968</td>
+    </tr>
+    <tr>
+      <th>Bilbo</th>
+      <td>Bilbo</td>
+      <td>Baggins</td>
+      <td>Shire</td>
+      <td>2890</td>
+    </tr>
+    <tr>
+      <th>Aragorn</th>
+      <td>Aragorn II</td>
+      <td>Elessar</td>
+      <td>Eriador</td>
+      <td>2931</td>
+    </tr>
+    <tr>
+      <th>Sam</th>
+      <td>Samwise</td>
+      <td>Gamgee</td>
+      <td>Shire</td>
+      <td>2980</td>
+    </tr>
+    <tr>
+      <th>Pippin</th>
+      <td>Peregrin</td>
+      <td>Took</td>
+      <td>Shire</td>
+      <td>2990</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here are other examples where we use the <strong>DataFrame</strong> functionality to handle arrays, now with more interesting features for us, namely numbers. We set up a matrix
+of dimensionality <span class="math notranslate nohighlight">\(10\times 5\)</span> and compute the mean value and standard deviation of each column. Similarly, we can perform mathematial operations like squaring the matrix elements and many other operations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1"># setting up a 10 x 5 matrix</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">cols</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.749765</td>
+      <td>0.342680</td>
+      <td>1.153036</td>
+      <td>-0.252436</td>
+      <td>0.981321</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.514219</td>
+      <td>0.221180</td>
+      <td>-1.070043</td>
+      <td>-0.189496</td>
+      <td>0.255001</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.458027</td>
+      <td>0.435163</td>
+      <td>-0.583595</td>
+      <td>0.816847</td>
+      <td>0.672721</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.104411</td>
+      <td>-0.531280</td>
+      <td>1.029733</td>
+      <td>-0.438136</td>
+      <td>-1.118318</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.618982</td>
+      <td>1.541605</td>
+      <td>-0.251879</td>
+      <td>-0.842436</td>
+      <td>0.184519</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.937082</td>
+      <td>0.731000</td>
+      <td>1.361556</td>
+      <td>-0.326238</td>
+      <td>0.055676</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.222400</td>
+      <td>-1.443217</td>
+      <td>-0.756352</td>
+      <td>0.816454</td>
+      <td>0.750445</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.455947</td>
+      <td>1.189622</td>
+      <td>-1.690617</td>
+      <td>-1.356399</td>
+      <td>-1.232435</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.544439</td>
+      <td>-0.668172</td>
+      <td>0.007315</td>
+      <td>-0.612939</td>
+      <td>1.299748</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-1.733096</td>
+      <td>-0.983310</td>
+      <td>0.357508</td>
+      <td>-1.613579</td>
+      <td>1.470714</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -0.175300
+1    0.083527
+2   -0.044334
+3   -0.399836
+4    0.331939
+dtype: float64
+0    1.069584
+1    0.965548
+2    1.018232
+3    0.793167
+4    0.918992
+dtype: float64
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.061679</td>
+      <td>0.117430</td>
+      <td>1.329492</td>
+      <td>0.063724</td>
+      <td>0.962990</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.264421</td>
+      <td>0.048920</td>
+      <td>1.144993</td>
+      <td>0.035909</td>
+      <td>0.065026</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.209789</td>
+      <td>0.189367</td>
+      <td>0.340583</td>
+      <td>0.667239</td>
+      <td>0.452553</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.010902</td>
+      <td>0.282259</td>
+      <td>1.060349</td>
+      <td>0.191963</td>
+      <td>1.250636</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.621102</td>
+      <td>2.376547</td>
+      <td>0.063443</td>
+      <td>0.709698</td>
+      <td>0.034047</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.878123</td>
+      <td>0.534362</td>
+      <td>1.853835</td>
+      <td>0.106431</td>
+      <td>0.003100</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.049462</td>
+      <td>2.082875</td>
+      <td>0.572069</td>
+      <td>0.666597</td>
+      <td>0.563167</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.207888</td>
+      <td>1.415201</td>
+      <td>2.858185</td>
+      <td>1.839818</td>
+      <td>1.518895</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.296414</td>
+      <td>0.446453</td>
+      <td>0.000054</td>
+      <td>0.375694</td>
+      <td>1.689345</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>3.003620</td>
+      <td>0.966899</td>
+      <td>0.127812</td>
+      <td>2.603636</td>
+      <td>2.162999</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Thereafter we can select specific columns only and plot final results</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;First&#39;</span><span class="p">,</span> <span class="s1">&#39;Second&#39;</span><span class="p">,</span> <span class="s1">&#39;Third&#39;</span><span class="p">,</span> <span class="s1">&#39;Fourth&#39;</span><span class="p">,</span> <span class="s1">&#39;Fifth&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Second&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="n">plt</span><span class="p">,</span> <span class="n">mpl</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn&#39;</span><span class="p">)</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">rot</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>First</th>
+      <th>Second</th>
+      <th>Third</th>
+      <th>Fourth</th>
+      <th>Fifth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-1.749765</td>
+      <td>0.342680</td>
+      <td>1.153036</td>
+      <td>-0.252436</td>
+      <td>0.981321</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.514219</td>
+      <td>0.221180</td>
+      <td>-1.070043</td>
+      <td>-0.189496</td>
+      <td>0.255001</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.458027</td>
+      <td>0.435163</td>
+      <td>-0.583595</td>
+      <td>0.816847</td>
+      <td>0.672721</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.104411</td>
+      <td>-0.531280</td>
+      <td>1.029733</td>
+      <td>-0.438136</td>
+      <td>-1.118318</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.618982</td>
+      <td>1.541605</td>
+      <td>-0.251879</td>
+      <td>-0.842436</td>
+      <td>0.184519</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.937082</td>
+      <td>0.731000</td>
+      <td>1.361556</td>
+      <td>-0.326238</td>
+      <td>0.055676</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.222400</td>
+      <td>-1.443217</td>
+      <td>-0.756352</td>
+      <td>0.816454</td>
+      <td>0.750445</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.455947</td>
+      <td>1.189622</td>
+      <td>-1.690617</td>
+      <td>-1.356399</td>
+      <td>-1.232435</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.544439</td>
+      <td>-0.668172</td>
+      <td>0.007315</td>
+      <td>-0.612939</td>
+      <td>1.299748</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-1.733096</td>
+      <td>-0.983310</td>
+      <td>0.357508</td>
+      <td>-1.613579</td>
+      <td>1.470714</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08352721390288316
+&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 10 entries, 0 to 9
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   First   10 non-null     float64
+ 1   Second  10 non-null     float64
+ 2   Third   10 non-null     float64
+ 3   Fourth  10 non-null     float64
+ 4   Fifth   10 non-null     float64
+dtypes: float64(5)
+memory usage: 480.0 bytes
+None
+           First     Second      Third     Fourth      Fifth
+count  10.000000  10.000000  10.000000  10.000000  10.000000
+mean   -0.175300   0.083527  -0.044334  -0.399836   0.331939
+std     1.069584   0.965548   1.018232   0.793167   0.918992
+min    -1.749765  -1.443217  -1.690617  -1.613579  -1.232435
+25%    -0.522836  -0.633949  -0.713163  -0.785061   0.087887
+50%    -0.280179   0.281930  -0.122282  -0.382187   0.463861
+75%     0.441264   0.657041   0.861676  -0.205231   0.923602
+max     1.618982   1.541605   1.361556   0.816847   1.470714
+</pre></div>
+</div>
+<img alt="../../_images/pandasDF_11_2.png" src="../../_images/pandasDF_11_2.png" />
+<img alt="../../_images/pandasDF_11_3.png" src="../../_images/pandasDF_11_3.png" />
+</div>
+</div>
+<p>We can produce a <span class="math notranslate nohighlight">\(4\times 4\)</span> matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]
+ [12 13 14 15]]
+    0   1   2   3
+0   0   1   2   3
+1   4   5   6   7
+2   8   9  10  11
+3  12  13  14  15
+</pre></div>
+</div>
+</div>
+</div>
+<p>and many other operations.</p>
+<p>The <strong>Series</strong> class is another important class included in
+<strong>pandas</strong>. You can view it as a specialization of <strong>DataFrame</strong> but where
+we have just a single column of data. It shares many of the same features as _DataFrame. As with <strong>DataFrame</strong>,
+most operations are vectorized, achieving thereby a high performance when dealing with computations of arrays, in particular labeled arrays.
+As we will see below it leads also to a very concice code close to the mathematical operations we may be interested in.
+For multidimensional arrays, we recommend strongly <a class="reference external" href="http://xarray.pydata.org/en/stable/">xarray</a>. <strong>xarray</strong> has much of the same flexibility as <strong>pandas</strong>, but allows for the extension to higher dimensions than two. We will see examples later of the usage of both <strong>pandas</strong> and <strong>xarray</strong>.</p>
+<p>In order to study various Machine Learning algorithms, we need to
+access data. Acccessing data is an essential step in all machine
+learning algorithms. In particular, setting up the so-called <strong>design
+matrix</strong> (to be defined below) is often the first element we need in
+order to perform our calculations. To set up the design matrix means
+reading (and later, when the calculations are done, writing) data
+in various formats, The formats span from reading files from disk,
+loading data from databases and interacting with online sources
+like web application programming interfaces (APIs).</p>
+<p>In handling various input formats, as discussed above, we will mainly stay with <strong>pandas</strong>,
+a Python package which allows us, in a seamless and painless way, to
+deal with a multitude of formats, from standard <strong>csv</strong> (comma separated
+values) files, via <strong>excel</strong>, <strong>html</strong> to <strong>hdf5</strong> formats.  With <strong>pandas</strong>
+and the <strong>DataFrame</strong>  and <strong>Series</strong> functionalities we are able to convert text data
+into the calculational formats we need for a specific algorithm. And our code is going to be
+pretty close the basic mathematical expressions.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks/Python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">pandas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="pandas_oppgaver.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pandas - Exercises</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Karl Henrik Fredly, Kaspara Skovli Gåsvær, Morten Hjorth-Jensen, Philip Karim Niane Sørli<br/>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
