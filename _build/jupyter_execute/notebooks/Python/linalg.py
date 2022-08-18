@@ -10,12 +10,7 @@
 # This will allow us to introduce some central programming features of high-level languages like Python and 
 # compiled languages like C++ and/or Fortran. 
 # 
-# As discussed in the introductory notes, these series of lectures focuses both on using
-# central Python packages like **tensorflow** and **scikit-learn** as well
-# as writing your own codes for some central ML algorithms. The
-# latter can be written in a language of your choice, be it Python, Julia, R,
-# Rust, C++, Fortran etc. In order to avoid confusion however, in these lectures we will limit our
-# attention to Python, C++ and Fortran.  
+# 
 # 
 # 
 # ## Important Matrix and vector handling packages
